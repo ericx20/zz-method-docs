@@ -1,0 +1,32 @@
+{
+  "name": "zz-method-docs",
+  "version": "0.0.1",
+  "description": "Documentation for the ZZ Speedsolving Method",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericx20/zz-method-docs.git"
+  },
+  "author": "err0rcuber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericx20/zz-method-docs/issues"
+  },
+  "homepage": "http://zzmethod.com/",
+  "dependencies": {
+    "next": "^13.4.19",
+    "nextra": "^2.12.3",
+    "nextra-theme-docs": "^2.12.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "20.5.9",
+    "@types/react": "^18.2.21",
+    "typescript": "^5.2.2"
+  }
+}

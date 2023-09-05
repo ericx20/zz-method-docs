@@ -1,0 +1,9 @@
+{
+  "index": "Introduction",
+  "test": "Test Page",
+  "tutorial": "Tutorial",
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
+}
