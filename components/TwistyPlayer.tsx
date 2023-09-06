@@ -23,6 +23,7 @@ export default function TwistyPlayer({
     }
     newTwisty.style.background = "#80808040";
     newTwisty.style.borderRadius = "5px";
+    newTwisty.style.maxWidth = "100%";
     setTwisty(newTwisty);
     spanRef.current?.appendChild(newTwisty);
     if (onTwistyInit) onTwistyInit(newTwisty);
