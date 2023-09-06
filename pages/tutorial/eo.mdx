@@ -1,3 +1,98 @@
+import YouTubeEmbed from "components/YouTubeEmbed";
+import TwistyPlayer from "components/TwistyPlayer";
+import { Callout } from "nextra/components";
+
 # Edge Orientation (EO)
 
-TODO
+Here's a video! Below is the written version.
+
+<YouTubeEmbed embedId="fxwVmTI5nGM" />
+
+## Introduction
+
+**Edge Orientation (EO)** is the way edge pieces are twisted on the cube. This is the key concept to Step 1.
+
+**"Solving" EO** means twisting the edges in a certain way to make the rest of the solve nicer. It feels like magic!
+
+{/* TODO: add articles that explain the application of EO to CFOP and FMC */}
+
+<Callout type="info" emoji="😺">
+  EO is also very useful for CFOP users and essential to FMC!
+</Callout>
+
+## How EO works
+
+There are two ways an edge piece can be twisted, or **"oriented"** on the cube.
+
+One orientation:
+
+<TwistyPlayer
+  alg="x2 z F'"
+  background="none"
+  controlPanel="none"
+  hintFacelets="none"
+  experimentalStickeringMaskOrbits="EDGES:IIIIII-IIIII,CORNERS:IIIIIIII,CENTERS:IDIIDD"
+/>
+
+The other orientation:
+
+<TwistyPlayer
+  alg="x2 z R U"
+  background="none"
+  controlPanel="none"
+  hintFacelets="none"
+  experimentalStickeringMaskOrbits="EDGES:IIIIII-IIIII,CORNERS:IIIIIIII,CENTERS:IDIIDD"
+/>
+
+Why does this matter? If all edges are twisted a specific way, we can use **_natural moves_** to speed up the rest of the solve.
+
+### Natural moves
+
+There are six basic kinds of moves on the cube. R, U, L, D, F and B moves.
+We can split them into two groups:
+
+1. **Natural moves**: All R, U, L, and D moves. Let's call them "natural" because they're fast and comfortable for your hands.  
+   _Examples: R, D2, L', U_
+
+2. **Unnatural moves**: All F and B moves. Let's call them "unnatural" because they're more awkward (unless in specific hand positions).  
+   _Examples: F, B', F2_
+
+In a good speedsolving method, we want to use many natural moves and few unnatural moves.
+But that begs the question: can we use _only_ natural moves to solve the whole cube?
+
+Almost! This is the closest we can get...
+
+<TwistyPlayer
+  alg="D2 F2 D R2 U' R2 F2 D F2 L2 D2 R' B D L' D R F2 L'"
+  background="none"
+  controlPanel="none"
+  experimentalStickeringMaskOrbits="EDGES:-D-DD-DD-DDD,CORNERS:DDDDDDDD,CENTERS:DDDDDD"
+/>
+
+With _only_ natural moves, we can solve the corners and move the edges to the right place.
+But the problem is that **natural moves can't twist edges**.
+Some edges could be solved just fine👍, but others remain twisted wrong👎.
+
+Remember how each edge has two possible orientations?
+Turns out one of them is "good", and the other is "bad".
+
+- 👍**Good edge**: it's oriented in way that's solvable with natural moves
+- 👎**Bad edge**: it's oriented in the other way, which is **un**solvable with natural moves
+
+### The purpose of EO
+
+The idea of ZZ is to add a step at the beginning of the solve:
+
+<Callout type="info" emoji="💡">
+  Twist all bad edges so they become good edges.
+</Callout>
+
+This is called **solving EO**, or **orienting the edges**. Then the whole cube can be solved with natural moves
+only!
+
+F/B moves or cube rotations are not required, allowing us to turn in a fast, streamlined way.
+{/* TODO: add a link to an article explaining the benefits and tradeoffs of ZZ due to EOStep */}
+
+### Orbits
+
+Earlier, we discovered that natural moves can't twist edges. But why?
