@@ -4,7 +4,7 @@ import { Callout } from "nextra/components";
 
 # Edge Orientation (EO)
 
-Here's a video! Below is the written version.
+Here's a video! Below is the written version with more details.
 
 <YouTubeEmbed embedId="fxwVmTI5nGM" />
 
@@ -14,13 +14,16 @@ Here's a video! Below is the written version.
 
 **"Solving" EO** means twisting the edges in a certain way to make the rest of the solve nicer. It feels like magic!
 
+This tutorial will teach
+Not only is EO the foundation of ZZ, it's very useful for CFOP and essential to FMC!
+
 {/* TODO: add articles that explain the application of EO to CFOP and FMC */}
 
 <Callout type="info" emoji="😺">
   EO is also very useful for CFOP users and essential to FMC!
 </Callout>
 
-## How EO works
+## 1. How EO works
 
 There are two ways an edge piece can be twisted, or **"oriented"** on the cube.
 
@@ -51,16 +54,16 @@ Why does this matter? If all edges are twisted a specific way, we can use **_nat
 There are six basic kinds of moves on the cube. R, U, L, D, F and B moves.
 We can split them into two groups:
 
-1. **Natural moves**: All R, U, L, and D moves. Let's call them "natural" because they're fast and comfortable for your hands.  
+1. **Natural moves**: All R, U, L, and D moves. Let's call them "natural" because they're fast and comfortable for your hands.<br/>
    _Examples: R, D2, L', U_
 
-2. **Unnatural moves**: All F and B moves. Let's call them "unnatural" because they're more awkward (unless in specific hand positions).  
+2. **Unnatural moves**: All F and B moves. Let's call them "unnatural" because they're more awkward (unless in specific hand positions).<br/>
    _Examples: F, B', F2_
 
 In a good speedsolving method, we want to use many natural moves and few unnatural moves.
 But that begs the question: can we use _only_ natural moves to solve the whole cube?
 
-Almost! This is the closest we can get...
+Almost! This is the closest we can get, usually something like this:
 
 <TwistyPlayer
   alg="D2 F2 D R2 U' R2 F2 D F2 L2 D2 R' B D L' D R F2 L'"
@@ -74,10 +77,10 @@ But the problem is that **natural moves can't twist edges**.
 Some edges could be solved just fine👍, but others remain twisted wrong👎.
 
 Remember how each edge has two possible orientations?
-Turns out one of them is "good", and the other is "bad".
+It turns out that one of them is "good", and the other is "bad".
 
-- 👍**Good edge**: it's oriented in way that's solvable with natural moves
-- 👎**Bad edge**: it's oriented in the other way, which is **un**solvable with natural moves
+- 👍**Good edge**: oriented in a way that's solvable with natural moves
+- 👎**Bad edge**: oriented in the other way, which is **un**solvable with natural moves
 
 ### The purpose of EO
 
@@ -88,11 +91,100 @@ The idea of ZZ is to add a step at the beginning of the solve:
 </Callout>
 
 This is called **solving EO**, or **orienting the edges**. Then the whole cube can be solved with natural moves
-only!
+only! Solving EO eliminates the need for F/B moves or cube rotations, allowing us to turn in a fast and streamlined way.
 
-F/B moves or cube rotations are not required, allowing us to turn in a fast, streamlined way.
-{/* TODO: add a link to an article explaining the benefits and tradeoffs of ZZ due to EOStep */}
+Plus, EO reduces the number of cases you'll encounter during the solve.
+
+- For experts: unlocks practical 1-look last layer (ZBLL)
+- For beginners: less algs to learn for 2-look last layer (OCLL+PLL)
+  {/* TODO: add a link to an article explaining the benefits and tradeoffs of ZZ due to EOStep */}
+  {/* Learn more here: <insert link to article> */}
 
 ### Orbits
 
-Earlier, we discovered that natural moves can't twist edges. But why?
+Earlier, we discovered that natural moves can't twist edges. Why is that?
+
+When doing R, U, L, D turns on the cube, the edge stickers move in a restricted way.
+(Stickers are the coloured tiles on the cube.)
+
+Here we have a green-red edge. Let's press ▶️ and watch the green sticker, see where it can move.
+
+<TwistyPlayer
+  alg="R3' U3 U' L3 L' D3 D' R"
+  background="none"
+  experimentalSetupAnchor="end"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/FR-edge.png"
+  experimentalHintSprite="/assets/FR-edge.png"
+/>
+
+The green sticker can only visit the region of spots marked with purple below.
+It can't visit the region of spots marked with an X. The red sticker is the opposite!
+We call these two regions "orbits".
+
+<TwistyPlayer
+  background="none"
+  controlPanel="none"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/orbits.png"
+    experimentalHintSprite="/assets/orbits.png"
+
+/>
+
+The spots marked in purple, let's call it the **purple orbit**.
+It covers all the edge stickers on the **U**p and **D**own sides, plus two on the **F**ront and two on the **B**ack.
+Remember this, it's important later!
+
+The rest are marked with an X, so let's call that the **outer orbit**.
+
+During natural moves, the stickers on one orbit will always stay on that orbit.
+Press ▶️ to see!
+
+<TwistyPlayer
+  alg="R L' D2 U L D' R2 U'"
+  background="none"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/orbits.png"
+  experimentalSetupAnchor="end"
+/>
+
+Also notice that every edge has one sticker in the purple orbit, and the other sticker in the outer orbit.
+For example, this bad edge has a red sticker in the purple orbit, and a green sticker in the outer orbit.
+
+<TwistyPlayer
+  alg="F' U' R'"
+  background="none"
+  controlPanel="none"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/FR-edge.png"
+  experimentalSetupAnchor="end"
+/>
+
+In order to twist this edge, we must switch red and green around.
+But that means red (on the purple orbit) must move to where green was (on the outer orbit), which is impossible with natural moves!
+_That's why natural moves can't twist edges._
+
+This explains why the edge is "bad": it's only solvable if we use unnatural moves:
+
+<TwistyPlayer
+  alg="F' U' R'"
+  background="none"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/FR-edge.png"
+  experimentalSetupAnchor="end"
+/>
+
+We can do `F' U' R'` to twist the front-right edge.
+The `F'` changed the orientation of the bad edge, making it a good edge solvable with natural moves (`U' R'` in this case).
+
+We call this process **orienting an edge**: turning a bad edge into a good edge with an unnatural move.
+Our goal is to orient all of the edges.
+
+But how can we tell that an edge is bad or good?
+If an edge is in its solved place but twisted wrong, it's definitely bad (natural moves can't twist edges!)
+But what if it were somewhere else? Not as obvious.
+
+In the next section, we'll learn a simple system to detect these bad edges.
+And after that, how we can orient them all.
+
+## 2. Recognizing bad edges

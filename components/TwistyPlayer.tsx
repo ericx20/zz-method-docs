@@ -21,7 +21,7 @@ export default function TwistyPlayer({
     if (className) {
       newTwisty.className = className;
     }
-    newTwisty.style.background = "#80808040";
+    newTwisty.style.background = "#80808080";
     newTwisty.style.borderRadius = "5px";
     newTwisty.style.maxWidth = "100%";
     setTwisty(newTwisty);
