@@ -1,0 +1,23 @@
+{
+    "image":"mcr.microsoft.com/devcontainers/universal:2",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "[typescriptreact]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[typescript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[javascript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "editor.formatOnSave": true,
+                "mdx.experimentalLanguageServer": true
+            },
+            "extensions": ["esbenp.prettier-vscode", "unifiedjs.vscode-mdx", "xyc.vscode-mdx-preview"]
+        }
+    },
+    "updateContentCommand": "pnpm install",
+    "postAttachCommand": "pnpm dev"
+}
