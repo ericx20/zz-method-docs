@@ -27,30 +27,6 @@ Here's a video! Below is the written version with more details.
 
 ## 1. How EO works
 
-There are two ways an edge piece can be twisted, or **"oriented"** on the cube.
-
-One orientation:
-
-<TwistyPlayer
-  alg="x2 z F'"
-  background="none"
-  controlPanel="none"
-  hintFacelets="none"
-  experimentalStickeringMaskOrbits="EDGES:IIIIII-IIIII,CORNERS:IIIIIIII,CENTERS:IDIIDD"
-/>
-
-The other orientation:
-
-<TwistyPlayer
-  alg="x2 z R U"
-  background="none"
-  controlPanel="none"
-  hintFacelets="none"
-  experimentalStickeringMaskOrbits="EDGES:IIIIII-IIIII,CORNERS:IIIIIIII,CENTERS:IDIIDD"
-/>
-
-Why does this matter? If all edges are twisted a specific way, we can use **_natural moves_** to speed up the rest of the solve.
-
 ### Natural moves
 
 There are six basic kinds of moves on the cube. R, U, L, D, F and B moves.
@@ -78,15 +54,14 @@ With _only_ natural moves, we can solve the corners and move the edges to the ri
 But the problem is that **natural moves can't twist edges**.
 Some edges could be solved just fine👍, but others remain twisted wrong👎.
 
-Remember how each edge has two possible orientations?
-It turns out that one of them is "good", and the other is "bad".
+There are two ways an edge piece can be twisted, or **"oriented"** on the cube:
 
 - 👍**Good edge**: oriented in a way that's solvable with natural moves
 - 👎**Bad edge**: oriented in the other way, which is **un**solvable with natural moves
 
 ### The purpose of EO
 
-The idea of ZZ is to add a step at the beginning of the solve:
+The idea of ZZ is to add a step at the beginning of the solve, which will speed up the rest of the solve.
 
 <Callout type="info" emoji="💡">
   Twist all bad edges so they become good edges.
@@ -196,14 +171,14 @@ And after that, how we can orient them all.
 When looking for bad edges around the cube, there is a problem: edge orientation depends on your perspective!
 If you turn the whole cube around, some edges can change from bad to good or good to bad.
 For example, if you do a `y` cube rotation, F moves (unnatural) become L moves (natural).
-So a bad edge that needs to be solved with F becomes a good edge that can be solved with L.
+So a bad edge that needs to be solved with `F` becomes a good edge that can be solved with `L`.
 
 {/* TODO: replace placeholder link */}
 
 <Callout type="info">
   This is how CFOP orients edges during F2L! If you use CFOP, recognizing EO
   helps eliminate unnecessary `y` rotations. Learn more
-  [here](https://example.com)
+  [here](https://example.com).
 </Callout>
 
 In order to recognize bad edges, we should not turn the cube around.
