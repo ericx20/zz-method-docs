@@ -1,3 +1,7 @@
+---
+description: "Learn EO: the foundation of the ZZ Method"
+---
+
 import YouTubeEmbed from "components/YouTubeEmbed";
 import TwistyPlayer from "components/TwistyPlayer";
 import { Callout } from "nextra/components";
@@ -117,7 +121,7 @@ Here we have a green-red edge. Let's press ▶️ and watch the green sticker, s
 />
 
 The green sticker can only visit the region of spots marked with purple below.
-It can't visit the region of spots marked with an X. The red sticker is the opposite!
+It can't visit the region of spots marked with X. The red sticker is the opposite!
 We call these two regions "orbits".
 
 <TwistyPlayer
@@ -125,8 +129,7 @@ We call these two regions "orbits".
   controlPanel="none"
   experimentalStickering="picture"
   experimentalSprite="/assets/orbits.png"
-    experimentalHintSprite="/assets/orbits.png"
-
+  experimentalHintSprite="/assets/orbits.png"
 />
 
 The spots marked in purple, let's call it the **purple orbit**.
@@ -162,7 +165,8 @@ In order to twist this edge, we must switch red and green around.
 But that means red (on the purple orbit) must move to where green was (on the outer orbit), which is impossible with natural moves!
 _That's why natural moves can't twist edges._
 
-This explains why the edge is "bad": it's only solvable if we use unnatural moves:
+This explains why the edge is "bad".
+It's only solvable if we use unnatural moves, which are the only moves that can move stickers between orbits.
 
 <TwistyPlayer
   alg="F' U' R'"
@@ -186,3 +190,118 @@ In the next section, we'll learn a simple system to detect these bad edges.
 And after that, how we can orient them all.
 
 ## 2. Recognizing bad edges
+
+### Perspective
+
+When looking for bad edges around the cube, there is a problem: edge orientation depends on your perspective!
+If you turn the whole cube around, some edges can change from bad to good or good to bad.
+For example, if you do a `y` cube rotation, F moves (unnatural) become L moves (natural).
+So a bad edge that needs to be solved with F becomes a good edge that can be solved with L.
+
+{/* TODO: replace placeholder link */}
+
+<Callout type="info">
+  This is how CFOP orients edges during F2L! If you use CFOP, recognizing EO
+  helps eliminate unnecessary `y` rotations. Learn more
+  [here](https://example.com)
+</Callout>
+
+In order to recognize bad edges, we should not turn the cube around.
+For each solve, pick a center to stay at the top, and another to stay at the front.
+
+Now we're ready to recognize bad edges! Follow along with this scramble:<br/>
+`F' R' D B U2 R' U R D2 L B2 R L U2 F2 B2 L B2 R'`
+
+When following scrambles, always have the white center at the top, green center at the front.
+After that, we can choose how to hold the cube. For example, orange center top, green center front.
+
+<TwistyPlayer
+  alg="F' R' D B U2 R' U R D2 L B2 R L U2 F2 B2 L B2 R' z"
+  background="none"
+  controlPanel="none"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/eo-example-1-1.png"
+/>
+
+We have two rules for finding bad edges:
+
+### Rule #1
+
+**Rule #1**: look for **L and R stickers on the purple orbit**. Their edges are bad.
+
+"L and R stickers" means the stickers that match the color of **L**eft and **R**ight centers.
+In our example, we're looking for yellow and white stickers on the purple orbit.
+Edges with those stickers are bad.
+
+<TwistyPlayer
+  alg="F' R' D B U2 R' U R D2 L B2 R L U2 F2 B2 L B2 R' z"
+  background="none"
+  controlPanel="none"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/eo-example-1-2.png"
+/>
+
+- On the **U**p side, there's a white sticker so its edge (⬜🟩) is bad.
+- At the **F**ront two spots, there are no whites/yellows.
+- On the **D**own side, there's one white and one yellow so we found two more bad edges (⬜🟦, 🟨🟥).
+- At the **B**ack two spots, there are no whites/yellows.
+
+We found three bad edges so far, let's mark them with tape.
+
+<TwistyPlayer
+  alg="F' R' D B U2 R' U R D2 L B2 R L U2 F2 B2 L B2 R' z"
+  background="none"
+  controlPanel="none"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/eo-example-1-3.png"
+  cameraLatitude="-30"
+  cameraLongitude="150"
+/>
+
+### Rule #2
+
+**Rule #2**: Look for **U and D stickers on the outer orbit**. Their edges are bad.
+
+In our example, we're looking for orange and red stickers on the outer orbit.
+
+<TwistyPlayer
+  alg="F' R' D B U2 R' U R D2 L B2 R L U2 F2 B2 L B2 R' z"
+  background="none"
+  controlPanel="none"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/eo-example-1-4.png"
+/>
+
+- On the **L**eft side, there are no oranges/reds.
+- At the **F**ront two spots, there's a red sticker so 🟥🟩 is the 4th bad edge.
+- On the **R**ight side, there's an orange sticker so 🟧🟦 is the 5th bad edge.<br/>
+  (The red sticker is on an edge we already know is bad.)
+- At the **B**ack two spots, there's an orange sticker so 🟧🟩 is the 6th bad edge.
+
+We've found all 6 bad edges! Here they are.
+
+<TwistyPlayer
+  alg="F' R' D B U2 R' U R D2 L B2 R L U2 F2 B2 L B2 R' z"
+  background="none"
+  controlPanel="none"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/eo-example-1-5.png"
+  cameraLatitude="-30"
+  cameraLongitude="150"
+/>
+
+<Callout type="info">
+  There will always be an even number of bad edges, from 0 to 12.
+</Callout>
+
+### Rules explained
+
+The two rules seem magical. Why do they work?
+
+Rule #1: L and R stickers on the purple orbit indicate bad edges.
+This is because on a solved cube, the L and R stickers belong to the outer orbit.
+But if we see them on the purple orbit, there's no way to bring them into the outer orbit with natural moves.
+We must use unnatural moves to solve these stickers, so their edges are bad.
+
+For rule #2, it's the same logic. U and D stickers on the outer orbit indicate bad edges.
+On a solved cube, they belong to the purple orbit.
