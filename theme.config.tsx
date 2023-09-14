@@ -46,6 +46,23 @@ const config: DocsThemeConfig = {
     const titleTemplate = isHomepage ? "ZZ Method" : "%s – ZZ Method";
     return { titleTemplate };
   },
+  main: ({ children }) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { frontMatter } = useConfig();
+    return (
+      <main>
+        <h1 className="nx-mt-2 nx-mb-2 nx-text-4xl nx-font-bold nx-tracking-tight">
+          {frontMatter?.title}
+        </h1>
+        {frontMatter?.author && (
+          <p className="nx-mb-4 nx-block nx-text-sm nx-text-gray-500 dark:nx-text-gray-400">
+            By {frontMatter.author}
+          </p>
+        )}
+        <div>{children}</div>
+      </main>
+    );
+  },
   footer: {
     text: (
       <p>
