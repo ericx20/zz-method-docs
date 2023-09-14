@@ -1,6 +1,6 @@
 {
   "eo": "Edge Orientation (EO)",
   "eocross": "Step 1: EOCross",
-  "f2l": "Step 2: ZZ F2L",
-  "ll": "Step 3: Last Layer"
+  "f2l": "Step 2: First 2 Layers (F2L)",
+  "ll": "Step 3: Last Layer (LL)"
 }
