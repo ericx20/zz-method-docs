@@ -1,17 +1,19 @@
-.container {
-  height: 256px;
-  max-width: 384px;
-  background: hsl(220, 5%, 70%);
+.wrapper {
+  position: relative;
 }
 
 .playButtonWrapper {
-  height: 100%;
-  max-width: 384px;
+  position: absolute;
+  top: 0;
+  width: 384px;
+  height: 256px;
+  max-width: 100%;
+  max-height: 100%;
   opacity: 0.8;
+  transition: opacity 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.2s;
 }
 
 .playButtonWrapper:hover {
@@ -26,13 +28,8 @@
   filter: drop-shadow(0 0 5px rgb(0 0 0 / 0.8));
 }
 
-.top {
-  z-index: 2;
-  height: 0;
+.video {
+  max-width: 384px;
+  width: 100%;
+  border-radius: 5px;
 }
-
-.bottom {
-  z-index: 1;
-  height: 0;
-}
-

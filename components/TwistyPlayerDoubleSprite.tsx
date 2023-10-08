@@ -3,7 +3,7 @@ import TwistyPlayer, { TwistyPlayerExtendedConfig } from "./TwistyPlayer";
 import { TwistyPlayer as TP } from "cubing/twisty";
 import styles from "./TwistyPlayerDoubleSprite.module.css";
 
-import { FaPlay } from "react-icons/fa";
+// import { FaPlay } from "react-icons/fa";
 
 export interface TwistyPlayerDoubleSpriteProps
   extends Omit<TwistyPlayerExtendedConfig, keyof typeof overrides> {
@@ -36,7 +36,6 @@ export default function TwistyPlayerDoubleSprite({
   const firstTwistyPlayer = useRef<TP>(null);
   const secondTwistyPlayer = useRef<TP>(null);
 
-  const [firstOpacity, setFirstOpacity] = useState(0);
   const [secondOpacity, setSecondOpacity] = useState(0);
 
   const [isPlaying, setPlaying] = useState(false);
@@ -64,7 +63,6 @@ export default function TwistyPlayerDoubleSprite({
           } else if (moveInfo.patternIndex > moveIndexToChangeSprite) {
             secondOpacity = 1;
           }
-          setFirstOpacity(1 - secondOpacity);
           setSecondOpacity(secondOpacity);
         }
       );
@@ -73,16 +71,12 @@ export default function TwistyPlayerDoubleSprite({
 
   const handleClick = () => {
     firstTwistyPlayer.current?.play();
-
     secondTwistyPlayer.current?.play();
   };
 
   return (
     <div className={styles.container} role="button" onClick={handleClick}>
-      <div
-        className={styles.bottom}
-        style={{ opacity: isEnd ? 0 : firstOpacity }}
-      >
+      <div className={styles.bottom}>
         <TwistyPlayer
           ref={firstTwistyPlayer}
           experimentalSprite={firstSprite}
@@ -101,12 +95,12 @@ export default function TwistyPlayerDoubleSprite({
           {...commonProps}
         />
       </div>
-      <div
+      {/* <div
         className={styles.playButtonWrapper}
         style={{ opacity: isPlaying ? 0 : undefined }}
       >
         <FaPlay className={styles.playButton} />
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -4,15 +4,25 @@ description: "Here's a description!"
 
 # Test Page
 
-import TwistyPlayer from "components/TwistyPlayer";
+import TwistyPlayerDoubleSprite from "components/TwistyPlayerDoubleSprite";
 
-<TwistyPlayer
-  alg="R U R' U R U2 R'"
+<TwistyPlayerDoubleSprite
+  alg="F"
   experimentalSetupAnchor="end"
-  background="none"
-  controlPanel="none"
+  moveIndexToChangeSprite={0}
+  firstSprite="/assets/plus-2-after.png"
+  secondSprite="/assets/plus-2.png"
+  tempoScale={0.5}
 />
 
-import YouTubeEmbed from "components/YouTubeEmbed";
+test
 
-<YouTubeEmbed embedId="Q9f-uHyHeQs" />
+<TwistyPlayerDoubleSprite
+  alg="R' B"
+  experimentalSetupAlg="F' R' D B U2 R' U R D2 L B2 R L U2 F2 B2 L B2 R' z L' U2 F B"
+  moveIndexToChangeSprite={1}
+  firstSprite="/assets/eo-example-1-5-3.png"
+  secondSprite="/assets/eo-example-1-5-4.png"
+  tempoScale={0.5}
+  cameraLongitude="150"
+/>
