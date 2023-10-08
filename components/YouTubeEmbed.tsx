@@ -1,6 +1,7 @@
 import styles from "./YouTubeEmbed.module.css";
 
 interface YouTubeEmbedProps {
+  // Typical YouTube links are in the form "youtube.com/watch?v=<embed id here>"
   embedId: string;
 }
 
