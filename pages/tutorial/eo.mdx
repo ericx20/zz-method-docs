@@ -4,6 +4,7 @@ description: "Learn EO: the foundation of the ZZ Method"
 
 import YouTubeEmbed from "components/YouTubeEmbed";
 import TwistyPlayer from "components/TwistyPlayer";
+import TwistyPlayerDoubleSprite from "components/TwistyPlayerDoubleSprite";
 import { Callout } from "nextra/components";
 
 # Edge Orientation (EO)
@@ -269,14 +270,46 @@ We've found all 6 bad edges! Here they are.
   There will always be an even number of bad edges, from 0 to 12.
 </Callout>
 
-### Rules explained
+### The Rules Explained
 
-The two rules seem magical. Why do they work?
+The rules can seem magical, but this is why they work:
 
-Rule #1: L and R stickers on the purple orbit indicate bad edges.
-This is because on a solved cube, the L and R stickers belong to the outer orbit.
-But if we see them on the purple orbit, there's no way to bring them into the outer orbit with natural moves.
-We must use unnatural moves to solve these stickers, so their edges are bad.
+**Rule 1**: L and R stickers on the purple orbit cannot be solved with natural moves, because their solved positions
+are all on the outer orbit. Natural moves can't move stickers between orbits, so those edges are bad.
 
-For rule #2, it's the same logic. U and D stickers on the outer orbit indicate bad edges.
-On a solved cube, they belong to the purple orbit.
+**Rule 2**: It's the same logic for the U and D stickers.
+
+## 3. Solving EO
+
+Finally we'll learn how to fix these bad edges! Here is our main strategy:
+
+### Fix 4 bad edges at once
+
+`F` or `F'` will flip the orientation of all 4 edges on the **F**ront layer.
+
+<TwistyPlayerDoubleSprite
+  experimentalSetupAlg="F'"
+  alg="F"
+  moveIndexToChangeSprite={0}
+  firstSprite="/assets/minus-4.png"
+  secondSprite="/assets/minus-4-after.png"
+  tempoScale={0.5}
+/>
+
+We can use natural moves to move 4 bad edges to the **F**ront layer.
+Continuing our example, we see there's already 2 bad edges at the front.
+We can do `L'` to move a 3rd edge to the front, and `U2` for the 4th edge.
+
+{/* TODO: add twisty alg viewer */}
+
+<TwistyPlayerDoubleSprite
+  experimentalSetupAlg="F' R' D B U2 R' U R D2 L B2 R L U2 F2 B2 L B2 R' z"
+  alg="L' U2' F"
+  moveIndexToChangeSprite={2}
+  firstSprite="/assets/eo-example-1-5.png"
+  secondSprite="/assets/eo-example-1-5-after.png"
+  showHintSprite
+  tempoScale={0.7}
+  cameraLongitude="-30"
+  cameraLatitude="22"
+/>

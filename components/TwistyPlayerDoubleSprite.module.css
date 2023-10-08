@@ -1,0 +1,35 @@
+.container {
+  height: 256px;
+}
+
+.playButtonWrapper {
+  height: 100%;
+  max-width: 384px;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.playButtonWrapper:hover {
+  opacity: 1;
+}
+
+.playButton {
+  z-index: 3;
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 5px rgb(0 0 0 / 0.8));
+}
+
+.top {
+  z-index: 2;
+  height: 0;
+}
+
+.bottom {
+  z-index: 1;
+  height: 0;
+}
+
