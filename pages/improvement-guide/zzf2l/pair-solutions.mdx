@@ -21,7 +21,7 @@ TODO: work in progress!
 
 ## Optimizing solutions more
 
-Your solutions are more efficient now, but we want them as best as they can be. When we use the previous technique, we might still not be solving the cases the fastest. That’s why we will start using resources to make our solutions speed optimal.
+Your solutions are more efficient now, but we want them as best as they can be. When we use the previous technique, we might still not be solving the cases the fastest. That's why we will start using resources to make our solutions speed optimal.
 
 ## Main resource: ZZF2L doc
 
@@ -91,6 +91,7 @@ In Step 3, insert the edge into the slot that it belongs to. Here's an example:
   background="none"
   experimentalStickeringMaskOrbits="EDGES:DDDDIIIID-DI,CORNERS:DDIDIIII,CENTERS:DDDDDD"
 />
+<span>Moves: `D' R U' R' D`</span>
 
 We take advantage of the open BR slot. The edge we want to insert is already on the U layer.
 So we can do `D'` to move the solved corner out of the way.
@@ -107,6 +108,7 @@ When inserting a corner, the D move in Step 2 should be to move the spot the cor
   background="none"
   experimentalStickeringMaskOrbits="EDGES:DDDDIIIIIDDD,CORNERS:IDD-IIII,CENTERS:DDDDDD"
 />
+<span>Moves: `D' L' U L D`</span>
 
 We take advantage of the open FR slot The corner we want to insert is already on the U layer. So we can do `D'` to move the spot that it belongs to into the open FR slot. Then `L' U L` to insert the corner into FR, and `D` to undo the first D move.
 

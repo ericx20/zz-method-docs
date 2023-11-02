@@ -85,22 +85,23 @@ For corners, you can also use process of elimination, but it's harder and less c
 
 This process of elimination becomes easier when more F2L pairs are solved because there are fewer options. With practice, this skill will no longer feel like a detective game. It will become instinct.
 
-### UB edge rule
+### LL edge rule
 
-Because EO is solved, there is a very special rule you can use for the UB edge:
+Because EO is solved, there is a rule you can use for the 'hard' UB edge and even the 'easy' FL, FR, UL, and UR edges:
 
 <Callout>
-  If the UB edge doesn't have a U sticker on top, it can't be a LL edge. **It's
-  an F2L edge**.
+  If an edge doesn't have a U sticker on top, it can't be a LL edge. **It must
+  be an F2L edge.**
 </Callout>
 
 U sticker means any sticker that matches the colour of the U center.
 
 <details>
 <summary>Explanation:</summary>
-Since EOCross is solved, all bottom edges are solved. So during F2L, there are two types of edges: F2L edges (belonging to an F2L pair) and LL edges. LL edges belong to the top layer, so they'll always have a U sticker (a sticker that matches the colour of the U center).
+Since EOCross is solved, all bottom edges are solved. So during F2L, there are two types of edges: F2L edges (belonging to an F2L pair) and LL edges. LL edges belong to the top (U) layer, so they'll always have a U sticker.
 
-Typically, you need to see both stickers of an edge to tell if it's a LL edge. However, there is a special rule for the UB edge! Its only visible sticker is on the top side, which happens to be part of the ['purple orbit'](/tutorial/eo#orbits). Because EO is solved, U stickers will always be on the purple orbit. This means: if the UB edge is an LL edge, you will see a U sticker on its top side. _If you don't see a U sticker there, the UB edge is an F2L edge._
+Typically, you need to see both stickers of an edge to tell if it's a LL edge. However, there is a special rule for stickers on the ['purple orbit'](/tutorial/eo#orbits). Because EO is solved, U stickers will always be on the purple orbit. This means: if an edge is an LL edge, you will see a U sticker on the purple orbit. If you don't see a U sticker there, the edge is an F2L edge.
+Since EOCross is solved, all bottom edges are solved. So during F2L, there are two types of edges: F2L edges (belonging to an F2L pair) and LL edges. LL edges belong to the top layer, so they'll always have a U sticker (a sticker that matches the colour of the U center).
 
 </details>
 
@@ -119,9 +120,9 @@ Suppose we want to identify the UB edge. We can only see its top sticker, which 
 - ❌green-red (F2L edge): it's an 'easy' piece, we see it at UF.
 - ❓green-orange (F2L edge): it's a 'hard' piece, is it at UB or BR?
 
-But the UB Edge Rule says: the UB edge doesn't have a U sticker on top (it doesn't have yellow on top, it's just green), therefore it's an F2L edge. This is perfect, because it eliminates the green-yellow LL edge which we weren't sure of.
+But the LL Edge Rule says: the UB edge doesn't have a U sticker on the purple orbit (it doesn't have yellow there), therefore it's an F2L edge. This is perfect, because it eliminates the green-yellow LL edge which we weren't sure of.
 
-- ❌green-yellow (LL edge): nope because of UB Edge Rule. We didn't see yellow.
+- ❌green-yellow (LL edge): nope because of UB Edge Rule.
 - ❌green-red (F2L edge): it's an 'easy' piece, we see it at UF.
 - ✅green-orange (F2L edge): green-orange is UB!
 
