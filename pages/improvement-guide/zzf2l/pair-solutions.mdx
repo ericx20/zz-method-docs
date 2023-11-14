@@ -25,9 +25,9 @@ Your solutions are more efficient now, but we want them as best as they can be. 
 
 ## Main resource: ZZF2L doc
 
-[OO ZZ F2L doc](https://docs.google.com/spreadsheets/d/172R8dkejxLXw9rj9E0B0plvYJtKnYnBVh_m3caNbFrM)
+[ZZF2L doc](https://docs.google.com/spreadsheets/d/14-ayHkPfd2YrV5svpn9So_aAjPdWyMODreJ7xkIAcDc)
 
-This is the resource you would want to use, it covers every single possible pair you can get in ZZ, as well as alternative solutions to different combinations of **open slots**. A fantastic resource, its all you need to optimize your pair solutions.
+This is the resource you would want to use, it covers every single possible pair you can get in ZZ, as well as alternative solutions to different combinations of **open slots**. A fantastic resource, it's all you need to optimize your pair solutions.
 An "open slot" is a slot with unsolved pieces.
 
 To accompany you, you can also use ZZ example solves. High level CFOP recons are OK too, but make sure that the solutions they do preserve EO.
@@ -62,7 +62,7 @@ When optimizing efficiency more, take note of the alternative solutions that pri
   experimentalStickeringMaskOrbits="EDGES:DDDDIIIIDDD-,CORNERS:DD-DIIII,CENTERS:DDDDDD"
 />
 
-But with FR slot open, there's no need for that. This mean the case could now be solved with just `R U2 R2 U' R`:
+But with the FR slot open, there's no need for that. This mean the case could now be solved with just `R U2 R2 U' R`:
 
 <TwistyPlayer
   experimentalSetupAlg="z2"
@@ -95,7 +95,7 @@ In Step 3, insert the edge into the slot that it belongs to. Here's an example:
 
 We take advantage of the open BR slot. The edge we want to insert is already on the U layer.
 So we can do `D'` to move the solved corner out of the way.
-Then `R U' R'` to insert the edge to the slot it belongs, and `D` to undo the first D move.
+Then `R U' R'` to insert the edge to the slot it belongs to, and `D` to undo the first D move.
 
 ### Corner keyhole
 
@@ -124,4 +124,4 @@ After going through LS, you could then check the cases where one of the pieces i
   experimentalStickeringMaskOrbits="EDGES:DDDDIIII-IDD,CORNERS:-DDIIIII,CENTERS:DDDDDD"
 />
 
-So the only cases left are the ones with both pieces in the F2L slots, what about those? Bar a few good cases, it's not recommended to learn them. Why? Because when these cases apear in a solve, there's a very high chance that there will be an another F2L pair on the cube thats more efficient and faster to solve, so we could just choose that pair instead. This is called [Pair Choice](/improvement-guide/zzf2l/pair-choice).
+So the only cases left are the ones with both pieces in the F2L slots, what about those? Bar a few good cases, it's not recommended to learn them. Why? Because when these cases appear in a solve, there's a very high chance that there will be another F2L pair on the cube that's more efficient and faster to solve, so we could just choose that pair instead. This is called [Pair Choice](/improvement-guide/zzf2l/pair-choice).
