@@ -8,7 +8,6 @@ author: err0rcuber
 import YouTubeEmbed from "components/YouTubeEmbed";
 import CubeMp4Embed from "components/CubeMp4Embed";
 import TwistyPlayer from "components/TwistyPlayer";
-import TwistyPlayerDoubleSprite from "components/TwistyPlayerDoubleSprite";
 import { Callout } from "nextra/components";
 
 Here's a video! Below is the written version with interactive cubes.
@@ -218,9 +217,11 @@ Edges with those stickers are bad.
   experimentalSprite="/assets/eo-example-1-2.png"
 />
 
-- On the **U**p side, there's a white sticker so its edge (⬜🟩) is bad.
+{/* NOTE: invisible character (U+2060) between the emoji for each piece, prevents line break from separating them */}
+
+- On the **U**p side, there's a white sticker so its edge (⬜⁠🟩) is bad.
 - At the **F**ront two spots, there are no whites/yellows.
-- On the **D**own side, there's one white and one yellow so we found two more bad edges (⬜🟦, 🟨🟥).
+- On the **D**own side, there's one white and one yellow so we found two more bad edges (⬜⁠🟦, 🟨⁠🟥).
 - At the **B**ack two spots, there are no whites/yellows.
 
 We found three bad edges so far, let's mark them with tape.
@@ -250,10 +251,10 @@ In our example, we're looking for orange and red stickers on the outer orbit.
 />
 
 - On the **L**eft side, there are no oranges/reds.
-- At the **F**ront two spots, there's a red sticker so 🟥🟩 is the 4th bad edge.
-- On the **R**ight side, there's an orange sticker so 🟧🟦 is the 5th bad edge.<br/>
+- At the **F**ront two spots, there's a red sticker so 🟥⁠🟩 is the 4th bad edge.
+- On the **R**ight side, there's an orange sticker so 🟧⁠🟦 is the 5th bad edge.<br/>
   (The red sticker is on an edge we already know is bad.)
-- At the **B**ack two spots, there's an orange sticker so 🟧🟩 is the 6th bad edge.
+- At the **B**ack two spots, there's an orange sticker so 🟧⁠🟩 is the 6th bad edge.
 
 We've found all 6 bad edges! Here they are.
 
