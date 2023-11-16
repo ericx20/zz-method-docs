@@ -3,6 +3,7 @@ import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import logo from "public/logo.svg";
+import { Analytics } from "@vercel/analytics/react";
 
 const config: DocsThemeConfig = {
   logo: (
@@ -37,6 +38,7 @@ const config: DocsThemeConfig = {
         />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.png" type="image/png" />
+        <Analytics />
       </>
     );
   },
