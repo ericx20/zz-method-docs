@@ -1,0 +1,57 @@
+---
+title: How to solve EOCross efficiently
+description: A guide to saving moves during EOCross in the ZZ Method.
+author: yoruba
+---
+
+For the mainstream methods, a strategy for solving intuitive steps is to break them into 2 easier to manage steps. Then as you get more skilled, you will begin to find ways to merge both of these steps into one.
+
+In the CFOP method for example, less experienced solvers might plan 2-3 cross edges at once, and then solve the rest of the cross. Or in the Roux method with the first block, solvers choose between various approaches depending on the scramble: mainly square+pair, line+other line or F2L style.
+
+In ZZ, the main approaches are:
+
+1. EO+2 -> the rest. The EO+2 step should influence the last 2 edges as much as possible (most commonly used, for 0, 2, 4, and 6-flips). \
+   [Example 1](https://alpha.twizzle.net/edit/?setup-alg=R2+B2+U%27+B2+L2+D+R2+D2+R2+U%27+L2+R%27+U+L+B%27+D%27+F2+R+F%27+D+F&alg=R%27+B+F+R+U+F+%2F%2F+EO%2B2%0AL+R+%2F%2F+finish&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=F2+D+F2+R2+D2+F2+R2+D%27+B2+D%27+L2+R%27+D+R2+F2+R+B2+F+U+F2+R%27&alg=F+R+U%27+F+%2F%2FEO%2B2%0AL%27+D+L+%2F%2Ffinish&stickering=EOcross)
+
+2. Partial EO+2 -> solve the other 2 while finishing EO (for higher n-flips: 6+). \
+   [Example](https://alpha.twizzle.net/edit/?setup-alg=F2+D2+L2+B2+L2+F2+D%27+L2+B2+L%27+U%27+R%27+F%27+L%27+F%27+D+L+U+B%27&alg=B%27+%2F%2FPartial+EO+%2B+2%0AF%27+D%27+F+L2+%2F%2Ffinish&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=R+F2+L+U2+R%27+F2+D2+L+U2+R+U2+R2+F+D%27+F%27+L%27+U2+F%27+D2+U%27+R&alg=F%27+%2F%2FPartial+EO+%2B2+edges%0AD%27+R%27+D%27+F+R+D2+%2F%2Ffinish&stickering=EOcross)
+
+3. Cross > EO (rarest, only really used in 2-flips from time to time when you can cancel into a sledge at the end). \
+   [Example](https://alpha.twizzle.net/edit/?setup-alg=D%27+L2+R2+U2+B+D+B+U+B+D2+R%27+U%27+D+B%27+R%27+L%27+U%27+R+L2+U%27+B%27+D+U2+B+R&alg=B2+R2+D2+%2F%2F+solving+the+cross+edges%0AF+R+F%27+%2F%2Fcancelling+into+EO&stickering=EOcross)
+
+## Preparing cross edges while solving EO:
+
+For actually solving the EOCross, you should learn these fundamental techniques that will incorporate solving the cross edges while solving EO. They are:
+
+- Using different directions for F/B moves
+
+  - Easiest example: Solving the edge directly: \
+    [Example](https://alpha.twizzle.net/edit/?alg=B%27+U+R+%2F%2F+orient+4+%2B+solve+1+edge%0AF+%2F%2F+orients+4+edges.+The+F+move+also+directly+solve+the+cross+edge%2C+instead+of+F%27+%0AR+L2+D%27+%2F%2F+finish&stickering=EOcross&setup-alg=B2+L%27+R%27+F2+D2+F2+D2+B2+L%27+R2+B2+U+F+L%27+B%27+D+F+D%27+U%27+R+U2)
+
+  - Inserting other cross edges: \
+    [Example 1](https://alpha.twizzle.net/edit/?setup-alg=R2+F2+U+B2+R2+B2+U2+L2+F2+R+F2+U+F2+D2+B+R%27+L2+D2&alg=U+R%27+%2F%2F+bringing+the+4+bad+edges.%0AF+%2F%2F+inserting+the+red+cross+edge+instead+of+green%0AU+L2+%2F%2F+finish&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=D2+L2+U+R2+F2+U+R2+D+L2+R2+U2+B+D%27+R%27+D+R%27+F2+R2+B2+L%27+D%27&alg=L+R2+U+%2F%2F+bringing+4+bad+edges%0AF+%2F%2F+if+you+do+F%27%2C+it+would+incorectly+put+the+red+cross+edge+relative+to+the+green+and+blue+ones.+Inserting+the+orange+cross+edge+is+a+better+option.%0AU%27+D%27+R2+%2F%2F+finish&stickering=EOcross)
+
+- Switching the bad edges you're going to orient \
+  [Example](https://alpha.twizzle.net/edit/?setup-alg=U%27+R2+U%27+L2+U+B2+U+B2+D+R%27+B+U+R+L+B2+L2+U%27+B%27+U&alg=U%27+D%27+%2F%2F+switching+out+the+bad+edges%3A+we+already+had+4+on+B%2C+and+we+want+to+do+B%27+%28to+insert+the+red+cross+edge%29.+We+can+move+the+green+and+blue+edges+on+th+B+face+so+that+after+B%27%2C+they+get+put+in+their+respective+layers.%0AB%27+%2F%2F+Orienting+4.+Now+the+green+cross+edges+get+put+in+their+respective+layers.%0AR+U%27+F%27+L%27+%2F%2F+finish&stickering=EOcross)
+
+- Doing extra moves before an EO turn (replacement technique) \
+  [Example 1](https://alpha.twizzle.net/edit/?setup-alg=D2+B%27+R2+D2+B2+D%27+R2+U+B2+L2+R2+U2+F%27+L+U%27+F%27+L2+D2+U+R%27&alg=B%27+D%27+%2F%2F+orient+4%0AL+%2F%2F+if+we+do+that+before+EO...%0AF2+R%27+F+%2F%2F+...we+solve+the+red+cross+edge+as+well.%0AL2+%2F%2F+finish&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=R2+B2+U2+B+U2+B%27+U2+F2+L+D+U%27+F%27+R%27+F%27+D2+F2+R%27+B%27&alg=L+%2F%2F+before+EO%2C+we+already+have+4+bad+edges+on+the+B+face%2C+but+L+puts+a+cross+edge+and+orients+an+otherwise+problematic+DL+bad+edge.%0AB%27+U%27+F+%2F%2F+EO%2B2%0AR+D+L+D+%2F%2F+finish&stickering=EOcross)
+
+- Handling cases with 2 bad edges on the F/B faces, where you manipulate the position of EO. For this Learn how EO gets changed, as well how it affects the cross pieces
+
+  - Adjacent 2 bad edges: \
+    [Example 1](https://alpha.twizzle.net/edit/?setup-alg=D+B2+L+D2+F2+R2+U2+R%27+D2+B2+U2+F%27+U+B2+U+D%27+R%27+B%27+L%27+F2&alg=R%27+B%27+R+D+%2F%2F+partialEO%2B3+edges%0AF%27+%2F%2F+2+adjacent+bad+edges%2C+changes+the+position+of+EO%0AU2+R%27+F%27+%2F%2F+putting+the+bad+edges+and+orienting%0AR+%2F%2F+finish&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=R2+L+D2+F2+L2+F2+R%27+F2+L%27+F2+L2+F2+U%27+F%27+U2+D+B%27+L%27+U2+D2+R%27&alg=F+L%27+%2F%2F+Partial+EO%2B2+edges%0AF+%2F%2F+Puts+the+bad+edges+in+FL+and+FD+so+that+you+can+insert+the+other+2+bad+edges+easier.+Also+sets+the+orange+edge+on+R.%0AR2%27+U+F+%2F%2F+EO%0AR+D%27+%2F%2F+finish)
+
+  - Opposite 2 bad edges: \
+    [Example 1](https://alpha.twizzle.net/edit/?alg=F%27+%2F%2F+2+opposite+bad+edges%2C+doesnt+change+the+EO+itself+but+it+does+affect+the+cross+pieces.%0AD2+R+%2F%2F+3+cross+edges%0AF+U+F+%2F%2F+EO%2Blast+cross+edge%0AD2+%2F%2F+finish&setup-alg=U+L+R%27+D2+F+U+L+F2+D2+R2+D2+B%27+D2+F+R2+U2+F+L2+B2+R&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=L+U%27+F+D%27+L2+D%27+R2+U2+D%27+L2+B2+L2+R%27+B%27+L%27+D%27+L%27+U%27+B2&alg=L2+%2F%2F+blue+cross+edge+%2B+bringing+1+bad+edge+to+F%0AF%27+%2F%2F+solving+the+red+cross+edge+and+setting+up+the+green+one%0AR+U+D%27+F%27+%2F%2F+EO%0AD2+%2F%2F+finish&stickering=EOcross)
+
+- Solving EO differently to influence cross pieces: \
+   [Example 1](https://alpha.twizzle.net/edit/?setup-alg=R+U%27+L+B2+F2+R+D%27+L+F+L2+R2+F+R2+B%27+L2+D2+F+R2+B2&alg=B%27+R2+B%27+%2F%2F+EO%2B3%2C+instead+of+F%27+U2+F+which+only+does+EO.+Note+that+the+second+B%27+is+also+important+since+it+solved+the+green+cross+edge+correctly+instead+of+doing+red%2C+which+ties+into+F%2FB+directions.%0AU%27+L2+%2F%2F+finish&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=L+D+R2+F2+L2+D+F2+U+B2+F2+L2+D2+U%27+L%27+F%27+R%27+U2+F+L2+D%27+F2&alg=D+%2F%2F+puts+a+bad+edge+on+the+F+face%0AU%27+R%27+U%27+%2F%2F+instead+of+U+R%27+U%27.+U%27+R%27+U%27+puts+the+orange+cross+edge+on+the+R+face%2C+so+that+after+an+F%2C+the+piece+will+be+solved+along+with+red+edge+%28EO%2B2%29%0AF+%2F%2F+EO%2B2%0AR2+D2+R%27+%2F%2F+finish&stickering=EOcross)
+
+## How to solve EOCross as one step
+
+We want to eventually be able to see EOCross as one step to solve, instead of 2 intermediate ones.
+
+If you recall the start of the article, it talked about being able to merge both steps as you get more skilled. The solution is really just more deliberate practice: after getting comfortable with each approach, you will start to see which ones will have the best balance of how short they are, and how much they influence the rest of the pieces and EO. These will be the best to use for a scramble.
+
+If you want more help on this, you can go to [crystalcube](https://crystalcube.app/) and train the scrambles with the highest n-flips and the longest solutions, and then study the solutions which the computer gives.
