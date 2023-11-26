@@ -1,8 +1,7 @@
 {
   "2lll": "OCLL and PLL",
   "zbll-guide": "ZBLL Guide",
-  "algs": "Alg Sheets",
-  "recog": "ZBLL Recog",
-  "practice-maintain": "Practicing ZBLL",
-  "ll-prediction": "LL Prediction"
+  "zbll-algs": "ZBLL Algs",
+  "zbll-recog": "ZBLL Recog",
+  "zbll-practice": "Practicing ZBLL"
 }
