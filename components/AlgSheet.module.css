@@ -39,6 +39,9 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.algImage {
   width: 100px;
   height: 100px;
 }

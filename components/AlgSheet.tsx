@@ -25,6 +25,8 @@ export default function AlgSheet({ algSet }: AlgSheetProps) {
             experimentalStickering={algSet.stickering}
             controlPanel="none"
             background="none"
+            className={styles.algImage}
+            rootClassName={styles.algImage}
           />
           <p className={styles.mobileCategory}>{algCase.category}</p>
         </div>

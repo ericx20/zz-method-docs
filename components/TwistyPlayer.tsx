@@ -11,11 +11,20 @@ import { TwistyPlayer as TP, TwistyPlayerConfig } from "cubing/twisty";
 
 export interface TwistyPlayerExtendedConfig extends TwistyPlayerConfig {
   className?: string;
+  rootClassName?: string;
   onTwistyInit?: (twisty: TP) => void;
 }
 
 const TwistyPlayer = forwardRef(
-  ({ className, onTwistyInit, ...props }: TwistyPlayerExtendedConfig, ref) => {
+  (
+    {
+      className,
+      rootClassName,
+      onTwistyInit,
+      ...props
+    }: TwistyPlayerExtendedConfig,
+    ref
+  ) => {
     const [twistyPlayer, setTwisty] = useState<TP>();
     const spanRef = useRef<HTMLSpanElement | null>(null);
 
@@ -38,7 +47,7 @@ const TwistyPlayer = forwardRef(
       return twistyPlayer;
     });
 
-    return <span ref={spanRef} />;
+    return <span className={rootClassName} ref={spanRef} />;
   }
 );
 
