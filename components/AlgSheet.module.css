@@ -1,0 +1,85 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.table {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border: 2px solid;
+  border-color: rgb(229, 229, 229);
+}
+
+:is(html[class~="dark"]) .table th,
+:is(html[class~="dark"]) .table td {
+  border-color: rgb(60, 60, 60);
+}
+
+.nameHeader {
+  display: none;
+}
+
+.name {
+  text-align: center;
+  display: none;
+}
+
+.case {
+  text-align: center;
+  width: 0;
+}
+
+.caseContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+}
+
+.algListContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.algList {
+  list-style-type: disc;
+}
+
+.categoryHeader {
+  display: none;
+}
+
+.category {
+  text-align: center;
+  display: none;
+}
+
+/* responsive styles */
+@media only screen and (min-width: 1024px) {
+  .nameHeader {
+    display: table-cell;
+  }
+  .name {
+    display: table-cell;
+  }
+  .mobileName {
+    display: none;
+  }
+  .mobileCategory {
+    display: none;
+  }
+  .categoryHeader {
+    display: table-cell;
+  }
+
+  .category {
+    display: table-cell;
+  }
+}

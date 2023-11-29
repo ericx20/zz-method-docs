@@ -38,7 +38,7 @@ const TwistyPlayer = forwardRef(
       return twistyPlayer;
     });
 
-    return <span id="twisty-header" className={className} ref={spanRef} />;
+    return <span ref={spanRef} />;
   }
 );
 

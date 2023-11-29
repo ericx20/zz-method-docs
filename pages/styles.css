@@ -1,0 +1,10 @@
+table th {
+  position: sticky;
+  /* must match the width of the nav bar */
+  top: 4rem;
+  background-color: rgb(255, 255, 255);
+}
+
+:is(html[class~="dark"]) table th {
+  background-color: rgb(17, 17, 17);
+}
