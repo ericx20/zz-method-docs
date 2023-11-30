@@ -10,13 +10,13 @@ In the CFOP method for example, less experienced solvers might plan 2-3 cross ed
 
 In ZZ, the main approaches are:
 
-1. EO+2 -> the rest. The EO+2 step should influence the last 2 edges as much as possible (most commonly used, for 0, 2, 4, and 6-flips). \
+1. EO+2 -> the rest. This is where you orient the edges and solve 2 cross edges at the same time, and then you solve the remaining cross pieces. The EO+2 step should influence the last 2 edges as much as possible (most commonly used for 0, 2, 4, and 6-flips). \
    [Example 1](https://alpha.twizzle.net/edit/?setup-alg=R2+B2+U%27+B2+L2+D+R2+D2+R2+U%27+L2+R%27+U+L+B%27+D%27+F2+R+F%27+D+F&alg=R%27+B+F+R+U+F+%2F%2F+EO%2B2%0AL+R+%2F%2F+finish&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=F2+D+F2+R2+D2+F2+R2+D%27+B2+D%27+L2+R%27+D+R2+F2+R+B2+F+U+F2+R%27&alg=F+R+U%27+F+%2F%2FEO%2B2%0AL%27+D+L+%2F%2Ffinish&stickering=EOcross)
 
-2. Partial EO+2 -> solve the other 2 while finishing EO (for higher n-flips: 6+). \
+2. Partial EO+2 -> solve the other 2 while finishing EO. In this approach, you orient some, but not all of the edges while solving 2 cross edges, and then you orient the remaining edges and solve the remaining cross edges. (used mainly for higher n-flips: 6+).  \
    [Example](https://alpha.twizzle.net/edit/?setup-alg=F2+D2+L2+B2+L2+F2+D%27+L2+B2+L%27+U%27+R%27+F%27+L%27+F%27+D+L+U+B%27&alg=B%27+%2F%2FPartial+EO+%2B+2%0AF%27+D%27+F+L2+%2F%2Ffinish&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=R+F2+L+U2+R%27+F2+D2+L+U2+R+U2+R2+F+D%27+F%27+L%27+U2+F%27+D2+U%27+R&alg=F%27+%2F%2FPartial+EO+%2B2+edges%0AD%27+R%27+D%27+F+R+D2+%2F%2Ffinish&stickering=EOcross)
 
-3. Cross > EO (rarest, only really used in 2-flips from time to time when you can cancel into a sledge at the end). \
+3. Cross > EO. This is by far the rarest approach, and is only really used in 2-flips from time to time when you can cancel into a sledge at the end. \
    [Example](https://alpha.twizzle.net/edit/?setup-alg=D%27+L2+R2+U2+B+D+B+U+B+D2+R%27+U%27+D+B%27+R%27+L%27+U%27+R+L2+U%27+B%27+D+U2+B+R&alg=B2+R2+D2+%2F%2F+solving+the+cross+edges%0AF+R+F%27+%2F%2Fcancelling+into+EO&stickering=EOcross)
 
 ## Preparing cross edges while solving EO:
