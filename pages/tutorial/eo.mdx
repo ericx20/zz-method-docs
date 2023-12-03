@@ -33,10 +33,10 @@ Here's a video! Below is the written version with interactive cubes.
 There are six basic kinds of moves on the cube. R, U, L, D, F and B moves.
 We can split them into two groups:
 
-1. **Natural moves**: All R, U, L, and D moves. Let's call them "natural" because they're fast and comfortable for your hands.<br/>
+1. **Natural moves:** All R, U, L, and D moves. Let's call them "natural" because they're fast and comfortable for your hands.<br/>
    _Examples: R, D2, L', U_
 
-2. **Unnatural moves**: All F and B moves. Let's call them "unnatural" because they're more awkward (unless in specific hand positions).<br/>
+2. **Unnatural moves:** All F and B moves. Let's call them "unnatural" because they're more awkward (unless in specific hand positions).<br/>
    _Examples: F, B', F2_
 
 In a good speedsolving method, we want to use many natural moves and few unnatural moves.
@@ -57,8 +57,8 @@ Some edges could be solved just fine👍, but others remain twisted wrong👎.
 
 There are two ways an edge piece can be twisted, or **"oriented"** on the cube:
 
-- 👍**Good edge**: oriented in a way that's solvable with natural moves.
-- 👎**Bad edge**: oriented in the other way, which is **un**solvable with natural moves.
+- 👍**Good edge:** oriented in a way that's solvable with natural moves.
+- 👎**Bad edge:** oriented in the other way, which is **un**solvable with natural moves.
 
 ### The purpose of EO
 
@@ -155,7 +155,7 @@ It's only solvable if we use unnatural moves, which are the only moves that can 
 We can do `F' U' R'` to twist the front-right edge.
 The `F'` changed the orientation of the bad edge, making it a good edge solvable with natural moves (`U' R'` in this case).
 
-We call this process **orienting an edge**: turning a bad edge into a good edge with an unnatural move.
+We call this process **orienting an edge:** turning a bad edge into a good edge with an unnatural move.
 Our goal is to orient all of the edges.
 
 But how can we tell that an edge is bad or good?
@@ -202,7 +202,7 @@ We have two rules for finding bad edges:
 
 ### Rule #1
 
-**Rule #1**: look for **L and R stickers on the purple orbit**. Their edges are bad.
+**Rule #1:** look for **L and R stickers on the purple orbit**. Their edges are bad.
 
 "L and R stickers" means the stickers that match the color of **L**eft and **R**ight centers.
 In our example, we're looking for yellow and white stickers on the purple orbit.
@@ -237,7 +237,7 @@ We found three bad edges so far, let's mark them with tape.
 
 ### Rule #2
 
-**Rule #2**: Look for **U and D stickers on the outer orbit**. Their edges are bad.
+**Rule #2:** Look for **U and D stickers on the outer orbit**. Their edges are bad.
 
 In our example, we're looking for orange and red stickers on the outer orbit.
 
@@ -275,10 +275,10 @@ We've found all 6 bad edges! Here they are.
 
 The rules can seem magical, but this is why they work:
 
-**Rule 1**: L and R stickers on the purple orbit cannot be solved with natural moves, because their solved positions
+**Rule 1:** L and R stickers on the purple orbit cannot be solved with natural moves, because their solved positions
 are all on the outer orbit. Natural moves can't move stickers between orbits, so those edges are bad.
 
-**Rule 2**: It's the same logic for the U and D stickers.
+**Rule 2:** It's the same logic for the U and D stickers.
 
 ## 3. Solving EO
 
