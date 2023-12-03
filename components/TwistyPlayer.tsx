@@ -15,6 +15,9 @@ export interface TwistyPlayerExtendedConfig extends TwistyPlayerConfig {
   onTwistyInit?: (twisty: TP) => void;
 }
 
+/**
+ * A React wrapper for the cubing.js `<twisty-player>` element.
+ */
 const TwistyPlayer = forwardRef(
   (
     {
@@ -52,3 +55,36 @@ const TwistyPlayer = forwardRef(
 );
 
 export default TwistyPlayer;
+
+/* Documentation for the experimentalStickeringMaskOrbits prop/attribute:
+This prop is used to customize the way pieces are highlighted on the cube,
+if it's beyond the default supported stickerings such as OCLL or EOCross.
+It's an experimental feature that is subject to change.
+
+Pass in a string in the format "EDGES:xxxxxxxxxxxx,CORNERS:xxxxxxxx,CENTERS:xxxxxx"
+where each "x" is one of the following characters:
+"-": regular
+"D": dim
+"I": ignored
+"X": invisible
+"O": ignore non-primary (ignore the non-primary stickers)
+"P": permute non-primary (dim the primary stickers, useful for PLL and other stickerings where just the permutation of pieces matters)
+"o": ignoriented (same as O, except the primary sticker is also dimmed)
+"?": orientation without permutation (useful for EO and CO on the entire cube! Primary stickers are replaced with turquoise)
+This is defined in https://github.com/cubing/cubing.js/blob/36c57c2dadc889b1321d05d8cfc005cef8a9bffd/src/cubing/twisty/model/props/puzzle/display/parseSerializedStickeringMask.ts
+
+"Primary stickers" are stickers that belong on the U and D faces, and FL, FR, BL, BR positions.
+They're relevant for edge orientation and corner orientation.
+
+Here is the order of the pieces for 3x3:
+EDGES:
+  UF, UR, UB, UL,
+  DF, DR, DB, DL,
+  FR, FL, BR, BL
+
+CORNERS:
+  UFR, UBR, UBL, UFL,
+  DFR, DFL, DBL, DBR
+
+CENTERS: U, L, F, R, B, D
+*/
