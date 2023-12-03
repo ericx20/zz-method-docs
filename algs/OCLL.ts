@@ -7,10 +7,10 @@ const OCLL: AlgSet = {
   algCases: [
     {
       name: "Sune",
-      algs: ["R U R' U R U2 R'"],
+      algs: ["R U R' U R U2' R'"],
     },
     {
-      name: "Left Sune",
+      name: "Antisune",
       algs: ["L' U' L U' L' U2 L"],
     },
     {
@@ -27,11 +27,11 @@ const OCLL: AlgSet = {
     },
     {
       name: "H",
-      algs: ["R' U2 R U R' U' R U R' U R"],
+      algs: ["R U R' U R U' R' U R U2' R'"],
     },
     {
       name: "Pi",
-      algs: ["R U2 R2' U' R2 U' R2 U2 R"],
+      algs: ["R U2' R2' U' R2 U' R2' U2' R"],
     },
   ],
 };
