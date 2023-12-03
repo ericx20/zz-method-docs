@@ -1,7 +1,377 @@
 ---
 title: ZZF2L
-description: # put description here
-author: # put your name/alias here
+description: Learn ZZF2L, the second step of the ZZ Method.
+author: S1neWav_ and err0rcuber
 ---
 
-TODO
+import TwistyPlayer from "components/TwistyPlayer";
+import { Callout } from "nextra/components";
+
+## Introduction
+
+**ZZF2L** is the 2nd step of the ZZ Method.
+After [EOCross](/tutorial/eocross), complete the **First 2 Layers (F2L)** of the cube, which are the bottom two layers.
+
+<Callout type="info">
+If you use the CFOP method, you already know how to solve F2L. \
+ZZF2L is the same process, except cube rotations and `F`/`B` moves are not
+needed because edges are oriented. \
+The cases in CFOP that use rotations or `F`/`B` are either impossible in
+ZZ, or are solved with [ZZ-specific
+solutions](/improvement-guide/zzf2l/pair-solutions#main-resource-zzf2l-doc)
+that keep the edges oriented.
+
+</Callout>
+
+The rest of the article does not require any knowledge of CFOP.
+
+To complete the F2L, we need to solve four corners and four edges around the EOCross.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD----,CORNERS:IIII----,CENTERS:IDDDDD"
+  background="none"
+  controlPanel="none"
+/>
+
+Each pair of matching corners and edges is called an **F2L pair**. For example, this is the front-right (FR) pair, scrambled up:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIXDDDD-DDD,CORNERS:IIXI-DDD,CENTERS:IDDDDD"
+  alg="R U2 R' U' R U R'"
+  experimentalSetupAnchor="end"
+  background="none"
+  controlPanel="none"
+/>
+
+And that "gap" where a pair belongs to is called an **F2L slot**. So the FR pair belongs to the FR slot, shown above as an empty spot.
+
+We name the four pairs and their four slots by their positions. FR is front-right, FL is front-left, BR is back-right, BL is back-left.
+
+### Basic inserts
+
+Many beginner methods for the Rubik's cube will complete the First 2 Layers, one piece at a time.
+This is easy to learn, but slow for speedsolving.
+Instead, we will learn how to solve _both pieces_ of an F2L pair together, which is much faster.
+
+Let's begin by looking at the two simplest ways to solve a pair together, using the FR pair as an exampler.
+We call these two simplest ways **basic inserts**.
+
+#### Joined pair
+
+This is the **joined pair:** the two pieces of this F2L pair are joined together with the colors aligned.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  alg="R U' R'"
+  experimentalSetupAnchor="end"
+/>
+<span>Moves: `R U' R'`</span>
+
+We can solve joined pairs in three moves with this general strategy (brackets have the moves for just this example):
+
+1. Lift the slot to the top. (`R`)
+2. Move the pair into the slot. (`U'`)
+3. Bring the solved slot back down. (`R'`)
+
+Press ▶️ above to see it in action!
+
+#### Split pair
+
+This is the **split pair:** it looks like a joined pair that was split apart by one move.
+We can also solve this in three moves with this strategy:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  alg="R U R'"
+  experimentalSetupAnchor="end"
+/>
+<span>Moves: `R U R'`</span>
+
+1. Lift the slot to the top, _while also joining the pair_. (`R`)
+2. Move the pair into the slot. (`U`)
+3. Bring the solved slot back down. (`R'`)
+
+### Intuition
+
+F2L solutions make "intuitive" sense: you can see and understand how they work.
+This is powerful because we don't need to memorize these solutions as algorithms (`R U' R'`, `R U R'`...).
+In fact, we shouldn't! You'd have to memorize all the variations for FL, BR and BL too.
+
+If you remember the strategy of a solution, you can easily apply it for all four pair positions.
+Here's the same F2L case on both the FR and FL pairs.
+
+Front-right pair:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  alg="R U' R'"
+  experimentalSetupAnchor="end"
+/>
+<span>Moves: `R U' R'`</span>
+
+Front-left pair:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDDD-DD,CORNERS:IIIID-DD,CENTERS:IDDDDD"
+  background="none"
+  alg="L' U L"
+  experimentalSetupAnchor="end"
+/>
+<span>Moves: `L' U L`</span>
+
+They're solved with the same strategy, because they're just mirror images of each other.
+It's a good skill to see them as exactly the same thing.
+
+This tutorial will mainly use the FR pair to show strategies, but they work for all pairs.
+
+# How to solve F2L
+
+We'll solve each F2L pair, one at a time.
+There are four steps to solving a pair:
+
+1. Move the pieces to the top layer.
+2. Separate the two pieces if they're touching.
+3. Arrange a basic insert.
+4. Do the basic insert.
+
+Since EOCross is solved, we only need to turn the R, U, and L layers.
+No cube rotations are needed, so we will keep holding the cube at the same angle throughout.
+
+## Step 1
+
+We want both pieces of the F2L pair to be in the top layer.
+Any F2L piece that is not in the top layer will be trapped in one of the unsolved F2L slots around the cube.
+
+To move a trapped piece to the top, we'll learn a general strategy.
+As an example, the yellow-green-orange corner is trapped in the FR slot.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDDIIDD,CORNERS:IIIII-DD,CENTERS:IDDDDD"
+  background="none"
+  experimentalSetupAlg="L' U' L (R U R' U')3"
+  alg="R U R'"
+/>
+<span>Moves: `R U R'`</span>
+
+1. Move the slot containing the piece to the top, using an R/L-layer move. (`R`)
+2. Free the trapped piece with _any_ U-layer move. (`U`)
+3. Move the slot back down. (`R'`)
+
+This strategy still works if both F2L pieces are trapped in the same slot:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDDI-DD,CORNERS:IIIII-DD,CENTERS:IDDDDD"
+  background="none"
+  experimentalSetupAlg="L' U L U2 R U R' U R U R'"
+  alg="R U R'"
+/>
+<span>Moves: `R U R'`</span>
+
+However, if exactly one piece is already at the top, there's a chance that it will become trapped when we free the other piece!
+For example, doing `R U R'` here will just trap the corner.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDDI-DD,CORNERS:IIIII-DD,CENTERS:IDDDDD"
+  background="none"
+  experimentalSetupAlg="F2 R' F2 R U'"
+  alg="R U R'"
+/>
+<span>Moves: `R U R'`. Oh no, corner's trapped now!</span>
+
+To avoid this, we can _wisely_ choose a U-layer move, not just any.
+It should take both pieces out of the first move's layer.
+
+Here, the first move is `R`, so then we move the pieces out of the R layer.
+`U2` works. You could also do `U'`.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDDI-DD,CORNERS:IIIII-DD,CENTERS:IDDDDD"
+  background="none"
+  experimentalSetupAlg="F2 R' F2 R U'"
+  alg="R U2 R'"
+/>
+<span>Moves: `R'`**`U2`**`R'`</span>
+
+This way, the third move has no chance of bringing any pair pieces back down.
+
+{/* TODO: Here's the exact same strategy, shown at different slots: [insert collapsible panel] */}
+
+## Step 2
+
+The pair is now at the top, but if they're "touching" then we want to separate them.
+
+The pair is **touching** if they're right next to each other like this:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  controlPanel="none"
+  experimentalSetupAlg="R U' R' U' R U R'"
+/>
+
+This pair is separated, which is what we want:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  controlPanel="none"
+  experimentalSetupAlg="R U R' U2 R U' R' U2"
+/>
+
+To separate a touching pair, there are four easy moves:
+
+1. Move the corner to above an unsolved slot, with a U-layer move. Skip if it's already like that.
+2. Move that unsolved slot to the top using an R/L-layer move.
+3. Do `U2`.
+4. Move the slot back down, which will cut the pair in half.
+
+For example, in this situation we can do:
+
+1. `U` to move the corner to above the unsolved FR slot.
+2. `R` to move the unsolved FR slot to the top.
+3. `U2`
+4. `R'` to move the FR slot back down.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  experimentalSetupAlg="R U' R' U' R U R'"
+  alg="U R U2 R'"
+/>
+<span>Moves: `U R U2 R'`</span>
+
+{/* TODO: show more examples in a collapsible section */}
+
+Note: if your pair is touching and is also a [joined pair](/tutorial/zzf2l#joined-pair), then you already have a basic insert ready!
+Skip to [Step 4](/tutorial/zzf2l#step-4).
+
+## Step 3
+
+Now we'll set up the pair for a [basic insert](/tutorial/zzf2l#basic-inserts).
+We can move the pieces around to form a joined pair or a split pair.
+
+There are three types of cases, based on the way the corner is twisted:
+
+### Case A
+
+**Case A:** The "D sticker" faces the top.
+The corner will always have a **D sticker:** a sticker that matches the color of the bottom (D) center.
+We'll setup a joined pair.
+
+Here's the strategy alongside an example:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  experimentalSetupAlg="R U R' U' R U' R' U2"
+  alg="U2 R U R'"
+/>
+<span>Moves: `U2 R U R'`</span>
+
+1. Align the edge with the center that matches its side color. (`U2`)
+2. The slot that we're solving, bring it to the top. (`R`)
+3. Do the U-layer move that stacks the corner on top of the edge. (`U`)
+4. Bring the slot back down. (`R'`)
+
+{/* TODO: show more examples in a collapsible section. */}
+
+### Case B
+
+**Case B:** the top stickers match.
+The corner is twisted so that the stickers on the top of both pieces are the same color.
+The joined pair is also like that, so we'll set up a joined pair.
+
+To do that, we'll temporarily hide the corner so that we can bring the edge right next to it.
+The **hiding spot** for the corner is the position that is an `R2` or `L2` move away from its solved position.
+
+Here's the strategy for Case B:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  experimentalSetupAlg="R U R' U2 R U2 R' U"
+  alg="U' R U2 R'"
+/>
+<span>Moves: `U' R U2 R'`</span>
+
+1. Move the corner to its "hiding spot". (Here, hiding spot is the back-right, do `U'` to move the corner there)
+2. The slot that we're solving, bring it to the top which will hide the corner. (`R`)
+3. Move the edge to the front or back, whichever is next to the hiding spot. (here, move it to the back with `U2`)
+4. Un-hide the corner. (`R'`)
+
+{/* TODO: more examples */}
+
+### Case C
+
+**Case C:** the top stickers don't match.
+The corner is twisted so that the stickers on the top are different colors.
+It's also not Case A, so we don't see a D sticker at the top.
+The split pair is also like this, so we'll set up to the split pair this time.
+
+There are only two cases. It's either a split pair which is our goal (you can see that it's 1 move away from being joined).
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  controlPanel="none"
+  experimentalSetupAlg="R U' R'"
+/>
+
+Or, it's not a split pair. We'll follow a strategy very similar to Case B.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  experimentalSetupAlg="R U' R' U' R U' R' U"
+  alg="U' R U R'"
+/>
+<span>Moves: `U' R U R'`</span>
+
+1. Move the corner to its hiding spot. (`U'`)
+2. Bring the slot we're solving to the top, which will hide the corner. (`R`)
+3. Move the edge to the left or right, whichever is _furthest_ from the hiding spot.
+4. Un-hide the corner. (`R'`)
+
+{/* TODO: more examples */}
+
+## Step 4
+
+Now we have a joined/split pair.
+If it's a joined pair, turn the U layer so that the corner's D sticker faces away from the slot we're solving.
+
+For instance, do a `U2` here so the yellow D sticker faces away from the FR slot.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  experimentalSetupAlg="R U R' U2"
+  alg="U2"
+/>
+
+If it's a split pair, turn the EU layer so that the corner is above the slot we're solving.
+
+In this case, do a `U'` to move the corner above the FR slot, which the pair belongs to.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  experimentalSetupAlg="R U' R' U"
+  alg="U'"
+/>
+
+Now we're ready to perform the basic insert. See the [basic insert section](/tutorial/zzf2l#basic-inserts).
+
+{/* TODO: example F2L solve */}
+
+## Conclusion
+
+**Congrats!** You've completed the ZZF2L tutorial.
+It may be a lot to take in initially, but because ZZF2L is intuitive it will become second nature.
+There are also a lot of patterns, for example you'll be lifting slots up and putting them back down.
+Solutions are generally alternating between R and U moves, or L and U moves.
+You'll get the hang of it!
+
+The next and final step is [Last Layer](/tutorial/ll).
