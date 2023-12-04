@@ -1,7 +1,277 @@
 ---
-title: EOCross
-description: # put description here
-author: # put your name/alias here
+title: How to solve EOCross
+description: Learn EOCross, the first step of the ZZ Method.
+author: S1neWav_ and err0rcuber
 ---
 
-TODO
+import TwistyPlayer from "components/TwistyPlayer";
+
+## Introduction
+
+EOCross is the first step of the modern ZZ method.
+We solve two properties:
+
+- [Edge Orientation](/tutorial/eo).
+- The **cross:** the 4 edges at the bottom.
+
+A solved EOCross looks like this:
+
+<TwistyPlayer
+  experimentalStickering="EOcross"
+  background="none"
+  controlPanel="none"
+  cameraLatitude="-30"
+/>
+
+The turquoise stickers are there to show the orientation of the unsolved edges.
+Good edges have turquoise on the ["purple orbit"](/tutorial/eo#orbits).
+We can see that they're all good.
+
+### What's the purpose of EOCross?
+
+EOCross slows down the beginning of the solve compared to just solving CFOP cross.
+However, EOCross sets up a rotationless, ergonomic F2L step.
+With EO solved, there is a simpler way to [deduce](/improvement-guide/zzf2l/deduction) F2L edges.
+Last Layer also becomes simpler.
+OLL and PLL is easier to learn for ZZ (28 algs instead of 78), or you can learn full ZBLL and use it every solve.
+
+In this tutorial, we'll solve EO first and then cross separately. For speed, you can later learn how to solve this as one step in the [Improvement Guide](/improvement-guide/eocross).
+
+## Step 1: EO
+
+The first step is to solve edge orientation. This process is explained in our [EO tutorial](/tutorial/eo).
+
+## Step 2: Cross
+
+Once EO is done, solve the four cross edges.
+They all belong on the bottom, and are the only edges that have the bottom color.
+All you need are the "natural" R, U, L, and D moves, and you can also use `F2` and `B2`.
+Avoid moves that disrupt EO such as cube rotations, quarter-turn F/B-layer moves and slice moves.
+
+There are two things needed for the cross:
+
+### Edges are at the bottom
+
+Here's a simple way to move each cross edge to the bottom layer.
+The edge will either be on the left, middle or right layer of the cube.
+
+- If it's on the left, do an L-layer move to bring it to the bottom.
+- If it's in the middle layer, do `F2` or `B2`, depending if the edge is at the top-front or top-back position respectively.
+- If it's on the right, do an R-layer move to bring it to the bottom.
+
+<details>
+<summary>Examples</summary>
+For example, this edge on the right. To move it down, we can do `R'`. Press ▶️ to see:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIII-IIIIIII,CORNERS:IIIIIIII"
+  experimentalSetupAlg="F2 U' R'"
+  alg="R'"
+  background="none"
+  cameraLatitude="-30"
+/>
+
+Here's an edge in the middle layer. To move it down, we can do `F2` because it's at the top-front:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIIII-IIII,CORNERS:IIIIIIII"
+  experimentalSetupAlg="L2 U'"
+  alg="F2"
+  background="none"
+  cameraLatitude="-30"
+/>
+</details>
+
+Sometimes, there will be a bottom cross piece that will get "kicked out" when you move another edge to the bottom.
+This can be avoided by doing a D-layer turn to move the bottom cross piece out of the way.
+To move this green-yellow edge to the bottom, we can first do `D'` to move the red-yellow edge out of the way. Then we can do the `R'`.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIII--IIIIII,CORNERS:IIIIIIII"
+  experimentalSetupAlg="D R D'"
+  alg="D' R'"
+  background="none"
+  cameraLatitude="-30"
+/>
+
+Now we know how to move any cross edge to the bottom.
+We can just put all cross edges on the bottom, and it'll look like this.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  background="none"
+  cameraLatitude="-30"
+  experimentalSetupAlg="D2 R D R' D' R"
+/>
+
+However, this is not a solved cross!
+The cross edges are in the wrong order, they're not solved.
+
+### Edges are in the correct order
+
+The other requirement is to have the edges in the "correct order".
+Two or more edges are in the **correct order** if they're either solved, or just one D move away from being solved.
+
+For example, these two cross edges are in the correct order.
+They are a `D` move away from solved.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIII--IIIII,CORNERS:IIIIIIII"
+  background="none"
+  cameraLatitude="-30"
+  experimentalSetupAlg="D'"
+  alg="D"
+/>
+
+We can see why the order is correct in another way: the red center is to the left of the blue center.
+So the cross edge with red must be to the left of the cross edge with blue.
+
+### How to solve the cross
+
+To solve the cross, we move the edges to the bottom so they are in the correct order.
+We can start by putting one cross edge at the bottom, in any position.
+
+It's easier to see with an example. Do this scramble with the white center at the top, green center at the front:
+`F2 D2 L2 U F2 R'`
+
+In this example, we can start with the green-white cross edge.
+`L2` moves it to the bottom.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalSetupAlg="F2 D2 L2 U F2 R'"
+  alg="L2"
+  background="none"
+  cameraLongitude="-30"
+/>
+<span>Move: `L2`</span>
+
+Then, we move another cross edge down.
+But we should turn the D layer so that it lands in the correct order with the first edge.
+
+Back to our example, we'll choose the **blue**-yellow edge right in front of us.
+If we moved it down right now (with `F2`), it would be next to the **green**-yellow edge.
+But the **blue** and **green** side colors don't belong next to each other.
+Look around the cube, you'll see that the blue center is on the opposite side to the green center.
+
+So to ensure the blue-yellow edge is placed opposite to the green-yellow edge, do a `D'` move.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalSetupAlg="F2 D2 L2 U F2 R' L2"
+  alg="D' F2"
+  background="none"
+  cameraLongitude="-30"
+  cameraLatitude="-15"
+/>
+<span>Moves: `D' F2`</span>
+
+You can see they're now in the correct order. The two cross edges are a `D2` move away from solved.
+
+Continue moving the remaining edges to the bottom like this.
+In our example, we can look at the right side and see the **orange**-yellow edge.
+If we put it down now with `R` then it will already be in the right order.
+It'll be to the right of the **blue**-yellow edge.
+We can see that the orange center is to the right of the blue center, so this is a good order.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalSetupAlg="F2 D2 L2 U F2 R' L2 D' F2"
+  alg="R"
+  background="none"
+  cameraLongitude="30"
+  cameraLatitude="-15"
+/>
+<span>Move: `R`</span>
+
+Now that three cross edges are solved, it's very easy to see the empty spot where the last one must go.
+The last one (red-yellow) goes down with a `B2`.
+That would kick one of the other cross edges out, so we first do `D'` so red-yellow goes down in the empty spot.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalSetupAlg="F2 D2 L2 U F2 R' L2 D' F2 R"
+  alg="D' B2"
+  background="none"
+  cameraLongitude="30"
+  cameraLatitude="15"
+/>
+<span>Moves: `D' B2`</span>
+
+Finally, align the cross to solve it completely.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalSetupAlg="F2 D2 L2 U F2 R' L2 D' F2 R D' B2"
+  alg="D'"
+  background="none"
+  cameraLongitude="30"
+  cameraLatitude="-15"
+/>
+<span>Move: `D'`</span>
+
+Now you know how to solve EOCross!
+
+### Example solve
+
+[Click here](https://alpha.twizzle.net/edit/?setup-alg=F2+L+B%27+U2+L2+F%27+R2+D2+F2+U2+R2+D2+F%27+B%27+L%27+F%27+L%27+R+D+R2+U%27&alg=%2F%2F+Step+1%3A+EO%0AR%27+B+%2F%2F+put+3+edges+on+B+face+and+B%E2%80%99+to+prepare+R2%0AR2+D+L+F+%2F%2F+put+the+last+4+edges+on+F+face+and+solve+EO%0A%2F%2F+Step+2%3A+Cross%0AL+D%27+L2+R+D&stickering=EOcross) to see an example EOCross solve.
+
+## Tips for EOCross
+
+Here are some helpful tips for EOCross.
+
+### Troubleshooting
+
+If you find that edges are unsolvable or end up twisted in their spot, it means EO is not complete yet.
+Make sure that all edges are good before solving cross.
+
+### Tip for edges at the top
+
+If a cross edge is at the top, sometimes you can save moves by turning the top layer before placing it (versus turning the bottom layer).
+
+Take this situation: three cross edges are already solved. `R2` moves the last one down, but we do `D2` first so it will land in the right order.
+Then we do `D2` to align the cross.
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalSetupAlg="L2 U2"
+  alg="D2 R2 D2"
+  background="none"
+  cameraLongitude="30"
+  cameraLatitude="15"
+/>
+<span>Moves: `D2 R2 D2`</span>
+
+However, in this case it's better to do a `U2` to move the last cross edge above where it should go.
+Then we'll put it down with `L2`. We skip a move, because the cross is already aligned!
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalSetupAlg="L2 U2"
+  alg="U2 L2"
+  background="none"
+  cameraLongitude="30"
+  cameraLatitude="15"
+/>
+<span>Moves: `U2 L2`</span>
+
+With experience, you will start to see where this strategy can save moves or even make the fingertricks easier.
+U moves are easier to perform than D moves.
+
+### Influencing
+
+Once you are comfortable with EOCross, you can improve your solutions with a technique called **influencing**.
+This means changing your EO solution to make the resulting cross better.
+Start paying attention to the direction of F and B turns during EO (deciding between F and F' for example).
+
+Here are some examples of basic influencing:
+
+- [Example 1: some influencing](https://alpha.twizzle.net/edit/?setup-alg=F%27+R2+F2+L%27+F2+L%27+U2+R+F2+U2+R+U+B+L2+D2+F+R%27+B%27+F2&alg=%2F%2F+EO+%28with+some+influencing%29%0AD%27+B+U+R%27+%2F%2F+D%E2%80%99+B+puts+3+edges+on+B+face+then+orients+them%2C+U+R%E2%80%99+puts+the+last+4+bad+edges+on+F+face%0AF+%2F%2F+we+do+F+instead+of+F%E2%80%99+because+it+places+blue+and+green+edges+relative+to+each+other+and+places+green+and+orange+edges+relative+to+each+other%0A%2F%2F+Cross%0AR%27+L2+D+L2&stickering=EOcross)
+- [Example 2: more influencing](https://alpha.twizzle.net/edit/?setup-alg=F2+L2+D+B2+U+F2+U+R2+U%27+R2+F%27+U+L2+F+R%27+B+D+F+R+D2&stickering=EOcross&alg=%2F%2F+EO+%28with+more+influencing%29%0AB+%2F%2F+since+3+bad+edges+are+already+on+the+B+face%2C+we+start+EO+by+orienting+3+edges+on+the+B+face.+we+do+B+instead+of+B%E2%80%99+because+it+places+blue+and+red+edges+relative+to+each+other+nicely%0AL%27+U+R%27+U%27+%2F%2F+places+the+last+4+bad+edges+on+F%0AF%27+%2F%2F+we+do+F%E2%80%99+instead+of+F+because+it+places+orange+relative+to+the+red+and+blue+edges+we+placed+correctly+earlier%0A%2F%2F+Cross%0AR%27+D%27+L%27+D%27)
+
+There are many forms of influencing, [click here](/improvement-guide/eocross/efficiency#influencing) for more details.
+
+## What's next?
+
+We suggest doing some untimed EOCross solves to become more familiar.
+The next step is [Last Layer](/tutorial/ll).
