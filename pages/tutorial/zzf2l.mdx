@@ -470,10 +470,13 @@ That's the hiding spot.
 
 ## Step 4
 
-Finally it's time to solve our joined/split pair.
+Finally it's time to solve our joined/split pair. We'll position the pair and then do the basic insert.
 
-If it's a joined pair, move it out of R or L layer (whichever one contains the slot we're solving).
-This moves the pair out of the way, so it won't get separated by the basic insert.
+### Solving a joined pair
+
+To solve a joined pair, we need to position the pair so that it won't get split by the basic insert.
+The basic insert will be turning the R or L layer, whichever one contains the slot we're solving.
+So we need to move the pair out of that R/L layer, to prevent it from getting split.
 
 For instance, this is a joined FR pair so we're solving the FR slot.
 The FR slot is in the R layer, so we can do a `U2` to move the pair out of the R layer.
@@ -486,8 +489,36 @@ The FR slot is in the R layer, so we can do a `U2` to move the pair out of the R
   alg="U2"
 />
 
-If it's a split pair, turn the U layer so that the corner is above the slot we're solving.
-Unlike the joined pair, there's only one position that works for the basic insert.
+Now it's time to do the basic insert. Here's the explanation from the [basic inserts section](/tutorial/zzf2l#basic-inserts) again:
+
+1. Lift the slot to the top. (`R`)
+2. Move the pair into the slot. (`U'`)
+3. Bring the solved slot back down. (`R'`)
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  alg="R U' R'"
+  experimentalSetupAnchor="end"
+/>
+<span>Moves: `R U' R'`</span>
+
+Alternatively, if we chose `U'` instead of `U2` to position the pair, our basic insert will be like this:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  alg="R U2 R'"
+  experimentalSetupAnchor="end"
+/>
+<span>Moves: `R U2 R'`</span>
+
+Exact same strategy, but in step 2 we did a `U2` to move the pair into the slot.
+
+### Solving a split pair
+
+To solve a split pair, we need to position the pair so that it will get joined by the basic insert.
+The corner needs to be above the slot we're solving, and that's the only position that works.
 
 In this case, do a `U'` to move the corner above the FR slot, which the pair belongs to.
 
@@ -498,7 +529,21 @@ In this case, do a `U'` to move the corner above the FR slot, which the pair bel
   alg="U'"
 />
 
-Now we're ready to perform the basic insert. See the [basic insert section](/tutorial/zzf2l#basic-inserts).
+Now it's time to do the basic insert. Here's the explanation from the [basic inserts section](/tutorial/zzf2l#basic-inserts) again:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+  background="none"
+  alg="R U R'"
+  experimentalSetupAnchor="end"
+/>
+<span>Moves: `R U R'`</span>
+
+1. Lift the slot to the top, _while also joining the pair_. (`R`)
+2. Move the pair into the slot. (`U`)
+3. Bring the solved slot back down. (`R'`)
+
+Now the F2L pair is solved!
 
 ## Conclusion
 

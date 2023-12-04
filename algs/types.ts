@@ -1,6 +1,7 @@
 export interface AlgSet {
   name: string;
-  stickering: "ZBLL" | "OCLL" | "PLL";
+  stickering?: string; // this should be supported by cubing.js `experimental-stickering` attribute
+  customStickering?: string; // this is for cubing.js `experimental-stickering-mask-orbits`
   visualization: "2D" | "3D";
   algCases: AlgCase[];
   hasCategories?: boolean;

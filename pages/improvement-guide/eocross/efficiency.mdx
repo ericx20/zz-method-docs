@@ -19,9 +19,10 @@ In ZZ, the main approaches are:
 3. Cross > EO. Here you solve the cross pieces first, and then orient the edges. (This is by far used the rarest, and is only really used in 2-flips from time to time when you can cancel into a sledge at the end). \
    [Example](https://alpha.twizzle.net/edit/?setup-alg=D%27+L2+R2+U2+B+D+B+U+B+D2+R%27+U%27+D+B%27+R%27+L%27+U%27+R+L2+U%27+B%27+D+U2+B+R&alg=B2+R2+D2+%2F%2F+solving+the+cross+edges%0AF+R+F%27+%2F%2Fcancelling+into+EO&stickering=EOcross)
 
-## Preparing cross edges while solving EO:
+## Influencing
 
-For actually solving the EOCross, you should learn these fundamental techniques that will incorporate solving the cross edges while solving EO. They are:
+**Influencing** is about affecting the cross pieces during the EO solution, to get a better cross.
+You should learn these fundamental influencing techniques:
 
 - Using different directions for F/B moves
 
@@ -32,7 +33,7 @@ For actually solving the EOCross, you should learn these fundamental techniques 
     [Example 1](https://alpha.twizzle.net/edit/?setup-alg=R2+F2+U+B2+R2+B2+U2+L2+F2+R+F2+U+F2+D2+B+R'+L2+D2&alg=U+R'+%2F%2F+bringing+the+4+bad+edges.%0AF+%2F%2F+inserting+the+green+cross+edge+instead+of+orange%0AU+L2+%2F%2F+finish&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=D2+L2+U+R2+F2+U+R2+D+L2+R2+U2+B+D%27+R%27+D+R%27+F2+R2+B2+L%27+D%27&alg=L+R2+U+%2F%2F+bringing+4+bad+edges%0AF+%2F%2F+if+you+do+F%27%2C+it+would+incorectly+put+the+red+cross+edge+relative+to+the+green+and+blue+ones.+Inserting+the+orange+cross+edge+is+a+better+option.%0AU%27+D%27+R2+%2F%2F+finish&stickering=EOcross)
 
 - Switching the bad edges you're going to orient \
-  [Example](<https://alpha.twizzle.net/edit/?setup-alg=U%27+R2+U%27+L2+U+B2+U+B2+D+R%27+B+U+R+L+B2+L2+U%27+B%27+U&alg=U%27+D%27+%2F%2F+switching+out+the+bad+edges%3A+we+already+had+4+on+B%2C+and+we+want+to+do+B%27+%28to+insert+the+blue+cross+edge%29.+We+can+move+the+red+and+orange+edges+to+the+B+face+so+that+after+B%27%2C+they+get+put+in+their+respective+layers.%0AB%27+%2F%2F+Orienting+4.+Now+the+red+and+orange+cross+edges+get+put+in+their+respective+layers.%0AR+U%27+F%27+L%27+%2F%2F+finish&stickering=EOcross>)
+  [Example](https://alpha.twizzle.net/edit/?setup-alg=U%27+R2+U%27+L2+U+B2+U+B2+D+R%27+B+U+R+L+B2+L2+U%27+B%27+U&alg=U%27+D%27+%2F%2F+switching+out+the+bad+edges%3A+we+already+had+4+on+B%2C+and+we+want+to+do+B%27+%28to+insert+the+blue+cross+edge%29.+We+can+move+the+red+and+orange+edges+to+the+B+face+so+that+after+B%27%2C+they+get+put+in+their+respective+layers.%0AB%27+%2F%2F+Orienting+4.+Now+the+red+and+orange+cross+edges+get+put+in+their+respective+layers.%0AR+U%27+F%27+L%27+%2F%2F+finish&stickering=EOcross)
 
 - Doing extra moves before an EO turn (replacement technique) \
   [Example 1](https://alpha.twizzle.net/edit/?setup-alg=D2+B%27+R2+D2+B2+D%27+R2+U+B2+L2+R2+U2+F%27+L+U%27+F%27+L2+D2+U+R%27&alg=B%27+D%27+%2F%2F+orient+4%0AL+%2F%2F+if+we+do+that+before+EO...%0AF2+R%27+F+%2F%2F+...we+solve+the+red+cross+edge+as+well.%0AL2+%2F%2F+finish&stickering=EOcross), [Example 2](https://alpha.twizzle.net/edit/?setup-alg=R2+B2+U2+B+U2+B%27+U2+F2+L+D+U%27+F%27+R%27+F%27+D2+F2+R%27+B%27&alg=L+%2F%2F+before+EO%2C+we+already+have+4+bad+edges+on+the+B+face%2C+but+L+puts+a+cross+edge+and+orients+an+otherwise+problematic+DL+bad+edge.%0AB%27+U%27+F+%2F%2F+EO%2B2%0AR+D+L+D+%2F%2F+finish&stickering=EOcross)
@@ -50,14 +51,14 @@ For actually solving the EOCross, you should learn these fundamental techniques 
 
 ## Movecount
 
-We've gotten through the theory and things you can do, it's time to implement them in practice. For this, we will use the **Movecount Drill**. It has helped many people and the writer of this article used it singlehandedly drop his movecount from 10.5 to 8.5. 
+We've gotten through the theory and things you can do, it's time to implement them in practice. For this, we will use the **Movecount Drill**. It has helped many people and the writer of this article used it singlehandedly drop his movecount from 10.5 to 8.5.
 
 First, set up your CSTimer settings:
 
 1. Go to [CSTimer](https://cstimer.net/).
 2. Click on the gear in the top left corner.
 3. Go to the 'Timer' section.
-4. In the 'entering in times with' box, change the setting from 'timer' to 'typing'. 
+4. In the 'entering in times with' box, change the setting from 'timer' to 'typing'.
 
 Now you're ready. The drill itself is very simple:
 
@@ -84,6 +85,3 @@ We want to eventually be able to see EOCross as one step to solve, instead of 2 
 If you recall the start of the article, it talked about being able to merge both steps as you get more skilled. The solution is really just more deliberate practice: after getting comfortable with each approach, you will start to see which ones will have the best balance of how short they are, and how much they influence the rest of the pieces and EO. These will be the best to use for a scramble.
 
 If you want more help on this, you can go to [crystalcube](https://crystalcube.app/) and train the scrambles with the highest n-flips and the longest solutions, and then study the solutions which the computer gives.
-
-
-
