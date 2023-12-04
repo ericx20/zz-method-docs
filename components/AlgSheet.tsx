@@ -23,6 +23,7 @@ export default function AlgSheet({ algSet }: AlgSheetProps) {
               algSet.visualization === "3D" ? "3D" : "experimental-2D-LL"
             }
             experimentalStickering={algSet.stickering}
+            experimentalStickeringMaskOrbits={algSet.customStickering}
             controlPanel="none"
             background="none"
             className={styles.algImage}
