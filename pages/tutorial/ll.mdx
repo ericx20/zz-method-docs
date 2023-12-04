@@ -1,5 +1,5 @@
 ---
-title: How to solve the Last Layer in ZZ
+title: How to solve the Last Layer
 description: Learn how to solve the Last Layer in the ZZ Method.
 author: S1neWav_ and err0rcuber
 ---
@@ -43,7 +43,7 @@ Everything else is ignored.
 
 We call a corner "oriented" if its top-colored sticker is on the top side.
 
-An important pattern for recognition is called **headlights:** when two adjacent corners have matching stickers on the side.
+An important pattern for OCLL recognition is called **headlights:** when two adjacent corners have matching stickers on the side.
 
 <TwistyPlayer
   experimentalStickeringMaskOrbits="EDGES:ooooDDDDDDDD,CORNERS:OoOoDDDD,CENTERS:DDDDDD"
@@ -51,6 +51,7 @@ An important pattern for recognition is called **headlights:** when two adjacent
   background="none"
   controlPanel="none"
   className={styles.headlights}
+  hintFacelets="none"
 />
 
 <AlgSheet algSet={OCLL} />
@@ -69,11 +70,21 @@ Finally, the cases with exactly two corners oriented:
 
 - U has a pair of headlights.
 - T has no headlights, but the two oriented corners are adjacent to each other.
-- L has no headlights, and the two orientede corners are opposite each other.
+- L has no headlights, and the two oriented corners are opposite each other.
 
 ## Step 2: CPLL
 
 There are only two CPLL cases.
+Like in OCLL, we look for headlights, but they look a bit different:
+
+<TwistyPlayer
+  experimentalStickeringMaskOrbits="EDGES:ooooDDDDDDDD,CORNERS:oo--DDDD,CENTERS:DDDDDD"
+  experimentalSetupAlg="R U R' U' R' F R2 U' R' U' R U R' F' U2"
+  background="none"
+  controlPanel="none"
+  className={styles.headlights}
+  hintFacelets="none"
+/>
 
 <AlgSheet algSet={CPLL} />
 
@@ -104,6 +115,13 @@ For EPLL, we recognize the case by looking at the color relationships on the sid
 
 After learning 3LLL and getting comfortable with it, we can unlock more speed.
 We can combine CPLL and EPLL into one step called **PLL** (**P**ermutation of the **L**ast **L**ayer).
-There are 21 PLL algs, which raises the total alg count from 13 to 28. The nice part is that you'll already know 6 PLLs from CPLL and EPLL.
+There are 21 PLL algs, but the nice part is that you'll already know 6 PLLs from CPLL and EPLL.
+Now you will have a 2-look last layer (**2LLL**) every solve.
 
 Check out 2LLL [here](/improvement-guide/ll/2lll).
+
+## What about 1LLL?
+
+You can even solve the entire Last Layer in a single step, which is a significant speed advantage.
+In ZZ, you need to learn 493 algorithms in total (compared to 3916 for CFOP).
+Learn more [here](/improvement-guide/ll/zbll-guide).
