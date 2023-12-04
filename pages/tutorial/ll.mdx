@@ -7,7 +7,7 @@ author: S1neWav_ and err0rcuber
 import TwistyPlayer from "components/TwistyPlayer";
 import AlgSheet from "components/AlgSheet";
 import OCLL from "algs/OCLL";
-import CPLL from "algs/CPLL";
+import CP from "algs/CP";
 import EPLL from "algs/EPLL";
 import styles from "./ll.module.css";
 
@@ -30,8 +30,8 @@ Here are the steps:
 
 1. **OCLL:** **O**rient the **C**orners of the **L**ast **L**ayer. \
    This step twists the top corners so the top side is a single color.
-2. **CPLL:** **C**orner **P**ermutation of the **L**ast **L**ayer. \
-   This step swaps the corners around so they're solved "relative to each other".
+2. **CP:** **C**orner **P**ermutation \
+   This step swaps the corners around so they're solved relative to each other.
 3. **EPLL:** **E**dge **P**ermutation of the **L**ast **L**ayer. \
    This step swaps the edges around so the top layer is completely solved.
 
@@ -72,9 +72,9 @@ Finally, the cases with exactly two corners oriented:
 - T has no headlights, but the two oriented corners are adjacent to each other.
 - L has no headlights, and the two oriented corners are opposite each other.
 
-## Step 2: CPLL
+## Step 2: CP
 
-There are only two CPLL cases.
+There are only two CP cases.
 Like in OCLL, we look for headlights, but they look a bit different:
 
 <TwistyPlayer
@@ -86,7 +86,7 @@ Like in OCLL, we look for headlights, but they look a bit different:
   hintFacelets="none"
 />
 
-<AlgSheet algSet={CPLL} />
+<AlgSheet algSet={CP} />
 
 To recognize which case you have, look at the colors on the sides of the corners and ignore everything else.
 If you see only one pair of headlights, then it's an adjacent swap.
@@ -106,7 +106,7 @@ First, learn these color relationships:
 For EPLL, we recognize the case by looking at the color relationships on the sides of the cube.
 
 - H has opposite colors on all four sides.
-- Ua and Ub have one solved edge. With that solved edge in the back,
+- Ua and Ub have one solved edge. With that solved edge in the back:
   - Ua has opposite colors on the right side.
   - Ub has opposite colors on the left side.
 - Z has adjacent colors on all four sides.
@@ -114,8 +114,8 @@ For EPLL, we recognize the case by looking at the color relationships on the sid
 ## Stepping up to 2LLL
 
 After learning 3LLL and getting comfortable with it, we can unlock more speed.
-We can combine CPLL and EPLL into one step called **PLL** (**P**ermutation of the **L**ast **L**ayer).
-There are 21 PLL algs, but the nice part is that you'll already know 6 PLLs from CPLL and EPLL.
+We can combine CP and EPLL into one step called **PLL** (**P**ermutation of the **L**ast **L**ayer).
+There are 21 PLL algs, but the nice part is that you'll already know 6 PLLs from CP and EPLL.
 Now you will have a 2-look last layer (**2LLL**) every solve.
 
 Check out 2LLL [here](/improvement-guide/ll/2lll).

@@ -1,8 +1,7 @@
 import { AlgSet } from "./types";
 
-const CPLL: AlgSet = {
-  name: "CPLL",
-  // stickering: "CPLL", // cubing.js CPLL shows EP which is not what we want
+const CP: AlgSet = {
+  name: "CP",
   customStickering: "EDGES:oooo--------,CORNERS:PPPP----,CENTERS:D-----",
   visualization: "2D",
   algCases: [
@@ -17,4 +16,4 @@ const CPLL: AlgSet = {
   ],
 };
 
-export default CPLL;
+export default CP;
