@@ -61,16 +61,23 @@ const config: DocsThemeConfig = {
           </p>
         )}
         <div>{children}</div>
-        <Analytics />
       </main>
     );
   },
   footer: {
     text: (
       <p>
-        Brought to you by{" "}
-        <a href="https://www.youtube.com/@err0rcuber">
+        Created by{" "}
+        <a
+          href="https://www.youtube.com/@err0rcuber"
+          target="_blank"
+          rel="noopener"
+        >
           <strong>err0rcuber</strong>
+        </a>
+        . Powered by{" "}
+        <a href="https://js.cubing.net/cubing/" target="_blank" rel="noopener">
+          <code>cubing.js</code>
         </a>
       </p>
     ),
