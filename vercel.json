@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/count",
+      "destination": "https://err0rcuber.goatcounter.com/count"
+    },
+    {
+      "source": "/api/count.js",
+      "destination": "https://gc.zgo.at/count.js"
+    }
+  ]
+}
