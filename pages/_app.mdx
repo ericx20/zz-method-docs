@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import Script from "next/script";
 import "./styles.css";
-import { Analytics } from "@vercel/analytics/react";
 import { useEffect } from "react";
 
 export default function App({ Component, pageProps }) {
@@ -21,17 +20,18 @@ export default function App({ Component, pageProps }) {
     },
     [router.events]
   );
-  // TODO: remove Vercel Analytics, plan ran out
+  const isProd = process.env.NODE_ENV === "production";
   return (
     <>
       <Component {...pageProps} />
-      <Analytics />
-      <Script
-        async
-        data-goatcounter="/api/count"
-        src="/api/count.js"
-        strategy="afterInteractive"
-      />
+      {isProd && (
+        <Script
+          async
+          data-goatcounter="/api/count"
+          src="/api/count.js"
+          strategy="afterInteractive"
+        />
+      )}
     </>
   );
 }
