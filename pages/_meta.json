@@ -5,5 +5,12 @@
     "type": "page"
   },
   "tutorial": "ZZ Tutorial",
-  "improvement-guide": "How to Improve"
+  "improvement-guide": "How to Improve",
+  "blog": {
+    "title": "Blog",
+    "type": "page",
+    "theme": {
+      "sidebar": false
+    }
+  }
 }

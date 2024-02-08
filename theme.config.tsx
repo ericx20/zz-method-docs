@@ -49,14 +49,22 @@ const config: DocsThemeConfig = {
   main: ({ children }) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { frontMatter } = useConfig();
+    const attributes = [];
+    if (frontMatter?.date) {
+      attributes.push(frontMatter.date);
+    }
+    if (frontMatter?.author) {
+      attributes.push(frontMatter.date ? "by" : "By");
+      attributes.push(frontMatter.author);
+    }
     return (
       <main>
         <h1 className="nx-mt-2 nx-mb-2 nx-text-4xl nx-font-bold nx-tracking-tight">
           {frontMatter?.title}
         </h1>
-        {frontMatter?.author && (
+        {attributes.length > 0 && (
           <p className="nx-mb-4 nx-block nx-text-sm nx-text-gray-500 dark:nx-text-gray-400">
-            By {frontMatter.author}
+            {attributes.join(" ")}
           </p>
         )}
         <div>{children}</div>
