@@ -1,3 +1,11 @@
 {
+  "*": {
+    "display": "hidden",
+    "theme": {
+      "toc": false,
+      "sidebar": false,
+      "pagination": false
+    }
+  },
   "story": "How ZZMethod.com was made"
 }

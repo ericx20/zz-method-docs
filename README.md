@@ -14,6 +14,12 @@ Then, run `pnpm dev` to start the development server and visit [localhost:3000](
 
 This project is licensed under the MIT License.
 
+## Contributing
+
+- If you have any suggestions, feel free to open an issue.
+- If you have fixes/corrections, you can create a Pull Request right away.
+- If you would like to make larger contributions, we suggest opening an issue first.
+
 ## Acknowledgements
 
 ### ZZMethod.com team

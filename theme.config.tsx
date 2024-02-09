@@ -3,6 +3,7 @@ import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import logo from "public/logo.svg";
+import Link from "next/link";
 
 const config: DocsThemeConfig = {
   logo: (
@@ -18,6 +19,10 @@ const config: DocsThemeConfig = {
   //   link: "https://discord.com",
   // },
   docsRepositoryBase: "https://github.com/ericx20/zz-method-docs/tree/main",
+  banner: {
+    key: "blog-release",
+    text: <Link href="/blog">We have a new blog! Check it out →</Link>,
+  },
   head() {
     const { asPath, defaultLocale, locale } = useRouter();
     const { frontMatter } = useConfig();
