@@ -1,125 +1,112 @@
 ---
-title: How ZZMethod.com was made
+title: The story of ZZMethod.com
 description: Learn more about the creation of this site.
 author: err0rcuber, Swagrid, yoruba
-date: Feb 8th, 2023
+date: Feb 9th, 2023
 ---
 
-Over the past several years, the ZZ method has changed a lot – this left us with many outdated resources.
-The few modern resources we had were scattered across the web, making it more difficult to learn and master the method.
+import TwistyPlayer from "components/TwistyPlayer";
 
-This website is a project designed to fill the gap.
-Starting in September of 2023, we created a comprehensive learning resource, reminiscent of the classic [Conrad Rider](http://cube.rider.biz/zz.php) and [Phil Yu](https://www.youtube.com/watch?v=Q9f-uHyHeQs&list=PLD9771CF83F13B110) tutorials.
-We focused on the improved, "modern" version of ZZ with EOCross and ZBLL.
+## How it started
 
-## Who we are
+Over the past several years, the ZZ method has evolved significantly.
+Solvers are now preferring EOCross over EOLine, and ZBLL is gaining popularity.
+We found very few resources for this new style of ZZ.
+They were also scattered across the web, making it more difficult to learn and master the method.
 
-As of now, we have three core members on our team:
+In September of 2023, we decided to start working on a solution to this problem.
+We wanted to build a central website that would explain the basics of ZZ and how to improve with it.
+We took inspiration from the legendary [Conrad Rider](http://cube.rider.biz/zz.php) and [Phil Yu](https://www.youtube.com/watch?v=Q9f-uHyHeQs&list=PLD9771CF83F13B110) tutorials.
 
-- [err0rcuber](https://www.youtube.com/@err0rcuber): software engineer.
-- [yoruba](https://www.youtube.com/@yoruba7807): the fastest active ZZ user.
-- [S1neWav\_](https://www.youtube.com/@S1neWav_): ZZ user with full ZBLL.
+## The team
 
-err0r saw an opportunity to improve ZZ resources.
-In 2023 he bought the zzmethod.com domain and began this project with two friends, yoruba and S1neWav\_.
+We are a team of friends and volunteers who enjoy the ZZ Method.
+Here are the three initial contributors:
+
+- [err0rcuber](https://www.youtube.com/@err0rcuber) is a software engineer and cube resource developer.
+- [yoruba](https://www.youtube.com/@yoruba7807) is a speedcuber, known for being the fastest active ZZ user.
+- [S1neWav\_](https://www.youtube.com/@S1neWav_) is a speedcuber and ZZ user who knows full ZBLL.
+
+## Building the website
+
+We used a tool called [Nextra](https://nextra.site/) to generate the site for us.
+It provides the basic UI of the site, allowing us to focus on writing the articles.
+Nextra is usually used to make documentation for software, but it worked great for documenting Rubik's cube methods too!
 
 ## Writing the content
 
-We wrote two main sections across 3 months:
+We began writing the content around September of 2023, with the goal of releasing by Halloween.
 
-1. A tutorial that walks through the concept of EO and the main steps of the method.
-2. An improvement guide with practice drills and techniques to improve your speed.
+err0r started working on a tutorial section for learning each step of the method.
+At the same time, yoruba started writing articles for how to improve at each step.
+However, we realized it was going to take much longer than expected!
 
-The tutorial section was mainly written by err0rcuber and S1neWav\_.
-It features a written version of err0r's existing EO tutorial.
-S1neWav\_ contributed a very intuitive beginner ZZF2L method, which is the first of its kind.
-It does not assume any knowledge of CFOP F2L, making it much easier to learn ZZ.
+The EO tutorial was based off err0r's existing [video tutorial](https://www.youtube.com/watch?v=fxwVmTI5nGM) so that saved a lot of time.
+However, it was a challenge to replicate the visuals of the video within the written version.
+We needed to create interactive 3D cubes that would show how EO worked.
+Thankfully, [`cubing.js`](https://js.cubing.net/cubing/) is an amazing tool that helped us build these visualizations.
 
-The improvement guide was written by yoruba.
-He wrote an incredible number of high-quality articles based on his expertise with the ZZ Method.
-It has step-by-step instructions for improving skill in each step of the method, including tutorials for EOCross and ZZF2L techniques and advice for learning ZBLL.
-yoruba also devised many practice drills for targeting specific skills.
+<TwistyPlayer
+  background="none"
+  controlPanel="none"
+  experimentalStickering="picture"
+  experimentalSprite="/assets/orbits.png"
+  experimentalHintSprite="/assets/orbits.png"
+/>
 
-The initial article drafts were written in Google Docs, in a shared Google Drive folder.
-This enabled the team to easily collaborate on the articles.
-Once they were ready, they were copied over to the site using [this Google Workspace plugin](https://workspace.google.com/marketplace/app/docs_to_markdown/700168918607).
-Finally, we added 3D cubes and other interactive features.
+In the meantime, yoruba created an ambitious list of 15 topics he wanted to cover for the improvement guide.
+Then, he started writing articles at an incredible speed, and they were actually quite good.
+He was writing so quickly that err0r could not keep up with adding them to the site!
+yoruba wrote step-by-step instructions for improving skill in each step of the method.
+It included tutorials for EOCross and ZZF2L techniques and advice for learning ZBLL.
+yoruba also shared his practice drills for targeting specific skills.
 
-By the time we launched our site, we wrote over 16,000 words!
+We definitely could not make the initial launch date, so we delayed it by a month.
+The new target date was November 26th, and we chose it to also give S1neWav\_ some time during his holidays to contribute.
 
-## Building the site
+Our friend [Swagrid](https://www.youtube.com/@SwagridCubing/) filmed a video on "How to master the ZZ method" where he also graciously promoted our project.
+He wanted to release the video on the 26th to complement our release.
 
-Here is a detailed overview of the way we built the website and the tools we used.
-We hope this will be useful for those looking to build a similar cubing resource.
+Yoruba went full steam ahead and completed most of the improvement guide.
+The tutorial section needed some help however, because ZZF2L was proving to be a challenge to explain.
+We wanted our site to have a dedicated ZZF2L tutorial that did not base its explanation off CFOP F2L.
+For that, we enlisted the help of S1neWav\_ to create an intuitive beginner ZZF2L method.
+He also wrote an outline for the Last Layer tutorial, choosing to teach beginners OCLL and 2-look PLL.
 
-### Goals
+Again, we started running out of time before our new launch day.
+But this time we were really close, we only needed to delay it by a week.
+We finished up the improvement guide and the beginner tutorial, adding some finishing touches.
 
-When choosing the technologies for ZZMethod.com, we had four goals in mind:
+## Launch
 
-- A reliable, long-term resource.
-- Beginner-friendly.
-- Accessible.
-- Open to contributions.
+On December 4th, 2023 we shared our website with the world!
 
-### Reliable
+Swagrid released his ["How to master ZZ" video](https://www.youtube.com/watch?v=vNgkGSNssxE) after delaying it for over a month just for us.
+The video performed well and helped advertise our site, so thank you Swagrid!
 
-One way to make a reliable site is to build a custom, self-contained site.
-All of the content and source code is in one place: on our [GitHub](https://github.com/ericx20/zz-method-docs) under an open-source license.
-This means if ZZMethod.com ever goes down, anyone can re-publish it easily.
-In addition, if anyone wants to make a similar website, they could see exactly how we made ours as a reference.
+We got a lot of feedback from online ZZ users, and we spent some time adding their suggestions.
+Overall, the website was well-received.
+It was great to start seeing people send ZZMethod.com links whenever someone asked for help with ZZ.
 
-We use a site generator called [Nextra](https://nextra.site/).
-It is primarily used to make software documentation websites, but we found it awesome for documenting cube methods too!
-The site is running on [Vercel](https://vercel.com/), but it can be easily deployed on many web hosting services.
+## Gratitude
 
-### Beginner-friendly
+We want to give a big thanks to everyone who helped us along the way!
 
-Visuals are essential for making Rubik's cube resources beginner-friendly.
-This is especially true in ZZ because EO is very visual and can be confusing at first.
-We found a way to embed interactive cubes into our written guides, allowing us to match the power of video tutorials.
+Thank you [Lucas Garron](https://garron.net/) for the `cubing.js` library!
+The TwistyPlayer visualizer has enabled us to build highly visual tutorials and resources with ease.
+Thanks for continuing to maintain and improve the library, and directly giving us help on using it.
 
-Our articles are written in [MDX](https://mdxjs.com/), a format that allows us to embed widgets into plain documents.
-MDX is an extended version of [Markdown](https://www.markdownguide.org/), so we first use Markdown as a convenient syntax for writing the words.
-And when we want to add an interactive Rubik's cube, alg sheet or video, we can just insert a reusable [React](https://react.dev/) component onto our page
-The cubes are made in [`cubing.js`](https://js.cubing.net/cubing/), which features a very customizable Rubik's cube visualizer.
+[Athefre](https://sites.google.com/site/athefre), thank you for your eye-opening research on the [origins of methods](https://sites.google.com/view/methodlibrary/home), including the ZZ method!
+It helped us write a more accurate introduction to ZZ.
 
-In addition to visuals, we carefully format our tutorials to make them easy to read.
-New terms are bolded, important points are called out in colored boxes, and steps are usually in bullet points.
-Additional examples are tucked away in collapsible sections, which helps prevent the tutorial from being overwhelming.
+Thanks [Swagrid](https://www.youtube.com/@SwagridCubing/) for promoting our website on your YouTube channel.
+You even delayed your own upload just for us.
 
-### Accessible
+Shoutout to [Gen The Snail](https://www.youtube.com/@GenTheSnail) and [Fahmi Aulia Rachman](https://www.youtube.com/@UNOFahmiAR) for your suggestions to improve the site.
 
-In the beginning, we mentioned that modern ZZ resources were scattered across the web.
-Sometimes, the best resources are buried deep inside online forums or social media.
-To fix this problem, we focused on making the website as easily discoverable as possible.
+And finally, thank you to everyone in the ZMS server for your feedback too.
 
-We optimized the website to rank higher on Google and other search engines.
-Whenever people search for "zz method", our website should ideally be one of the first results you see.
-This is called "Search Engine Optimization", or SEO for short.
+## What's next?
 
-[Next.js](https://nextjs.org) is the framework that Nextra uses to generate the static sites, and it has high SEO performance.
-Static sites load faster and are easier for search engines to explore.
-We also added a description to each article to help search engines better understand the topic.
-
-"Accessibility" also has another meaning.
-Web accessibility is the goal of making websites usable for everyone.
-It is the removal of barriers that could affect users with and without disabilities when they use our site.
-For example, users with motor disabilities may rely on keyboard navigation to visit pages.
-Thanks to the tools we chose (Nextra and `cubing.js`), keyboard users can easily navigate to any page and play with the interactive cubes.
-We have light and dark mode that matches the system preferences of users by default.
-The site's layout adapts to the device's screen size, so mobile users enjoy an experience equal to desktop users.
-
-### Open to contributions
-
-ZZMethod.com is a community project, so it needs to be easily edited and maintained by the community.
-With GitHub, anyone can provide feedback and submit contributions for review.
-Non-technical users are still able to make changes because the articles are written with the simple Markdown format.
-Users with experience in web dev can easily participate because we chose industry-standard tech such as [TypeScript](https://www.typescriptlang.org/), React and Next.js.
-
-If you are interested in contributing, check out our [GitHub](https://github.com/ericx20/zz-method-docs) and let us know!
-
-## Conclusion
-
-And that is the story of ZZMethod.com.
-This is our first blog post, we hope you enjoyed it and found it interesting.
-We're working on more resources, so stay tuned for more!
+We're planning to add more blog posts and more resources.
+Stay tuned!
