@@ -38,6 +38,16 @@ const pets: Pet[] = [
     src: "/assets/pets/finn.jpg",
     owner: "Gen",
   },
+  {
+    name: "Eva",
+    src: "/assets/pets/eva.jpg",
+    owner: "Luna",
+  },
+  {
+    name: "Fufréda",
+    src: "/assets/pets/fufreda.jpg",
+    owner: "Jouda",
+  },
 ];
 
 export default function PetGallery() {
@@ -57,6 +67,7 @@ export default function PetGallery() {
             style={{
               aspectRatio: 1,
               width: "100%",
+              objectFit: "cover",
             }}
           />
           <div className="nx-flex nx-justify-between nx-p-4">
