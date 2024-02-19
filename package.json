@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Documentation for the ZZ Speedsolving Method",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 2006",
     "build": "next build && rm -rf .next/cache",
     "start": "next start"
   },

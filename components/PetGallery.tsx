@@ -4,16 +4,39 @@ import Image from "next/image";
 type Pet = {
   name: string;
   src: string;
+  owner: string;
 };
 
 const pets: Pet[] = [
   {
     name: "Harley",
     src: "/assets/pets/harley.jpg",
+    owner: "S1neWav_",
   },
   {
     name: "Cosmo",
     src: "/assets/pets/cosmo.jpg",
+    owner: "S1neWav_",
+  },
+  {
+    name: "Spumoni",
+    src: "/assets/pets/spumoni.jpg",
+    owner: "Gen",
+  },
+  {
+    name: "Io",
+    src: "/assets/pets/io.jpg",
+    owner: "Gen",
+  },
+  {
+    name: "Artemis",
+    src: "/assets/pets/artemis.jpg",
+    owner: "Gen",
+  },
+  {
+    name: "Finn",
+    src: "/assets/pets/finn.jpg",
+    owner: "Gen",
   },
 ];
 
@@ -36,9 +59,14 @@ export default function PetGallery() {
               width: "100%",
             }}
           />
-          <span className="nx-flex nx-font-semibold nx-items-start nx-gap-2 nx-p-4 nx-text-gray-700 hover:nx-text-gray-900 dark:nx-text-gray-300 dark:hover:nx-text-gray-100 nx-justify-center">
-            {pet.name}
-          </span>
+          <div className="nx-flex nx-justify-between nx-p-4">
+            <span className="nx-font-semibold nx-gap-2 nx-text-gray-700 hover:nx-text-gray-900 dark:nx-text-gray-300 dark:hover:nx-text-gray-100">
+              {pet.name}
+            </span>
+            <span className="nx-text-gray-500 dark:nx-text-gray-400">
+              {pet.owner}
+            </span>
+          </div>
         </div>
       ))}
     </div>
