@@ -48,6 +48,11 @@ const pets: Pet[] = [
     src: "/assets/pets/fufreda.jpg",
     owner: "Jouda",
   },
+  {
+    name: "Sir Harold III",
+    src: "/assets/pets/sir_harold_iii.jpg",
+    owner: "YeetPizza74",
+  },
 ];
 
 export default function PetGallery() {
