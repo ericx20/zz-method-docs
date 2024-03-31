@@ -6,9 +6,13 @@ Learn the ZZ Method for solving the Rubik's Cube!
 
 ## Local Development
 
+This project uses the [pnpm](https://pnpm.io/) package manager.
+
 First, run `pnpm i` to install the dependencies.
 
 Then, run `pnpm dev` to start the development server and visit [localhost:2006](http://localhost:2006).
+
+If you want to use npm instead,`npm i` and `npm run dev` are the equivalent commands.
 
 ## License
 
