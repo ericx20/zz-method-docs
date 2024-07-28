@@ -14,19 +14,29 @@ export default function ReconCollection({
   recons,
   youtubeVideoId,
 }: ReconCollectionProps) {
-  const [selectedSolveIndex, setSelectedSolveIndex] = useState(0);
-  const selectedSolve = recons[selectedSolveIndex];
+  const [selectedReconIndex, setSelectedReconIndex] = useState(0);
+  const selectedRecon = recons[selectedReconIndex];
   const [youTubePlayer, setYouTubePlayer] = useState<YouTubePlayer>();
   const [shouldJumpToVideo, setShouldJumpToVideo] = useState(true);
   const shouldJumpCheckboxId = useId();
 
   const handlePreviousButton = () => {
-    if (selectedSolveIndex <= 0) return;
-    setSelectedSolveIndex(selectedSolveIndex - 1);
+    if (selectedReconIndex <= 0) return;
+    const prevIndex = selectedReconIndex - 1;
+    if (shouldJumpToVideo) {
+      youTubePlayer?.seekTo(recons[prevIndex].videoTimestamp);
+      youTubePlayer.pauseVideo();
+    }
+    setSelectedReconIndex(prevIndex);
   };
   const handleNextButton = () => {
-    if (selectedSolveIndex > recons.length - 1) return;
-    setSelectedSolveIndex(selectedSolveIndex + 1);
+    if (selectedReconIndex > recons.length - 1) return;
+    const nextIndex = selectedReconIndex + 1;
+    if (shouldJumpToVideo) {
+      youTubePlayer?.seekTo(recons[nextIndex].videoTimestamp);
+      youTubePlayer.pauseVideo();
+    }
+    setSelectedReconIndex(nextIndex);
   };
 
   return (
@@ -39,9 +49,9 @@ export default function ReconCollection({
       />
       <div className={styles.solvesList}>
         {recons.map((recon, index) => {
-          const active = index === selectedSolveIndex;
+          const active = index === selectedReconIndex;
           const onClick = () => {
-            setSelectedSolveIndex(index);
+            setSelectedReconIndex(index);
             if (!recon.videoTimestamp) return;
             shouldJumpToVideo && youTubePlayer?.seekTo(recon.videoTimestamp);
           };
@@ -72,12 +82,12 @@ export default function ReconCollection({
         <label htmlFor={shouldJumpCheckboxId}>Jump to video timestamp</label>
       </div>
 
-      <ReconViewer recon={selectedSolve} index={selectedSolveIndex} />
+      <ReconViewer recon={selectedRecon} index={selectedReconIndex} />
 
       <div className={styles.navigationButtonGroup}>
         <button
           className={styles.button}
-          disabled={selectedSolveIndex <= 0}
+          disabled={selectedReconIndex <= 0}
           type="button"
           title="Previous solve"
           onClick={handlePreviousButton}
@@ -86,7 +96,7 @@ export default function ReconCollection({
         </button>
         <button
           className={styles.button}
-          disabled={selectedSolveIndex >= recons.length - 1}
+          disabled={selectedReconIndex >= recons.length - 1}
           type="button"
           title="Next solve"
           onClick={handleNextButton}
