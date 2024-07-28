@@ -8,3 +8,15 @@ table th {
 :is(html[class~="dark"]) table th {
   background-color: rgb(17, 17, 17);
 }
+
+.nextra-banner-container {
+  background-image: linear-gradient(1deg,#6da3eb,#4280d1) !important;
+}
+
+:is(html[class~="dark"]) .nextra-banner-container {
+  background-image: linear-gradient(1deg,#3d82db,#416da7) !important;
+}
+
+.nextra-banner-container a {
+  text-decoration: underline;
+}

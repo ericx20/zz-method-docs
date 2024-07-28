@@ -1,27 +1,24 @@
 import { TwistyPlayer, TwistyAlgViewer } from "cubing/twisty";
 import { useState, useEffect, useRef, useId } from "react";
 import { type Reconstruction } from "reconstructions/types";
-import styles from "./ReconstructionViewer.module.css";
+import styles from "./ReconCollection.module.css";
 import clsx from "clsx";
 import YouTube, { type YouTubePlayer } from "react-youtube";
-export interface ReconstructionViewer {
+
+export interface ReconCollectionProps {
   recons: Reconstruction[];
-  youtubeVideoId: string; // TODO: make this optional and hide youtube player if undefined
+  youtubeVideoId: string;
 }
 
-export default function ReconstructionViewer({
+export default function ReconCollection({
   recons,
   youtubeVideoId,
-}: ReconstructionViewer) {
+}: ReconCollectionProps) {
   const [selectedSolveIndex, setSelectedSolveIndex] = useState(0);
   const selectedSolve = recons[selectedSolveIndex];
   const [youTubePlayer, setYouTubePlayer] = useState<YouTubePlayer>();
   const [shouldJumpToVideo, setShouldJumpToVideo] = useState(true);
   const shouldJumpCheckboxId = useId();
-  const twistyPlayerContainer = useRef<HTMLDivElement>(null);
-  const twistyAlgViewerContainer = useRef<HTMLDivElement>(null);
-  const twistyPlayer = useRef<TwistyPlayer>(null);
-  const twistyAlgViewer = useRef<TwistyAlgViewer>(null);
 
   const handlePreviousButton = () => {
     if (selectedSolveIndex <= 0) return;
@@ -31,42 +28,6 @@ export default function ReconstructionViewer({
     if (selectedSolveIndex > recons.length - 1) return;
     setSelectedSolveIndex(selectedSolveIndex + 1);
   };
-
-  // setup the twisty player and alg viewer
-  useEffect(() => {
-    if (!twistyPlayerContainer.current || !twistyAlgViewerContainer.current)
-      return;
-    twistyPlayer.current = new TwistyPlayer({
-      background: "none",
-      tempoScale: 1.5,
-    });
-    twistyPlayer.current.className = styles.twistyPlayer;
-    twistyPlayerContainer.current.appendChild(twistyPlayer.current);
-    twistyAlgViewer.current = new TwistyAlgViewer({
-      twistyPlayer: twistyPlayer.current,
-    });
-    twistyAlgViewerContainer.current.appendChild(twistyAlgViewer.current);
-
-    return () => {
-      if (twistyPlayerContainer.current) {
-        twistyPlayerContainer.current.innerHTML = "";
-      }
-      if (twistyAlgViewerContainer.current) {
-        twistyAlgViewerContainer.current.innerHTML = "";
-      }
-    };
-  }, []);
-
-  // update the twisty player when props hcange
-  useEffect(() => {
-    if (!twistyPlayer.current) return;
-    twistyPlayer.current.experimentalSetupAlg = selectedSolve.scramble;
-    twistyPlayer.current.alg = selectedSolve.solution;
-    twistyPlayer.current.jumpToStart();
-  }, [selectedSolve]);
-
-  const tps =
-    selectedSolve.movecount / Number(selectedSolve.time.replace("+", ""));
 
   return (
     <div className={styles.container}>
@@ -111,30 +72,8 @@ export default function ReconstructionViewer({
         <label htmlFor={shouldJumpCheckboxId}>Jump to video timestamp</label>
       </div>
 
-      <p className={styles.solveHeading}>
-        Solve #{selectedSolveIndex + 1} ({selectedSolve.time}): reconstructed by{" "}
-        {selectedSolve.reconstructor}
-      </p>
-      <div className={styles.scrambleAndSolution}>
-        <div ref={twistyPlayerContainer} />
-        <p>
-          <strong>Scramble:</strong> {selectedSolve.scramble}
-        </p>
-        <div>
-          <p>
-            <strong>
-              Solution ({selectedSolve.movecount} STM, {tps.toFixed(1)} TPS):
-            </strong>
-          </p>
-          <div ref={twistyAlgViewerContainer} />
-        </div>
-        {selectedSolve.notes && (
-          <div>
-            <p><strong>Notes:</strong></p>
-            {selectedSolve.notes.split("\n").map((note) => <p key={note}>{note}</p>)}
-          </div>
-        )}
-      </div>
+      <ReconViewer recon={selectedSolve} index={selectedSolveIndex} />
+
       <div className={styles.navigationButtonGroup}>
         <button
           className={styles.button}
@@ -156,5 +95,85 @@ export default function ReconstructionViewer({
         </button>
       </div>
     </div>
+  );
+}
+
+export interface ReconViewerProps {
+  recon: Reconstruction;
+  index?: number;
+}
+
+export function ReconViewer({ recon, index }: ReconViewerProps) {
+  const twistyPlayerContainer = useRef<HTMLDivElement>(null);
+  const twistyAlgViewerContainer = useRef<HTMLDivElement>(null);
+  const twistyPlayer = useRef<TwistyPlayer>(null);
+  const twistyAlgViewer = useRef<TwistyAlgViewer>(null);
+
+  // setup the twisty player and alg viewer
+  useEffect(() => {
+    if (!twistyPlayerContainer.current || !twistyAlgViewerContainer.current)
+      return;
+    twistyPlayer.current = new TwistyPlayer({
+      background: "none",
+      tempoScale: 1.5,
+    });
+    twistyPlayer.current.className = styles.twistyPlayer;
+    twistyPlayerContainer.current.appendChild(twistyPlayer.current);
+    twistyAlgViewer.current = new TwistyAlgViewer({
+      twistyPlayer: twistyPlayer.current,
+    });
+    twistyAlgViewerContainer.current.appendChild(twistyAlgViewer.current);
+
+    return () => {
+      if (twistyPlayerContainer.current) {
+        twistyPlayerContainer.current.innerHTML = "";
+      }
+      if (twistyAlgViewerContainer.current) {
+        twistyAlgViewerContainer.current.innerHTML = "";
+      }
+    };
+  }, []);
+
+  // update the twisty player when props change
+  useEffect(() => {
+    if (!twistyPlayer.current) return;
+    twistyPlayer.current.experimentalSetupAlg = recon.scramble;
+    twistyPlayer.current.alg = recon.solution;
+    twistyPlayer.current.jumpToStart();
+  }, [recon]);
+
+  const headingText =
+    (index === undefined ? "" : `Solve #${index + 1} `) +
+    `(${recon.time}): reconstructed by ${recon.reconstructor}`;
+  const tps = recon.movecount / Number(recon.time.replace("+", ""));
+
+  return (
+    <>
+      <p className={styles.solveHeading}>{headingText}</p>
+      <div className={styles.scrambleAndSolution}>
+        <div ref={twistyPlayerContainer} />
+        <p>
+          <strong>Scramble:</strong> {recon.scramble}
+        </p>
+        <div>
+          <p>
+            <strong>
+              Solution ({recon.movecount} STM, {tps.toFixed(1)} TPS):
+            </strong>
+          </p>
+          <div ref={twistyAlgViewerContainer} />
+        </div>
+        {recon.notes && (
+          <div>
+            <p>
+              <strong>Notes:</strong>
+            </p>
+            {recon.notes.split("\n").map((note) => (
+              <p key={note}>{note}</p>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 }
