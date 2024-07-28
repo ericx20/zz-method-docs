@@ -57,19 +57,24 @@
 }
 
 :is(html[class~="dark"]) .button {
-  background-color: #3f3f46 ;
+  background-color: #3f3f46;
 }
 
 :is(html[class~="dark"]) .button:hover {
-  background-color: #52525b ;
+  background-color: #52525b;
 }
 
 :is(html[class~="dark"]) .button.active {
-  background-color: #71717a ;
+  background-color: #71717a;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .checkbox {
-  margin-right: 0.75rem;
   width: 1rem;
   height: 1rem;
 }

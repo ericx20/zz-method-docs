@@ -61,7 +61,7 @@ export default function ReconCollection({
           );
         })}
       </div>
-      <div>
+      <div className={styles.checkboxContainer}>
         <input
           type="checkbox"
           className={styles.checkbox}
