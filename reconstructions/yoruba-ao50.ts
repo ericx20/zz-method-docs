@@ -569,9 +569,9 @@ M2 U M M' U M U M2 U M2 U M U // Z perm`,
     time: "8.94",
     movecount: 63,
     reconstructor: "Jouda",
-    notes: `better EOCross from this orientation:'
+    notes: `better EOCross:'
 D' R' (F' B) R // partialEO + 2 cross edges
-D F' L2 D' // finish`,
+D F' L2 D' // finish EOCross`,
     videoTimestamp: 840,
   },
   {
