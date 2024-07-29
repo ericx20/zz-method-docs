@@ -25,7 +25,7 @@ export default function ReconCollection({
     const prevIndex = selectedReconIndex - 1;
     if (shouldJumpToVideo) {
       youTubePlayer?.seekTo(recons[prevIndex].videoTimestamp);
-      youTubePlayer.pauseVideo();
+      youTubePlayer?.pauseVideo();
     }
     setSelectedReconIndex(prevIndex);
   };
@@ -34,7 +34,7 @@ export default function ReconCollection({
     const nextIndex = selectedReconIndex + 1;
     if (shouldJumpToVideo) {
       youTubePlayer?.seekTo(recons[nextIndex].videoTimestamp);
-      youTubePlayer.pauseVideo();
+      youTubePlayer?.pauseVideo();
     }
     setSelectedReconIndex(nextIndex);
   };
