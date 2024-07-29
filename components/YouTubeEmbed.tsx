@@ -5,15 +5,16 @@ interface YouTubeEmbedProps {
   embedId: string;
 }
 
+// Options are limited. If you need more, use the `react-youtube` package
 export default function YouTubeEmbed({ embedId }: YouTubeEmbedProps) {
   return (
     <div className={styles.video}>
       <iframe
         className={styles.iframe}
-        src={`https://www.youtube.com/embed/${embedId}`}
+        src={`https://www.youtube-nocookie.com/embed/${embedId}`}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        title="Embedded youtube"
+        title="Embedded YouTube video"
       />
     </div>
   );

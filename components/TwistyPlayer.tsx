@@ -28,7 +28,7 @@ const TwistyPlayer = forwardRef(
     }: TwistyPlayerExtendedConfig,
     ref
   ) => {
-    const [twistyPlayer, setTwisty] = useState<TP>();
+    const twistyPlayer = useRef<TP>(null);
     const spanRef = useRef<HTMLSpanElement | null>(null);
 
     useEffect(() => {
@@ -38,13 +38,18 @@ const TwistyPlayer = forwardRef(
       }
 
       newTwisty.style.maxWidth = "100%";
-      setTwisty(newTwisty);
+      twistyPlayer.current = newTwisty;
       spanRef.current?.appendChild(newTwisty);
       if (onTwistyInit) onTwistyInit(newTwisty);
       return () => {
         spanRef.current?.removeChild(newTwisty);
       };
-    }, [props.alg]);
+    }, []);
+
+    useEffect(() => {
+      if (!twistyPlayer.current || !props.alg) return;
+      twistyPlayer.current.alg = props.alg;
+    }, [props.alg])
 
     useImperativeHandle(ref, () => {
       return twistyPlayer;

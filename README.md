@@ -35,7 +35,7 @@ This project is licensed under the MIT License.
 ### Feedback
 
 - [Gen The Snail](https://www.youtube.com/@GenTheSnail)
-- [Fahmi Aulia Rachman](https://www.youtube.com/@UNOFahmiAR)
+- [Fahmi Aulia Rachman](https://www.worldcubeassociation.org/persons/2016RACH01)
 
 ### Technologies
 
