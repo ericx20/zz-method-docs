@@ -1,6 +1,6 @@
 import { Reconstruction } from "./types";
 
-export const YORUBA_AO50: Reconstruction[] = [
+const RECONS: Reconstruction[] = [
   {
     scramble: "U2 B2 U2 R2 B2 D' L2 F2 U F U2 B R2 U2 B' L' B2 D' F2 L2",
     solution: `x2 y // inspection
@@ -19,7 +19,7 @@ l' U R' D2 R U' R' D2 l R U2 // PLL`,
   },
   {
     scramble: "F' L2 F' D2 F D2 L2 F2 L2 F R' U B L2 F R F2 L B' R'",
-    solution: `B' D2 L' F R U' L2 D R //EOCross
+    solution: `B' D2 L' F R U' L2 D R // EOCross
 U U' R U R2 U' R2 // BR
 U R' // setup BL
 L U' L' U L U L' // mistake
@@ -103,7 +103,7 @@ L' U L R' U R // 1st pair
 U L' U' L // 2nd pair
 U2 R U R' U' R U R' // 3rd pair
 L U L' U2 L U' L' U L U' L' // 4th pair
-U2 r' U r U r' U' r U R2 F R F' R U // ZBLL`,
+U2 r' U r U r' U' r U R2' F R F' R U // ZBLL`,
     time: "7.55",
     movecount: 52,
     reconstructor: "err0rcuber",
@@ -118,7 +118,7 @@ L U2 L' U L U' L' // 1st pair
 R U2' R' U' R U R' // 2nd pair
 U2' L' U L U2' L' U L // 3rd pair
 U R' U' R U R' U2 R // 4th pair
-U' U2 R F R' U R U2 R' U R U F' R' U2 //ZBLL`,
+U' U2 R F R' U R U2 R' U R U F' R' U2 // ZBLL`,
     time: "6.96",
     movecount: 55,
     reconstructor: "err0rcuber",
@@ -386,7 +386,7 @@ Better EO+2 (same orientation): y' R' F' D' L2 U F, and after that, nice D' R fi
   {
     scramble: "R U2 R F2 L' D2 F2 U2 R B2 L' D F' L2 R' F' U' F2 D F2",
     solution: `z2 (U' D) L U R2 F // EOCross
-(U D) L' U L2 U' L' D' //BR
+(U D) L' U L2 U' L' D' // BR
 L' U L U' L U L' // BL
 U2 L' L U' L' U2 L U2 R U R' // FR
 U' L' U2 L U' L' U L // FL
@@ -487,19 +487,17 @@ Or you can do x2 R' F D2 L F' L2 D R' D' but that's slightly worse`,
   },
   {
     scramble: "U2 F2 L' B' R' B' D' B D' F' L2 U' B2 D' F2 D' R2 F2 U' B2 U",
-    solution: `y' x y2 D r' R' F' R' D' L' D2 L R2 // EOCross
-//better: y2 U' L' B'F2 U' F' R'
+    solution: `x' z D r' R' F' R' D' L' D2 L R2 // EOCross
 D R U' R' D' // FL
 R' R U' R' U2 R U R' U2 R // BR
-U RU' R' U R U' R' L U2 L' // BL
+U R U' R' U R U' R' L U2 L' // BL
 U' R U R' U R U' R' // FR
 U' L' U' L U' L' U2 L // Left Sune
-U' M2 U M U2 M' U M2 U2 // U perm
-`,
+U' M2 U M U2 M' U M2 U2 // U perm`,
     time: "7.68",
     movecount: 61,
     reconstructor: "Jouda",
-    notes: ``,
+    notes: `Better EOCross: y2 U' L' B'F2 U' F' R'`,
     videoTimestamp: 725,
   },
   {
@@ -753,3 +751,5 @@ Suggested EOCross: y F R D L2 U' L U F' D2`,
     videoTimestamp: 1146,
   },
 ];
+
+export default RECONS;

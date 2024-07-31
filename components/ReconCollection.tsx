@@ -82,8 +82,6 @@ export default function ReconCollection({
         <label htmlFor={shouldJumpCheckboxId}>Jump to video timestamp</label>
       </div>
 
-      <ReconViewer recon={selectedRecon} index={selectedReconIndex} />
-
       <div className={styles.navigationButtonGroup}>
         <button
           className={styles.button}
@@ -104,6 +102,8 @@ export default function ReconCollection({
           Next
         </button>
       </div>
+
+      <ReconViewer recon={selectedRecon} index={selectedReconIndex} />
     </div>
   );
 }
@@ -158,10 +158,12 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
   const tps = recon.movecount / Number(recon.time.replace("+", ""));
 
   return (
-    <>
-      <p className={styles.solveHeading}>{headingText}</p>
-      <div className={styles.scrambleAndSolution}>
+    <div className={clsx(styles.container, styles.splitOnDesktop)}>
+      <div>
+        <p className={styles.solveHeading}>{headingText}</p>
         <div ref={twistyPlayerContainer} />
+      </div>
+      <div className={styles.scrambleAndSolution}>
         <p>
           <strong>Scramble:</strong> {recon.scramble}
         </p>
@@ -184,6 +186,6 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
