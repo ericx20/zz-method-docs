@@ -1,5 +1,5 @@
 export interface Reconstruction {
-  time: string; // string because we put a "+" at the end to indicate +2 penalty
+  time: string; // Format like this: 4.56, (4.56), 4.56+, DNF(4.56)
   movecount: number; // STM
   scramble: string;
   solution: string;

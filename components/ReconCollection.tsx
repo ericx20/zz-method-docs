@@ -155,7 +155,7 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
   const headingText =
     (index === undefined ? "" : `Solve #${index + 1} `) +
     `(${recon.time}): reconstructed by ${recon.reconstructor}`;
-  const tps = recon.movecount / Number(recon.time.replace("+", ""));
+  const tps = recon.movecount / parseTime(recon.time)
 
   return (
     <div className={clsx(styles.container, styles.splitOnDesktop)}>
@@ -188,4 +188,11 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
       </div>
     </div>
   );
+}
+
+// Ignores DNFs, just gets the time including penalty
+function parseTime(time: string) {
+  const penalty = time.includes("+") ? 2 : 0
+  time = time.replace("(", "").replace(")", "").replace("+", "").replace("DNF", "");
+  return Number(time) + penalty;
 }
