@@ -15,7 +15,7 @@
                 "editor.formatOnSave": true,
                 "mdx.experimentalLanguageServer": true
             },
-            "extensions": ["esbenp.prettier-vscode", "unifiedjs.vscode-mdx", "xyc.vscode-mdx-preview"]
+            "extensions": ["esbenp.prettier-vscode", "unifiedjs.vscode-mdx"]
         }
     },
     "updateContentCommand": "pnpm install",

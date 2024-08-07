@@ -55,6 +55,7 @@ export default function ReconCollection({
             if (!recon.videoTimestamp) return;
             shouldJumpToVideo && youTubePlayer?.seekTo(recon.videoTimestamp);
           };
+          const isDNF = recon.time.includes("DNF");
           return (
             <button
               className={clsx(
@@ -66,7 +67,7 @@ export default function ReconCollection({
               type="button"
               key={index}
             >
-              {recon.time}
+              {isDNF ? "DNF" : recon.time}
             </button>
           );
         })}
@@ -155,6 +156,9 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
   const headingText =
     (index === undefined ? "" : `Solve #${index + 1} `) +
     `(${recon.time}): reconstructed by ${recon.reconstructor}`;
+
+  const parsedTime = parseTime(recon.time);
+  const isDNF = parsedTime === null;
   const tps = recon.movecount / parseTime(recon.time)
 
   return (
@@ -170,7 +174,8 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
         <div>
           <p>
             <strong>
-              Solution ({recon.movecount} STM, {tps.toFixed(1)} TPS):
+              {/* , {tps.toFixed(1)} TPS */}
+              Solution ({recon.movecount} STM{isDNF ? "" : `, ${tps.toFixed(1)} TPS`}):
             </strong>
           </p>
           <div ref={twistyAlgViewerContainer} />
@@ -190,9 +195,10 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
   );
 }
 
-// Ignores DNFs, just gets the time including penalty
-function parseTime(time: string) {
+// gets the time including penalty. DNF is null
+function parseTime(time: string): number | null {
+  if (time.includes("DNF")) return null;
   const penalty = time.includes("+") ? 2 : 0
-  time = time.replace("(", "").replace(")", "").replace("+", "").replace("DNF", "");
+  time = time.replace("(", "").replace(")", "").replace("+", "");
   return Number(time) + penalty;
 }

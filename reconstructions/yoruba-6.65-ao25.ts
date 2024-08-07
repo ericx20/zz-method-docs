@@ -76,7 +76,7 @@ const RECONS: Reconstruction[] = [
   {
     scramble: "F2 U L2 U F2 U R2 U' B2 D' B2 L F' L' B' D' L2 B2 D2 B",
     solution:
-      "y // inspection\nL R' F' R U R' U' F D R L2 D2 // eocross\nU' R U' R' U' L U // pair 1\nL2' U' R U (L R') // pair 2\nR' U' R // pair 3\nU' R U' U R' U R U' R' U' R U' R' U R U' R' // pair 4\nU' U R U R' U R R' R U R2' D' Rw U2 Rw' D R2 U R' U // zbll",
+      "y // inspection\nL R' F' R U R' U' F D R L2 D2 // eocross\n// more efficient eocrosses from this orientation:\n// y' R' D' F R F' R L' D'\n// y' D' L' F R F D' L\nU' R U' R' U' L U // pair 1\nL2' U' R U (L R') // pair 2\nR' U' R // pair 3\nU' R U' U R' U R U' R' U' R U' R' U R U' R' // pair 4\nU' U R U R' U R R' R U R2' D' Rw U2 Rw' D R2 U R' U // zbll",
     time: "6.44",
     movecount: 64,
     reconstructor: "Gen",
@@ -139,7 +139,7 @@ const RECONS: Reconstruction[] = [
   {
     scramble: "F2 L2 U F2 D B2 R2 D2 L2 U B R F' R2 F U2 L' R D R2 U'",
     solution:
-      "x2 // inspection\nLw U D' L' U' Lw D' R2 L D // eocross\nU L U' L' U L U L' // pair 1\nL' U' L R' U R // pair 2\nU' R U2 R' U R U' R' // pair 3\nU2 L U2 L2' U' L2 U' L' // pair 4\nR' U2 R U R' U R // ocll\nM2' U' M U2 M' U' M2' M2' U' M U2 M' U' M2' U' // pll",
+      "x2 // inspection\nLw U D' L' U' Lw D' R2 L D // eocross\n// z2 L (F B') R' F' D' R D2 R' is a better eocross\nU L U' L' U L U L' // pair 1\nL' U' L R' U R // pair 2\nU' R U2 R' U R U' R' // pair 3\nU2 L U2 L2' U' L2 U' L' // pair 4\nR' U2 R U R' U R // ocll\nM2' U' M U2 M' U' M2' M2' U' M U2 M' U' M2' U' // pll",
     time: "8.09",
     movecount: 62,
     reconstructor: "Gen",
@@ -166,7 +166,7 @@ const RECONS: Reconstruction[] = [
   {
     scramble: "B D' R' B' L D R2 B' R D2 R D2 F2 U2 L' B2 R' D2 B2",
     solution:
-      "z2 x // eocross\nL' D' x' R2' F U' L2' F' D2 R' D2 // eocross\nU R' U2' R U' R' U R // pair 1\nL' U' L U' L' U L // pair 2\nU R U' R' U R U' R' U2 R U' R' // pair 3\nU2 L U L' U' L U L' // pair 4\nU' // zbll",
+      "z2 x // inspection\nL' D' x' R2' F U' L2' F' D2 R' D2 // eocross\n// z2 L B L' R2 B2 U' F for a better eocross from this angle\nU R' U2' R U' R' U R // pair 1\nL' U' L U' L' U L // pair 2\nU R U' R' U R U' R' U2 R U' R' // pair 3\nU2 L U L' U' L U L' // pair 4\nU' // zbll",
     time: "5.60",
     movecount: 46,
     reconstructor: "Gen",
@@ -211,7 +211,7 @@ const RECONS: Reconstruction[] = [
   {
     scramble: "F' R B2 U2 R2 D' F2 U R2 U R2 U2 L' U' R2 B' L2 U2 R2 B'",
     solution:
-      "y x // inspection\nD' R' D' x' (U' D') F D' U' L2 D' R D // eocross\nL' U L U' L U L' // 1st pair\nU D' R U2 R' U R U' R' D U2 L' U L // 2nd pair\nU R U' R' U R' U R U U' R U' R' // 3rd pair\nU R' U R U' R' U' R // 4th pair\nU2 L' R U2 R2 U' R2 U' R' U' L U R' U2 R U2 //ZBLL",
+      "y x // inspection\nD' R' D' x' (U' D') F D' U' L2 D' R D // eocross\n// B L DU' F D L F2 R for an xeocross\nL' U L U' L U L' // 1st pair\nU D' R U2 R' U R U' R' D U2 L' U L // 2nd pair\nU R U' R' U R' U R U U' R U' R' // 3rd pair\nU R' U R U' R' U' R // 4th pair\nU2 L' R U2 R2 U' R2 U' R' U' L U R' U2 R U2 //ZBLL",
     time: "(10.10)",
     movecount: 70,
     reconstructor: "Yoruba",
