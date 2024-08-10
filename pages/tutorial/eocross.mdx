@@ -5,6 +5,7 @@ author: S1neWav_ and err0rcuber
 ---
 
 import TwistyPlayer from "components/TwistyPlayer";
+import { ReconViewer } from "components/ReconViewer";
 import { Callout } from "nextra/components";
 
 ## Introduction
@@ -19,6 +20,8 @@ A solved EOCross looks like this:
 
 <TwistyPlayer
   experimentalStickering="EOcross"
+  experimentalSetupAlg="x2"
+  stickeringSetup="x2"
   background="none"
   controlPanel="none"
   cameraLatitude="-30"
@@ -75,12 +78,13 @@ To move an edge to the bottom, use R/L moves, `F2` or `B2` (whichever one that m
 
 Sometimes, there will be a bottom cross piece that will get "kicked out" when you move another edge to the bottom.
 This can be avoided by doing a D-layer turn to move the bottom cross piece out of the way.
-To move this green-yellow edge to the bottom, we can first do `D'` to move the red-yellow edge out of the way.
+To move this blue-white edge to the bottom, we can first do `D'` to move the red-white edge out of the way.
 Then we can do `R'`.
 
 <TwistyPlayer
-  experimentalStickeringMaskOrbits="EDGES:IIII--IIIIII,CORNERS:IIIIIIII"
-  experimentalSetupAlg="D R D'"
+  experimentalStickeringMaskOrbits="EDGES:IIII--IIIIII,CORNERS:IIIIIIII,CENTERS:------"
+  experimentalSetupAlg="x2 D R D'"
+  stickeringSetup="x2"
   alg="D' R'"
   background="none"
   cameraLatitude="-30"
@@ -90,18 +94,21 @@ Now we know how to move any cross edge to the bottom.
 We could put all cross edges on the bottom, and it would look like this.
 
 <TwistyPlayer
-  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
   background="none"
   controlPanel="none"
   cameraLatitude="-30"
-  experimentalSetupAlg="D2 R D R' D' R"
+  experimentalSetupAlg="x2 D2 R D R' D' R"
+  stickeringSetup="x2"
 />
 
 However, this is not a solved cross!
 Our goal is to solve the cross pieces, which looks something like this:
 
 <TwistyPlayer
-  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
+  experimentalSetupAlg="x2"
+  stickeringSetup="x2"
   background="none"
   controlPanel="none"
   cameraLatitude="-30"
@@ -122,42 +129,45 @@ It would be too restrictive for our solution to keep the solved edges matching t
 Here's an example where we use these relationships to solve cross:
 
 <TwistyPlayer
-  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
   background="none"
   controlPanel="none"
   cameraLatitude="-30"
   cameraLongitude="45"
-  experimentalSetupAlg="L' D' R D2 R' L2 U2"
+  experimentalSetupAlg="x2 L' D' R D2 R' L2 U2"
+  stickeringSetup="x2"
 />
 
 There are already two cross edges at the bottom, but they don't have the right relationship.
-With yellow as our bottom color, the red center is to the left of the blue center.
-However, the cross edge with red is to the _right_ of the cross edge with blue.
+With white as our bottom color, the red center is to the left of the green center.
+However, the cross edge with red is to the _right_ of the cross edge with green.
 
-We can fix that by replacing the blue-yellow cross edge with the green-yellow cross edge.
+We can fix that by replacing the green-white cross edge with the blue-white cross edge.
 
 <TwistyPlayer
-  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
   background="none"
   cameraLatitude="-30"
   cameraLongitude="45"
-  experimentalSetupAlg="L' D' R D2 R' L2 U2"
+  experimentalSetupAlg="x2 L' D' R D2 R' L2 U2"
+  stickeringSetup="x2"
   alg="R"
 />
 <span>Move: `R`</span>
 
 Now the two edges at the bottom have the right relationship.
-The green center is to the left of the red center, and the green edge is to the left of the red edge.
+The blue center is to the left of the red center, and the blue edge is to the left of the red edge.
 
 We can continue moving edges down while maintaining the right color relationships.
-We can do `D2 R'` to place the green cross edge opposite to the blue cross edge, just like how the green and blue centers are opposite.
+We can do `D2 R'` to place the blue cross edge opposite to the green cross edge, just like how the blue and green centers are opposite.
 
 <TwistyPlayer
-  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
   background="none"
   cameraLatitude="-30"
   cameraLongitude="45"
-  experimentalSetupAlg="L' D' R D2 R' L2 U2 R"
+  experimentalSetupAlg="x2 L' D' R D2 R' L2 U2 R"
+  stickeringSetup="x2"
   alg="D2 R'"
 />
 
@@ -165,11 +175,12 @@ Now there's only one remaining cross edge, on the left side.
 We can finish with `D L'`.
 
 <TwistyPlayer
-  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII"
+  experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
   background="none"
   cameraLatitude="-30"
   cameraLongitude="-30"
-  experimentalSetupAlg="L' D' R D2 R' L2 U2 R D2 R'"
+  experimentalSetupAlg="x2 L' D' R D2 R' L2 U2 R D2 R'"
+  stickeringSetup="x2"
   alg="D L'"
 />
 
@@ -177,7 +188,24 @@ We can finish with `D L'`.
 
 ### Example EOCross
 
-[Click here](https://alpha.twizzle.net/edit/?setup-alg=F2+L+B%27+U2+L2+F%27+R2+D2+F2+U2+R2+D2+F%27+B%27+L%27+F%27+L%27+R+D+R2+U%27&alg=%2F%2F+Step+1%3A+EO%0AR%27+B+%2F%2F+put+3+edges+on+B+face+and+B%E2%80%99+to+prepare+R2%0AR2+D+L+F+%2F%2F+put+the+last+4+edges+on+F+face+and+solve+EO%0A%2F%2F+Step+2%3A+Cross%0AL+D%27+L2+R+D&stickering=EOcross) to see an example EOCross solve.
+<br />
+
+<ReconViewer
+  recon={{
+    scramble: "R2 F2 R2 D2 B2 U' L2 R2 B2 U' L2 D L2 B' U' L R U2 F' L' F2 D2",
+    solution: `x2 // Let's choose yellow on top, blue on front
+// Step 1: EO (6 bad edges)
+R' B // Flip 3 bad and 1 good at the back (-2)
+R2 D L F // Flip 4 bad on the front (-4)
+
+// Step 2: Cross
+// red-white already on the bottom
+L // orange-white goes opposite of red-white
+D' L2 // blue-white goes to the left of red-white
+R D // finish with green-white
+`,
+  }}
+/>
 
 ### Troubleshooting
 

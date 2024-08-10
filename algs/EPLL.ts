@@ -2,7 +2,7 @@ import { AlgSet } from "./types";
 
 const EPLL: AlgSet = {
   name: "EPLL",
-  stickering: "PLL",
+  stickering: "full", // I think full stickering looks better than PLL/EPLL here
   visualization: "2D",
   algCases: [
     {

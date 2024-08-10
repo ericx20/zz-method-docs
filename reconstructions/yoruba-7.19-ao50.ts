@@ -1,6 +1,7 @@
 import { Reconstruction } from "./types";
 
-const RECONS: Reconstruction[] = [
+export const YOUTUBE_VIDEO_ID = "HoG809XxWqM";
+export const RECONS: Reconstruction[] = [
   {
     scramble: "U2 B2 U2 R2 B2 D' L2 F2 U F U2 B R2 U2 B' L' B2 D' F2 L2",
     solution: `x2 y // inspection
@@ -751,5 +752,3 @@ Suggested EOCross: y F R D L2 U' L U F' D2`,
     videoTimestamp: 1146,
   },
 ];
-
-export default RECONS;

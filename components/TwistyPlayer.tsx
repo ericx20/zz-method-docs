@@ -1,18 +1,20 @@
 // taken from
 // https://github.com/cubing/react-cubing/blob/main/src/TwistyPlayer/index.tsx
 import {
-  useState,
   useEffect,
   forwardRef,
   useRef,
   useImperativeHandle,
 } from "react";
 import { TwistyPlayer as TP, TwistyPlayerConfig } from "cubing/twisty";
+import { Alg } from "cubing/alg";
+import { cube3x3x3 } from "cubing/puzzles";
 
 export interface TwistyPlayerExtendedConfig extends TwistyPlayerConfig {
   className?: string;
   rootClassName?: string;
   onTwistyInit?: (twisty: TP) => void;
+  stickeringSetup?: Alg | string;
 }
 
 /**
@@ -24,6 +26,7 @@ const TwistyPlayer = forwardRef(
       className,
       rootClassName,
       onTwistyInit,
+      stickeringSetup,
       ...props
     }: TwistyPlayerExtendedConfig,
     ref
@@ -35,6 +38,10 @@ const TwistyPlayer = forwardRef(
       const newTwisty = new TP(props);
       if (className) {
         newTwisty.className = className;
+      }
+
+      if (stickeringSetup) {
+        transformTPMask(newTwisty, stickeringSetup)
       }
 
       newTwisty.style.maxWidth = "100%";
@@ -93,3 +100,34 @@ CORNERS:
 
 CENTERS: U, L, F, R, B, D
 */
+
+// adapted from https://github.com/cubing/cubing.js/issues/224#issuecomment-1275928713
+async function transformTPMask(twisty: TP, transformationSource: Alg | string) {
+  const kpuzzle = await cube3x3x3.kpuzzle();
+  const mask = await twisty.experimentalModel.twistySceneModel.stickeringMask.get()
+  const transformation = kpuzzle.algToTransformation(transformationSource)
+  const newMask = { orbits: {} };
+
+  for (
+    let orbitIndex = 0;
+    orbitIndex < kpuzzle.definition.orbits.length;
+    orbitIndex++
+  ) {
+    const newOrbitMask = { pieces: [] };
+    const { numPieces, numOrientations, orbitName } =
+      kpuzzle.definition.orbits[orbitIndex];
+
+    const orbitMask = mask.orbits[orbitName];
+    for (let i = 0; i < numPieces; i++) {
+      const perm = transformation.transformationData[orbitName].permutation[i];
+      const ori =
+        transformation.transformationData[orbitName].orientationDelta[i];
+      let facelets = orbitMask.pieces[perm].facelets.slice(0, numOrientations);
+      facelets = facelets.slice(ori).concat(facelets.slice(0, ori));
+      newOrbitMask.pieces.push({ facelets });
+    }
+    newMask.orbits[orbitName] = newOrbitMask;
+  }
+
+  twisty.experimentalStickeringMaskOrbits = newMask;
+}

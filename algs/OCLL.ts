@@ -2,7 +2,7 @@ import { AlgSet } from "./types";
 
 const OCLL: AlgSet = {
   name: "OCLL",
-  stickering: "OCLL",
+  stickering: "OLL", // I think OLL stickering looks better than OCLL here
   visualization: "2D",
   algCases: [
     {
@@ -15,7 +15,7 @@ const OCLL: AlgSet = {
     },
     {
       name: "U",
-      algs: ["R2 D' R U2 R' D R U2 R"],
+      algs: ["R2' D' R U2 R' D R U2 R"],
     },
     {
       name: "T",

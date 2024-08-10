@@ -2,7 +2,7 @@ import { AlgSet } from "./types";
 
 const CP: AlgSet = {
   name: "CP",
-  customStickering: "EDGES:oooo--------,CORNERS:PPPP----,CENTERS:D-----",
+  customStickering: "EDGES:OOOO--------,CORNERS:--------,CENTERS:------",
   visualization: "2D",
   algCases: [
     {

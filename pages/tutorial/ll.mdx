@@ -47,7 +47,8 @@ An important pattern for OCLL recognition is called **headlights:** a pair of ma
 
 <TwistyPlayer
   experimentalStickeringMaskOrbits="EDGES:ooooDDDDDDDD,CORNERS:OoOoDDDD,CENTERS:DDDDDD"
-  experimentalSetupAlg="R' U2 R' D' R U2 R' D R2 U"
+  experimentalSetupAlg="x2 R' U2 R' D' R U2 R' D R2 U"
+  stickeringSetup="x2"
   background="none"
   controlPanel="none"
   className={styles.headlights}
@@ -79,7 +80,8 @@ Like in OCLL, we look for headlights, but they look a bit different:
 
 <TwistyPlayer
   experimentalStickeringMaskOrbits="EDGES:ooooDDDDDDDD,CORNERS:oo--DDDD,CENTERS:DDDDDD"
-  experimentalSetupAlg="R U R' U' R' F R2 U' R' U' R U R' F' U2"
+  experimentalSetupAlg="x2 R U R' U' R' F R2 U' R' U' R U R' F' U2"
+  stickeringSetup="x2"
   background="none"
   controlPanel="none"
   className={styles.headlights}

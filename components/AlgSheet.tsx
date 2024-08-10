@@ -17,7 +17,9 @@ export default function AlgSheet({ algSet }: AlgSheetProps) {
         <div className={styles.caseContainer}>
           <strong className={styles.mobileName}>{algCase.name}</strong>
           <TwistyPlayer
-            alg={algCase.algs.at(0)}
+            alg={algCase.algs[0]}
+            stickeringSetup="x2"
+            experimentalSetupAlg="x2"
             experimentalSetupAnchor="end"
             visualization={
               algSet.visualization === "3D" ? "3D" : "experimental-2D-LL"
@@ -35,7 +37,7 @@ export default function AlgSheet({ algSet }: AlgSheetProps) {
       <td>
         <div className={styles.algListContainer}>
           {algCase.algs.length === 1 ? (
-            <p>{algCase.algs.at(0)}</p>
+            <p>{algCase.algs[0]}</p>
           ) : (
             <ul className={styles.algList}>
               {algCase.algs.map((alg) => (

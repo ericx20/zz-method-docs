@@ -1,7 +1,7 @@
 import { Reconstruction } from "./types";
 
-// TODO: video timestamps
-const RECONS: Reconstruction[] = [
+export const YOUTUBE_VIDEO_ID = "GE2QVYJWSjc";
+export const RECONS: Reconstruction[] = [
   {
     scramble: "L F2 U' R F U2 F2 R F L F2 U L2 U' B2 D2 R2",
     solution: `x // inspection
@@ -68,5 +68,3 @@ U U' R U R' U R U' R' U R' U' R2 U' R2' U2 R U2' // zbll`,
     videoTimestamp: 117,
   },
 ];
-
-export default RECONS;
