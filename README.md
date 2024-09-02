@@ -28,7 +28,7 @@ This project is licensed under the MIT License.
 
 ### ZZMethod.com team
 
-- [err0rcuber](https://www.youtube.com/@err0rcuber)
+- [crystalcuber](https://www.youtube.com/@crystalcuber)
 - [yoruba](https://www.youtube.com/@yoruba7807)
 - [S1neWav\_](https://www.youtube.com/@S1neWav_)
 
