@@ -81,11 +81,11 @@ const config: DocsThemeConfig = {
       <p>
         Created by{" "}
         <a
-          href="https://www.youtube.com/@err0rcuber"
+          href="https://www.youtube.com/@crystalcuber"
           target="_blank"
           rel="noopener"
         >
-          <strong>err0rcuber</strong>
+          <strong>crystalcuber</strong>
         </a>
         . Powered by{" "}
         <a href="https://js.cubing.net/cubing/" target="_blank" rel="noopener">
