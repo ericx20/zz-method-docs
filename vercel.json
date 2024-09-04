@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/count",
-      "destination": "https://crystalcuber.goatcounter.com/count"
+      "destination": "https://zzmethod.goatcounter.com/count"
     },
     {
       "source": "/api/count.js",
