@@ -48,7 +48,7 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
     twistyPlayer.current.jumpToStart();
   }, [recon]);
 
-  const parsedTime = recon.time && parseTime(recon.time);
+  const parsedTime = recon?.time && parseTime(recon.time);
   const isDNF = parsedTime === null;
   const tps =
     recon.time && recon.movecount && recon.movecount / parseTime(recon.time);
