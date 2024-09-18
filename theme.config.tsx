@@ -19,10 +19,10 @@ const config: DocsThemeConfig = {
   //   link: "https://discord.com",
   // },
   docsRepositoryBase: "https://github.com/ericx20/zz-method-docs/tree/main",
-  banner: {
-    key: "example-solve-library-release",
-    text: <Link href="/blog/zz-example-solve-library">Introducing the ZZ Example Solve Library!</Link>,
-  },
+  // banner: {
+  //   key: "example-solve-library-release",
+  //   text: <Link href="/blog/zz-example-solve-library">Introducing the ZZ Example Solve Library!</Link>,
+  // },
   head() {
     const { asPath, defaultLocale, locale } = useRouter();
     const { frontMatter } = useConfig();
