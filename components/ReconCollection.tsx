@@ -41,12 +41,14 @@ export function ReconCollection({
 
   return (
     <div className={styles.container}>
-      <YouTube
-        className={styles.video}
-        iframeClassName={styles.videoIframe}
-        videoId={youtubeVideoId}
-        onReady={(event) => setYouTubePlayer(event.target)}
-      />
+      {youtubeVideoId && (
+        <YouTube
+          className={styles.video}
+          iframeClassName={styles.videoIframe}
+          videoId={youtubeVideoId}
+          onReady={(event) => setYouTubePlayer(event.target)}
+        />
+      )}
       <div className={styles.solvesList}>
         {recons.map((recon, index) => {
           const active = index === selectedReconIndex;
@@ -55,7 +57,7 @@ export function ReconCollection({
             if (!recon.videoTimestamp) return;
             shouldJumpToVideo && youTubePlayer?.seekTo(recon.videoTimestamp);
           };
-          const isDNF = recon.time.includes("DNF");
+          const isDNF = recon.time?.includes("DNF");
           return (
             <button
               className={clsx(
@@ -67,21 +69,23 @@ export function ReconCollection({
               type="button"
               key={index}
             >
-              {isDNF ? "DNF" : recon.time}
+              {isDNF ? "DNF" : recon.time ?? `#${index + 1}`}
             </button>
           );
         })}
       </div>
-      <div className={styles.checkboxContainer}>
-        <input
-          type="checkbox"
-          className={styles.checkbox}
-          id={shouldJumpCheckboxId}
-          checked={shouldJumpToVideo}
-          onChange={(e) => setShouldJumpToVideo(e.target.checked)}
-        />
-        <label htmlFor={shouldJumpCheckboxId}>Jump to video timestamp</label>
-      </div>
+      {youtubeVideoId && (
+        <div className={styles.checkboxContainer}>
+          <input
+            type="checkbox"
+            className={styles.checkbox}
+            id={shouldJumpCheckboxId}
+            checked={shouldJumpToVideo}
+            onChange={(e) => setShouldJumpToVideo(e.target.checked)}
+          />
+          <label htmlFor={shouldJumpCheckboxId}>Jump to video timestamp</label>
+        </div>
+      )}
 
       <div className={styles.navigationButtonGroup}>
         <button
