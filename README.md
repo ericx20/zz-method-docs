@@ -16,7 +16,7 @@ If you want to use npm instead,`npm i` and `npm run dev` are the equivalent comm
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](./LICENSE).
 
 ## Contributing
 
@@ -41,3 +41,7 @@ This project is licensed under the MIT License.
 
 - [`cubing.js`](https://github.com/cubing/cubing.js) for cube visuals
 - [`nextra`](https://github.com/shuding/nextra): documentation site framework
+
+## Note on Generative AI
+This project uses [ai.robots.txt](https://github.com/ai-robots-txt/ai.robots.txt) to block AI web crawlers.
+The contents of this site shall not be used to train or develop generative AI models.
