@@ -61,7 +61,7 @@ export default function PetGallery() {
       {pets.map((pet) => (
         <div
           key={pet.src}
-          className="nx-group nx-flex nx-flex-col nx-justify-start nx-overflow-hidden nx-rounded-lg nx-border nx-border-gray-200 nx-text-current nx-no-underline dark:nx-shadow-none hover:nx-shadow-gray-100 dark:hover:nx-shadow-none nx-shadow-gray-100 active:nx-shadow-sm active:nx-shadow-gray-200 nx-transition-all nx-duration-200 hover:nx-border-gray-300 nx-bg-gray-100 nx-shadow dark:nx-border-neutral-700 dark:nx-bg-neutral-800 dark:nx-text-gray-50 hover:nx-shadow-lg dark:hover:nx-border-neutral-500 dark:hover:nx-bg-neutral-700"
+          className="_group _flex _flex-col _justify-start _overflow-hidden _rounded-lg _border _border-gray-200 _text-current _no-underline dark:_shadow-none hover:_shadow-gray-100 dark:hover:_shadow-none _shadow-gray-100 active:_shadow-sm active:_shadow-gray-200 _transition-all _duration-200 hover:_border-gray-300 _bg-gray-100 _shadow dark:_border-neutral-700 dark:_bg-neutral-800 dark:_text-gray-50 hover:_shadow-lg dark:hover:_border-neutral-500 dark:hover:_bg-neutral-700"
         >
           <Image
             src={pet.src}
@@ -75,11 +75,11 @@ export default function PetGallery() {
               objectFit: "cover",
             }}
           />
-          <div className="nx-flex nx-justify-between nx-p-4">
-            <span className="nx-font-semibold nx-gap-2 nx-text-gray-700 hover:nx-text-gray-900 dark:nx-text-gray-300 dark:hover:nx-text-gray-100">
+          <div className="_flex _justify-between _p-4">
+            <span className="_font-semibold _gap-2 _text-gray-700 hover:_text-gray-900 dark:_text-gray-300 dark:hover:_text-gray-100">
               {pet.name}
             </span>
-            <span className="nx-text-gray-500 dark:nx-text-gray-400">
+            <span className="_text-gray-500 dark:_text-gray-400">
               {pet.owner}
             </span>
           </div>

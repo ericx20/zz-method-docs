@@ -19,18 +19,18 @@
   "homepage": "http://zzmethod.com/",
   "dependencies": {
     "clsx": "^2.1.1",
-    "cubing": "^0.42.0",
-    "next": "^13.4.19",
-    "nextra": "^2.12.3",
-    "nextra-theme-docs": "^2.12.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0",
+    "cubing": "^0.53.3",
+    "next": "^15.0.2",
+    "nextra": "^3.2.3",
+    "nextra-theme-docs": "^3.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.3.0",
     "react-youtube": "^10.1.0"
   },
   "devDependencies": {
-    "@types/node": "20.5.9",
-    "@types/react": "^18.2.21",
-    "typescript": "^5.2.2"
+    "@types/node": "22.9.0",
+    "@types/react": "^18.3.12",
+    "typescript": "^5.6.3"
   }
 }

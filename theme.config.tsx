@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import logo from "public/logo.svg";
 import Link from "next/link";
+import * as thing from "nextra/mdx";
+import h1 from "nextra/components"
 
 const config: DocsThemeConfig = {
   logo: (
@@ -23,15 +25,22 @@ const config: DocsThemeConfig = {
   //   key: "example-solve-library-release",
   //   text: <Link href="/blog/zz-example-solve-library">Introducing the ZZ Example Solve Library!</Link>,
   // },
+  i18n: [
+    { locale: 'en', name: 'English' },
+    { locale: 'zh', name: '中文' },
+    { locale: 'fr', name: 'Français' },
+    { locale: 'he', name: 'עִברִית', direction: 'rtl' }
+  ],
   head() {
     const { asPath, defaultLocale, locale } = useRouter();
     const { frontMatter } = useConfig();
     const url =
       "https://zzmethod.com" +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`);
-
+    const isHomepage = asPath === "/" || asPath === `/${locale}${asPath}`;
     return (
       <>
+        <title>{(isHomepage || !frontMatter.title) ? "ZZ Method" : `${frontMatter.title} – ZZ Method`}</title>
         <meta property="og:url" content={url} />
         <meta property="og:title" content={frontMatter.title || "ZZ Method"} />
         <meta
@@ -45,16 +54,10 @@ const config: DocsThemeConfig = {
       </>
     );
   },
-  useNextSeoProps() {
-    const { asPath } = useRouter();
-    const isHomepage = asPath === "/";
-    const titleTemplate = isHomepage ? "ZZ Method" : "%s – ZZ Method";
-    return { titleTemplate };
-  },
   main: ({ children }) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { frontMatter } = useConfig();
-    const attributes = [];
+    const attributes: string[] = [];
     if (frontMatter?.date) {
       attributes.push(frontMatter.date);
     }
@@ -63,21 +66,21 @@ const config: DocsThemeConfig = {
       attributes.push(frontMatter.author);
     }
     return (
-      <main>
-        <h1 className="nx-mt-2 nx-mb-2 nx-text-4xl nx-font-bold nx-tracking-tight">
+      <>
+        <h1 className="_mt-2 _mb-2 _text-4xl _font-bold _tracking-tight">
           {frontMatter?.title}
         </h1>
         {attributes.length > 0 && (
-          <p className="nx-mb-4 nx-block nx-text-sm nx-text-gray-500 dark:nx-text-gray-400">
+          <p className="_block _text-sm _text-gray-500 dark:_text-gray-400">
             {attributes.join(" ")}
           </p>
         )}
         <div>{children}</div>
-      </main>
+      </>
     );
   },
   footer: {
-    text: (
+    content: (
       <p>
         Created by{" "}
         <a
