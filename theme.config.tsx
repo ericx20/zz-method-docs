@@ -1,19 +1,27 @@
 import React from "react";
 import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
-import { useRouter } from "next/router";
+import { useRouter } from "nextra/hooks";
 import Image from "next/image";
 import logo from "public/logo.svg";
 import Link from "next/link";
-import * as thing from "nextra/mdx";
-import h1 from "nextra/components"
+import { backToTopMap, defaultDescriptionMap, editTextMap, feedbackLinkMap, footerMap, gitTimestampMap, logoTextMap, searchPlaceholderMap, tableOfContentsMap, titleTextMap } from "translations/site";
+import { useTranslation } from "translations/useTranslation";
 
 const config: DocsThemeConfig = {
-  logo: (
-    <>
-      <Image src={logo} alt="ZZ Logo" width={40} />
-      <span>ZZ Method</span>
-    </>
-  ),
+  logo: () => {
+    const logoText = useTranslation(logoTextMap);
+    return (
+      <>
+        <Image src={logo} alt="ZZ Logo" width={40} />
+        <span>{logoText}</span>
+      </>
+    )
+  },
+
+  search: {
+    placeholder: () => useTranslation(searchPlaceholderMap)
+  },
+
   project: {
     link: "https://github.com/ericx20/zz-method-docs",
   },
@@ -27,9 +35,9 @@ const config: DocsThemeConfig = {
   // },
   i18n: [
     { locale: 'en', name: 'English' },
-    { locale: 'zh', name: '中文' },
     { locale: 'fr', name: 'Français' },
-    { locale: 'he', name: 'עִברִית', direction: 'rtl' }
+    { locale: 'he', name: 'עִברִית', direction: 'rtl' },
+    { locale: 'zh', name: '中文' },
   ],
   head() {
     const { asPath, defaultLocale, locale } = useRouter();
@@ -38,15 +46,17 @@ const config: DocsThemeConfig = {
       "https://zzmethod.com" +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`);
     const isHomepage = asPath === "/" || asPath === `/${locale}${asPath}`;
+    const titleText = useTranslation(titleTextMap);
+    const defaultDescription = useTranslation(defaultDescriptionMap);
     return (
       <>
-        <title>{(isHomepage || !frontMatter.title) ? "ZZ Method" : `${frontMatter.title} – ZZ Method`}</title>
+        <title>{(isHomepage || !frontMatter.title) ? titleText : `${frontMatter.title} – ${titleText}`}</title>
         <meta property="og:url" content={url} />
-        <meta property="og:title" content={frontMatter.title || "ZZ Method"} />
+        <meta property="og:title" content={frontMatter.title || titleText} />
         <meta
           property="og:description"
           content={
-            frontMatter.description || "Guide to the ZZ Speedsolving Method"
+            frontMatter.description || defaultDescription
           }
         />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -79,23 +89,40 @@ const config: DocsThemeConfig = {
       </>
     );
   },
+
+  toc: {
+    float: true,
+    title: () => useTranslation(tableOfContentsMap),
+    backToTop: () => useTranslation(backToTopMap),
+  },
+
+  feedback: {
+    content: () => useTranslation(feedbackLinkMap)
+  },
+
+  editLink: {
+    content: () => useTranslation(editTextMap)
+  },
+
+  gitTimestamp: ({ timestamp }) => {
+    const { locale } = useRouter();
+    const lastUpdatedOn = useTranslation(gitTimestampMap);
+    return (
+      <>
+        {lastUpdatedOn}{" "}
+        <time dateTime={timestamp.toISOString()}>
+          {timestamp.toLocaleDateString(locale, {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })}
+        </time>
+      </>
+    )
+  },
+
   footer: {
-    content: (
-      <p>
-        Created by{" "}
-        <a
-          href="https://www.youtube.com/@crystalcuber"
-          target="_blank"
-          rel="noopener"
-        >
-          <strong>crystalcuber</strong>
-        </a>
-        . Powered by{" "}
-        <a href="https://js.cubing.net/cubing/" target="_blank" rel="noopener">
-          <code>cubing.js</code>
-        </a>
-      </p>
-    ),
+    content: () => useTranslation(footerMap),
   },
 };
 
