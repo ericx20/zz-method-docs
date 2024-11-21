@@ -58,6 +58,13 @@ export const logoTextMap: Translation<string> = {
     zh: "ZZ Method",
 }
 
+export const authorsMap: Translation<(authors: string) => string> = {
+    en: (authors: string) => `By ${authors}`,
+    fr: (authors: string) => `By ${authors}`,
+    he: (authors: string) => `By ${authors}`,
+    zh: (authors: string) => `By ${authors}`,
+}
+
 export const gitTimestampMap: Translation<string> = {
     en: "Last updated on",
     fr: "Last updated on",

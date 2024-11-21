@@ -31,7 +31,7 @@ const TwistyPlayer = forwardRef(
     }: TwistyPlayerExtendedConfig,
     ref
   ) => {
-    const twistyPlayer = useRef<TP>(null);
+    const twistyPlayer = useRef<TP | null>(null);
     const spanRef = useRef<HTMLSpanElement | null>(null);
 
     useEffect(() => {
@@ -113,7 +113,7 @@ async function transformTPMask(twisty: TP, transformationSource: Alg | string) {
     orbitIndex < kpuzzle.definition.orbits.length;
     orbitIndex++
   ) {
-    const newOrbitMask = { pieces: [] };
+    const newOrbitMask = { pieces: [] as any[] };
     const { numPieces, numOrientations, orbitName } =
       kpuzzle.definition.orbits[orbitIndex];
 
@@ -122,7 +122,7 @@ async function transformTPMask(twisty: TP, transformationSource: Alg | string) {
       const perm = transformation.transformationData[orbitName].permutation[i];
       const ori =
         transformation.transformationData[orbitName].orientationDelta[i];
-      let facelets = orbitMask.pieces[perm].facelets.slice(0, numOrientations);
+      let facelets = orbitMask.pieces[perm]!.facelets.slice(0, numOrientations);
       facelets = facelets.slice(ori).concat(facelets.slice(0, ori));
       newOrbitMask.pieces.push({ facelets });
     }

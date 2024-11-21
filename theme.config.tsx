@@ -4,7 +4,7 @@ import { useRouter } from "nextra/hooks";
 import Image from "next/image";
 import logo from "public/logo.svg";
 import Link from "next/link";
-import { backToTopMap, defaultDescriptionMap, editTextMap, feedbackLinkMap, footerMap, gitTimestampMap, logoTextMap, searchPlaceholderMap, tableOfContentsMap, titleTextMap } from "translations/site";
+import { authorsMap, backToTopMap, defaultDescriptionMap, editTextMap, feedbackLinkMap, footerMap, gitTimestampMap, logoTextMap, searchPlaceholderMap, tableOfContentsMap, titleTextMap } from "translations/site";
 import { useTranslation } from "translations/useTranslation";
 
 const config: DocsThemeConfig = {
@@ -67,22 +67,20 @@ const config: DocsThemeConfig = {
   main: ({ children }) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { frontMatter } = useConfig();
-    const attributes: string[] = [];
-    if (frontMatter?.date) {
-      attributes.push(frontMatter.date);
-    }
-    if (frontMatter?.author) {
-      attributes.push(frontMatter.date ? "by" : "By");
-      attributes.push(frontMatter.author);
-    }
+    const authorsTextFn = useTranslation(authorsMap);
     return (
       <>
         <h1 className="_mt-2 _mb-2 _text-4xl _font-bold _tracking-tight">
           {frontMatter?.title}
         </h1>
-        {attributes.length > 0 && (
+        {frontMatter?.date && (
           <p className="_block _text-sm _text-gray-500 dark:_text-gray-400">
-            {attributes.join(" ")}
+            {frontMatter.date}
+          </p>
+        )}
+        {frontMatter?.author && (
+          <p className="_block _text-sm _text-gray-500 dark:_text-gray-400">
+            {authorsTextFn(frontMatter.author)}
           </p>
         )}
         <div>{children}</div>

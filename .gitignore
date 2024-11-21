@@ -1,4 +1,9 @@
 .next
 node_modules
+
+# dev environment
 .vscode
 .DS_Store
+
+# produced by tsc
+tsconfig.tsbuildinfo

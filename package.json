@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev -p 2006",
     "build": "next build && rm -rf .next/cache",
-    "start": "next start"
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
