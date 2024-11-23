@@ -3,6 +3,8 @@ import { useEffect, useRef } from "react";
 import { type Reconstruction } from "reconstructions/types";
 import styles from "./ReconViewer.module.css";
 import clsx from "clsx";
+import { notesTextMap, reconstructedByMap, scrambleTextMap, solutionTextMap, solveIndexMap } from "translations/ReconViewer";
+import { useTranslation } from "translations/useTranslation";
 
 export interface ReconViewerProps {
   recon: Reconstruction;
@@ -12,8 +14,8 @@ export interface ReconViewerProps {
 export function ReconViewer({ recon, index }: ReconViewerProps) {
   const twistyPlayerContainer = useRef<HTMLDivElement>(null);
   const twistyAlgViewerContainer = useRef<HTMLDivElement>(null);
-  const twistyPlayer = useRef<TwistyPlayer>(null);
-  const twistyAlgViewer = useRef<TwistyAlgViewer>(null);
+  const twistyPlayer = useRef<TwistyPlayer | null>(null);
+  const twistyAlgViewer = useRef<TwistyAlgViewer | null>(null);
 
   // setup the twisty player and alg viewer
   useEffect(() => {
@@ -48,15 +50,20 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
     twistyPlayer.current.jumpToStart();
   }, [recon]);
 
-  const parsedTime = recon?.time && parseTime(recon.time);
+  const parsedTime = recon?.time ? parseTime(recon.time) : null
   const isDNF = parsedTime === null;
-  const tps =
-    recon.time && recon.movecount && recon.movecount / parseTime(recon.time);
+  const tps = isDNF ? undefined :
+    recon.time && recon.movecount && recon.movecount / parsedTime;
+
+  const scrambleText = useTranslation(scrambleTextMap);
+
+  const solveIndexTextFn = useTranslation(solveIndexMap)
+  const reconstructedByTextFn = useTranslation(reconstructedByMap);
 
   const headingText = [
-    index !== undefined && `Solve #${index + 1}`,
-    recon.time && `(${recon.time})${recon.reconstructor ? ":" : ""}`,
-    recon.reconstructor && `reconstructed by ${recon.reconstructor}`,
+    index !== undefined && solveIndexTextFn(index + 1),
+    recon.time && `(${recon.time}):`,
+    recon.reconstructor && reconstructedByTextFn(recon.reconstructor),
   ]
     .filter(Boolean)
     .join(" ");
@@ -68,10 +75,9 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
     .filter(Boolean)
     .join(", ");
 
-  const solutionText = solutionDetailsText
-    ? `Solution (${solutionDetailsText}):`
-    : `Solution:`;
+  const notesText = useTranslation(notesTextMap);
 
+  const solutionText = `${useTranslation(solutionTextMap)}: ${solutionDetailsText}`;
   return (
     <div className={clsx(styles.container, styles.splitOnDesktop)}>
       <div>
@@ -80,7 +86,7 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
       </div>
       <div className={styles.scrambleAndSolution}>
         <p>
-          <strong>Scramble:</strong> {recon.scramble}
+          <strong>{scrambleText}</strong> {recon.scramble}
         </p>
         <div>
           <p>
@@ -91,7 +97,7 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
         {recon.notes && (
           <div>
             <p>
-              <strong>Notes:</strong>
+              <strong>{notesText}</strong>
             </p>
             {recon.notes.split("\n").map((note) => (
               <p key={note}>{note}</p>

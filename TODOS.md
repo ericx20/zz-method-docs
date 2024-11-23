@@ -1,0 +1,1 @@
+- add translation file for the UI itself, like https://github.com/vercel/swr-site/blob/main/theme.config.js

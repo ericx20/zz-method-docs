@@ -4,6 +4,8 @@ import styles from "./ReconCollection.module.css";
 import clsx from "clsx";
 import YouTube, { type YouTubePlayer } from "react-youtube";
 import { ReconViewer } from "./ReconViewer";
+import { useTranslation } from "translations/useTranslation";
+import { jumpToVideoTimestampMap, nextReconMap, previousReconMap } from "translations/ReconCollection";
 
 export interface ReconCollectionProps {
   recons: Reconstruction[];
@@ -38,6 +40,11 @@ export function ReconCollection({
     }
     setSelectedReconIndex(nextIndex);
   };
+
+  // translations
+  const jumpToVideoTimestampText = useTranslation(jumpToVideoTimestampMap);
+  const previousReconText = useTranslation(previousReconMap)
+  const nextReconText = useTranslation(nextReconMap);
 
   return (
     <div className={styles.container}>
@@ -83,7 +90,7 @@ export function ReconCollection({
             checked={shouldJumpToVideo}
             onChange={(e) => setShouldJumpToVideo(e.target.checked)}
           />
-          <label htmlFor={shouldJumpCheckboxId}>Jump to video timestamp</label>
+          <label htmlFor={shouldJumpCheckboxId}>{jumpToVideoTimestampText}</label>
         </div>
       )}
 
@@ -95,7 +102,7 @@ export function ReconCollection({
           title="Previous solve"
           onClick={handlePreviousButton}
         >
-          Previous
+          {previousReconText}
         </button>
         <button
           className={styles.button}
@@ -104,7 +111,7 @@ export function ReconCollection({
           title="Next solve"
           onClick={handleNextButton}
         >
-          Next
+          {nextReconText}
         </button>
       </div>
 
