@@ -77,7 +77,7 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
 
   const notesText = useTranslation(notesTextMap);
 
-  const solutionText = `${useTranslation(solutionTextMap)}: ${solutionDetailsText}`;
+  const solutionText = `${useTranslation(solutionTextMap)} ${solutionDetailsText}`;
   return (
     <div className={clsx(styles.container, styles.splitOnDesktop)}>
       <div>
