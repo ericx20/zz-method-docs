@@ -56,11 +56,11 @@
   cursor: not-allowed;
 }
 
-:is(html[class~="dark"]) .button, .dropdown {
+:is(html[class~="dark"]) .button, :is(html[class~="dark"]) .dropdown {
   background-color: #374151;
 }
 
-:is(html[class~="dark"]) .button:hover:not(:disabled), .dropdown:hover:not(:disabled) {
+:is(html[class~="dark"]) .button:hover:not(:disabled), :is(html[class~="dark"]) .dropdown:hover:not(:disabled) {
   background-color: #4b5563;
 }
 
