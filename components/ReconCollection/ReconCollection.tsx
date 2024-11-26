@@ -8,9 +8,12 @@ import YouTube, { type YouTubePlayer } from "react-youtube";
 import { ReconViewer } from "../ReconViewer";
 import { useTranslation } from "translations/useTranslation";
 import {
+  frontColorMap,
   jumpToVideoTimestampMap,
   nextReconMap,
   previousReconMap,
+  topColorMap,
+  usePreferredSolvingOrientationMap,
 } from "translations/ReconCollection";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { Color, COLORS, getAdjacentColors, type CubeOrientation } from "@/lib";
@@ -64,6 +67,9 @@ export default function ReconCollection({
 
   // translations
   const jumpToVideoTimestampText = useTranslation(jumpToVideoTimestampMap);
+  const usePreferredSolvingOrientationText = useTranslation(
+    usePreferredSolvingOrientationMap
+  );
   const previousReconText = useTranslation(previousReconMap);
   const nextReconText = useTranslation(nextReconMap);
 
@@ -126,7 +132,7 @@ export default function ReconCollection({
           onChange={(e) => setShouldTranslateCubeOrientation(e.target.checked)}
         />
         <label htmlFor={shouldTranslateCubeOrientationCheckboxId}>
-          Use your preferred solving orientation
+          {usePreferredSolvingOrientationText}
         </label>
       </div>
 
@@ -174,7 +180,6 @@ interface OrientationSelectProps {
   setOrientation: (orientation: CubeOrientation) => void;
 }
 
-// TODO: i18n
 function OrientationSelect({
   orientation,
   setOrientation,
@@ -208,22 +213,33 @@ function OrientationSelect({
     setOrientation(newOrientation);
   };
 
+  const topColorTextFn = useTranslation(topColorMap);
+  const frontColorTextFn = useTranslation(frontColorMap);
+
   return (
-    <>
-      <select value={topColor} onChange={handleTopColor}>
+    <span className={styles.dropdownGroup}>
+      <select
+        className={styles.dropdown}
+        value={topColor}
+        onChange={handleTopColor}
+      >
         {COLORS.map((color) => (
           <option value={color} key={color}>
-            {color} top
+            {topColorTextFn(color)}
           </option>
         ))}
       </select>
-      <select value={frontColor} onChange={handleFrontColor}>
+      <select
+        className={styles.dropdown}
+        value={frontColor}
+        onChange={handleFrontColor}
+      >
         {COLORS.map((color) => (
           <option value={color} key={color}>
-            {color} front
+            {frontColorTextFn(color)}
           </option>
         ))}
       </select>
-    </>
+    </span>
   );
 }

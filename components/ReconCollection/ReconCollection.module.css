@@ -35,7 +35,7 @@
   width: 100%;
 }
 
-.button {
+.button, .dropdown {
   height: 2rem;
   border-radius: 5px;
   transition: 0.2s ease-in;
@@ -43,7 +43,7 @@
   background-color: #f4f4f5;
 }
 
-.button:hover:not(:disabled) {
+.button:hover:not(:disabled), .dropdown:hover:not(:disabled) {
   background-color: #e4e4e7;
 }
 
@@ -51,16 +51,16 @@
   background-color: #d4d4d8;
 }
 
-.button:disabled {
+.button:disabled, .dropdown:disabled {
   opacity: 50%;
   cursor: not-allowed;
 }
 
-:is(html[class~="dark"]) .button {
+:is(html[class~="dark"]) .button, .dropdown {
   background-color: #374151;
 }
 
-:is(html[class~="dark"]) .button:hover:not(:disabled) {
+:is(html[class~="dark"]) .button:hover:not(:disabled), .dropdown:hover:not(:disabled) {
   background-color: #4b5563;
 }
 
@@ -82,4 +82,14 @@
 .navigationButtonGroup {
   display: flex;
   gap: 0.75rem;
+}
+
+.dropdown {
+  max-width: min-content;
+}
+
+.dropdownGroup {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: -1rem;
 }

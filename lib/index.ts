@@ -5,7 +5,14 @@ export * from "./simplifyRotations";
 export type CubeOrientation = { top: Color; front: Color };
 export type Color = "white" | "yellow" | "blue" | "green" | "orange" | "red";
 
-export const COLORS = ["white", "yellow", "blue", "green", "orange", "red"];
+export const COLORS: Color[] = [
+  "white",
+  "yellow",
+  "blue",
+  "green",
+  "orange",
+  "red",
+];
 
 const ADJACENT_COLOR_MAP: { [c in Color]: Color[] } = {
   white: ["orange", "green", "red", "blue"],
