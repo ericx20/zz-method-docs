@@ -1,6 +1,15 @@
-import { Rotation } from "@/types";
-
 export * from "./simplifyRotations";
+
+export type Rotation =
+  | "x"
+  | "x2"
+  | "x'"
+  | "y"
+  | "y2"
+  | "y'"
+  | "z"
+  | "z2"
+  | "z'";
 
 export type CubeOrientation = { top: Color; front: Color };
 export type Color = "white" | "yellow" | "blue" | "green" | "orange" | "red";

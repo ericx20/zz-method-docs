@@ -111,10 +111,6 @@ export function ReconViewer({
     solutionTextMap
   )} ${solutionDetailsText}`;
 
-  console.log({
-    translatedCubeOrientation,
-    eoStepOrientation: recon.eoStepOrientation,
-  });
   return (
     <div className={clsx(styles.container, styles.splitOnDesktop)}>
       <div>

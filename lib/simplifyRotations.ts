@@ -1,5 +1,4 @@
-import { Rotation } from "@/types";
-import { Color } from ".";
+import { Color, Rotation } from ".";
 
 type Side = "front" | "top" | "left" | "right" | "bottom" | "back";
 type Cube = { [s in Side]: Color };
@@ -70,5 +69,3 @@ function applyRotation(cube: Cube, rotation: Rotation): Cube {
   });
   return newCube;
 }
-
-console.log(simplifyRotations(["x2", "y2"]));
