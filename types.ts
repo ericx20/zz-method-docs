@@ -14,7 +14,7 @@ export interface Reconstruction {
   movecount?: number; // STM. Note: we count simultaneously executed moves e.g. (U D') as 1 STM
   scramble: string;
   solution: string; // Uses Twizzle notation
-  eoStepOrientation?: Rotation[];
+  eoStepOrientation: Rotation[];
   reconstructor?: string;
   notes?: string;
   videoTimestamp?: number; // in seconds

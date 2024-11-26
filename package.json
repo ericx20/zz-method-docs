@@ -19,6 +19,7 @@
   },
   "homepage": "http://zzmethod.com/",
   "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
     "clsx": "^2.1.1",
     "cubing": "^0.53.3",
     "next": "^15.0.2",

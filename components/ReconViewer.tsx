@@ -3,15 +3,33 @@ import { useEffect, useRef } from "react";
 import { type Reconstruction } from "types";
 import styles from "./ReconViewer.module.css";
 import clsx from "clsx";
-import { notesTextMap, reconstructedByMap, scrambleTextMap, solutionTextMap, solveIndexMap } from "translations/ReconViewer";
+import {
+  notesTextMap,
+  reconstructedByMap,
+  scrambleTextMap,
+  solutionTextMap,
+  solveIndexMap,
+} from "translations/ReconViewer";
 import { useTranslation } from "translations/useTranslation";
+import {
+  CubeOrientation,
+  cubeOrientationToRotations,
+  invertRotations,
+  simplifyRotations,
+} from "@/lib";
+import { Alg } from "cubing/alg";
 
 export interface ReconViewerProps {
   recon: Reconstruction;
   index?: number;
+  translatedCubeOrientation?: CubeOrientation;
 }
 
-export function ReconViewer({ recon, index }: ReconViewerProps) {
+export function ReconViewer({
+  recon,
+  index,
+  translatedCubeOrientation,
+}: ReconViewerProps) {
   const twistyPlayerContainer = useRef<HTMLDivElement>(null);
   const twistyAlgViewerContainer = useRef<HTMLDivElement>(null);
   const twistyPlayer = useRef<TwistyPlayer | null>(null);
@@ -42,22 +60,34 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
     };
   }, []);
 
+  // Prepend the scramble with rotations that translate the entire recon to match the desired cube orientation
+  const preRotations = translatedCubeOrientation
+    ? simplifyRotations([
+        ...cubeOrientationToRotations(translatedCubeOrientation),
+        ...invertRotations(recon.eoStepOrientation),
+      ])
+    : [];
+
+  const translatedScramble = preRotations.join(" ") + " " + recon.scramble;
+
   // update the twisty player when props change
   useEffect(() => {
     if (!twistyPlayer.current) return;
-    twistyPlayer.current.experimentalSetupAlg = recon.scramble;
+
+    twistyPlayer.current.experimentalSetupAlg = new Alg(translatedScramble);
     twistyPlayer.current.alg = recon.solution;
     twistyPlayer.current.jumpToStart();
-  }, [recon]);
+  }, [recon, translatedCubeOrientation]);
 
-  const parsedTime = recon?.time ? parseTime(recon.time) : null
+  const parsedTime = recon?.time ? parseTime(recon.time) : null;
   const isDNF = parsedTime === null;
-  const tps = isDNF ? undefined :
-    recon.time && recon.movecount && recon.movecount / parsedTime;
+  const tps = isDNF
+    ? undefined
+    : recon.time && recon.movecount && recon.movecount / parsedTime;
 
   const scrambleText = useTranslation(scrambleTextMap);
 
-  const solveIndexTextFn = useTranslation(solveIndexMap)
+  const solveIndexTextFn = useTranslation(solveIndexMap);
   const reconstructedByTextFn = useTranslation(reconstructedByMap);
 
   const headingText = [
@@ -77,7 +107,14 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
 
   const notesText = useTranslation(notesTextMap);
 
-  const solutionText = `${useTranslation(solutionTextMap)} ${solutionDetailsText}`;
+  const solutionText = `${useTranslation(
+    solutionTextMap
+  )} ${solutionDetailsText}`;
+
+  console.log({
+    translatedCubeOrientation,
+    eoStepOrientation: recon.eoStepOrientation,
+  });
   return (
     <div className={clsx(styles.container, styles.splitOnDesktop)}>
       <div>
@@ -86,7 +123,7 @@ export function ReconViewer({ recon, index }: ReconViewerProps) {
       </div>
       <div className={styles.scrambleAndSolution}>
         <p>
-          <strong>{scrambleText}</strong> {recon.scramble}
+          <strong>{scrambleText}</strong> {translatedScramble}
         </p>
         <div>
           <p>
