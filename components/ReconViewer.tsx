@@ -1,6 +1,6 @@
 import { TwistyPlayer, TwistyAlgViewer } from "cubing/twisty";
 import { useEffect, useRef } from "react";
-import { type Reconstruction } from "reconstructions/types";
+import { type Reconstruction } from "types";
 import styles from "./ReconViewer.module.css";
 import clsx from "clsx";
 import { notesTextMap, reconstructedByMap, scrambleTextMap, solutionTextMap, solveIndexMap } from "translations/ReconViewer";

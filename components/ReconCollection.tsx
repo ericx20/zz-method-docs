@@ -1,5 +1,5 @@
 import { useState, useId } from "react";
-import { type Reconstruction } from "reconstructions/types";
+import { type Reconstruction } from "types";
 import styles from "./ReconCollection.module.css";
 import clsx from "clsx";
 import YouTube, { type YouTubePlayer } from "react-youtube";

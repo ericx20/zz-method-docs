@@ -1,4 +1,4 @@
-import { Reconstruction } from "./types";
+import { Reconstruction } from "@/types";
 
 export const YOUTUBE_VIDEO_ID = "i8USp6w0a34";
 export const RECONS: Reconstruction[] = [
