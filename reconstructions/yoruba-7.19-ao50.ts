@@ -17,6 +17,7 @@ l' U R' D2 R U' R' D2 l R U2 // PLL`,
     reconstructor: "Yoruba",
     notes: ``,
     videoTimestamp: 13,
+    eoStepOrientation: ["x2", "y"],
   },
   {
     scramble: "F' L2 F' D2 F D2 L2 F2 L2 F R' U B L2 F R F2 L B' R'",
@@ -33,7 +34,8 @@ r' F R' F2 r U' r' F2 r R U2 // LL`,
     movecount: 61,
     reconstructor: "Yoruba",
     notes: ``,
-    videoTimestamp: 38
+    videoTimestamp: 38,
+    eoStepOrientation: [],
   },
   {
     scramble: "R2 D' F2 U' F2 R2 U F2 D' F2 R B2 U' F L2 B U' R' D' R2",
@@ -48,6 +50,7 @@ U2 R U R' U R U2 R' U R' U' R U' R' U2 R U // ZBLL`,
     reconstructor: "Yoruba",
     notes: ``,
     videoTimestamp: 59,
+    eoStepOrientation: ["y"],
   },
   {
     scramble: "B L2 B R2 F B D' R U' F' L' F2 U2 D2 L U2 R2 L B2",
@@ -63,6 +66,7 @@ U R U R D R' U R (R' D' D R) D' R2 U' R U R' U' R U' R' U2 // ZBLL`,
     reconstructor: "Yoruba",
     notes: `Better EOCross: z2 D' R2 (F' B) U' F' L' D`,
     videoTimestamp: 83,
+    eoStepOrientation: ["y"],
   },
   {
     scramble: "B2 D R2 F2 R2 D' R2 U D L2 R D2 B L F2 U' F' D B2 R'",
@@ -80,6 +84,7 @@ U' R2 F2 R U2 R U2 R' F R U R' U' R' F R2 U' // PLL`,
 Even without the 3 free pairs afterwards it's better.
 Would be 8.95 TPS without +2.`,
     videoTimestamp: 107,
+    eoStepOrientation: ["x2", "y'"],
   },
   {
     scramble: "D' B2 L2 D2 B2 U L2 D' U2 B2 F2 L' D L F2 R' U' F' R' U2 B'",
@@ -95,6 +100,7 @@ U' R U' R' U R U R' U R U' R2' D' R U R' D R U' // ZBLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 129,
+    eoStepOrientation: ["x2"],
   },
   {
     scramble: "D B2 D2 B2 L2 F2 L2 U2 L F' L U' B2 D L2 F' L2 U L",
@@ -110,6 +116,7 @@ U2 r' U r U r' U' r U R2' F R F' R U // ZBLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 146,
+    eoStepOrientation: ["x2", "y"],
   },
   {
     scramble: "B2 D L2 F2 D' B2 U R2 F2 U' B U2 B2 F L D' L F R F",
@@ -125,6 +132,7 @@ U' U2 R F R' U R U2 R' U R U F' R' U2 // ZBLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 166,
+    eoStepOrientation: ["x2"],
   },
   {
     scramble: "R2 B2 R2 D' B2 D' U2 R2 U B R2 U B2 F L' B2 L' D2 B2",
@@ -140,6 +148,7 @@ U' R U R' U R U R' // 4th pair
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 184,
+    eoStepOrientation: ["y'"],
   },
   {
     scramble: "R2 F' L2 B D2 L2 B2 L2 F' L' D U' L' D2 B' L' R' D' L2 F",
@@ -155,6 +164,7 @@ U U R U R' F' U' L' U2 L U F U2' // ZBLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 203,
+    eoStepOrientation: ["y2"],
   },
   {
     scramble: "L' B2 L' U2 B2 R F2 L' B' D2 L' U' R' B R F' R' F U'",
@@ -171,6 +181,7 @@ U' R U' R' U' R U R D R' U' R D' R' U2 R' // PLL`,
     reconstructor: "crystalcuber",
     notes: `Better EOCross: R B' D' L' F' (U' D') R2`,
     videoTimestamp: 225,
+    eoStepOrientation: ["z2"],
   },
   {
     scramble: "B U' B' L' U2 B R B' R' L U' B2 L2 U F2 D' R2 F2 D'",
@@ -186,6 +197,7 @@ U R U R' U R U' R' U R U2 R' // ZBLL`,
     reconstructor: "crystalcuber",
     notes: `Misscrambled, original: B U' B' L' U2 B R B' R' L U' B2 L2 U F2 D' R2 F2 (D)`,
     videoTimestamp: 246,
+    eoStepOrientation: ["y"],
   },
   {
     scramble: "L2 F D2 B' L2 B' D2 B' R2 U L' U L D' B L B2 D' F",
@@ -202,6 +214,7 @@ r' F R' F2 r U' r' F2 r R U' // PLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 266,
+    eoStepOrientation: ["y"],
   },
   {
     scramble: "F B2 U2 F U F' R2 L F L' B D2 R2 L2 F' L2 U2 R2 L2 F",
@@ -217,6 +230,7 @@ U R U2' R' U2 R U R2' D' R U2 R' D R2 U2' R' U`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 292,
+    eoStepOrientation: ["x2", "y"],
   },
   {
     scramble: "L2 F2 U' B2 L2 R2 D2 U' L2 R2 B2 R' U2 F L2 F U R B' R2",
@@ -232,6 +246,7 @@ R' U2' R U R' U' F' R U R' U' R' F R U2 R // ZBLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 313,
+    eoStepOrientation: ["y'", "z2"],
   },
   {
     scramble: "R2 U2 B2 D2 R' B2 L' D2 F' L R D2 L' D U2 R2 F' D F'",
@@ -247,6 +262,7 @@ U' U R U2' R' U' R U2 R' U2 R U' R2' D' R U' R' D R // ZBLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 332,
+    eoStepOrientation: ["x2", "y"],
   },
   {
     scramble: "R2 U L2 F2 U2 B2 D' F2 R' D B L' U F R F2 L U' L2",
@@ -261,6 +277,7 @@ U' U R U R' U' R' F' R U R R' U R U2' R' F U // ZBLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 353,
+    eoStepOrientation: ["x2", "y'"],
   },
   {
     scramble: "F L D' B L F' U' D2 B' R D2 F2 D2 L2 B' L2 D2",
@@ -277,6 +294,7 @@ U2' x R2' F R F' R U2 r' U r U2 B' // PLL`,
     reconstructor: "crystalcuber",
     notes: `Misscrambled, original: F L D' (B') L F' U' D2 B' R D2 F2 D2 L2 B' L2 D2`,
     videoTimestamp: 372,
+    eoStepOrientation: [],
   },
   {
     scramble: "U2 R U2 R' B2 L' F2 U2 F2 L F2 U F' U2 R' D L' B2 L R2",
@@ -291,6 +309,7 @@ U U' F R' F' R U R U' R' F U R U' R' U R U' R' F' U2' // ZBLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 396,
+    eoStepOrientation: ["x2"],
   },
   {
     scramble: "L2 B2 L F2 R U2 L R2 F2 U2 R U L' R D R B' R2 U2 R F",
@@ -305,6 +324,7 @@ U' r U R' U R' D' R U R' D R U r' F R F' U // ZBLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 417,
+    eoStepOrientation: ["y", "z2"],
   },
   {
     scramble: "U2 B2 D F2 U L2 D' B2 R2 F' U L' D2 B' L' R B2 F R D'",
@@ -320,10 +340,12 @@ U' U' L' U' L U' L' U L U' L' U2 L U' // ZBLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 444,
+    eoStepOrientation: ["y2"],
   },
   {
     scramble: "D2 B L2 U2 F2 L2 U2 F2 L2 D2 F R B' L2 R U' B R2 D'",
-    solution: `x2 y L2 D' F D F' D R // EOCross
+    solution: `x2 y // inspection
+L2 D' F D F' D R // EOCross
 U' R' U R U L' U' L // FL
 U' R U2' R' U2 R U' R' // FR
 L U2 L' U' L U L' // BL
@@ -334,6 +356,7 @@ U2 R D r' U2 r D' R' U2 R' U R U R' U R U2' // ZBLL`,
     reconstructor: "Fahmi",
     notes: ``,
     videoTimestamp: 464,
+    eoStepOrientation: ["x2", "y"],
   },
   {
     scramble: "D2 L2 F2 R2 B R2 U2 F2 U2 F' L F R F' L2 B U' B2 L2",
@@ -350,6 +373,7 @@ x R2' F R F' R U2 r' U r U2 // PLL`,
     reconstructor: "crystalcuber",
     notes: ``,
     videoTimestamp: 486,
+    eoStepOrientation: ["y"],
   },
   {
     scramble: "L' D2 R F2 R' F2 U2 R' F2 R2 F R' U' R' D U' R' B R' F",
@@ -365,6 +389,7 @@ U' R' U' F R' F' R2 S' R' U R S U // ZBLL`,
     notes: `Better EOCross from this orientation: F' L' D F L' R' D.
 Shows how useful using F/B moves can be when there are only 2 bad edges on the 'orienting' face.`,
     videoTimestamp: 511,
+    eoStepOrientation: ["y'"],
   },
   {
     scramble: "B R F U' F L D F2 L' B U2 R' F2 L' F2 R' D2 R' D2",
@@ -383,10 +408,12 @@ R' U' R (U D') R2 U R' U R U' R U' R2' (D U2') // PLL`,
     notes: `Chose an EO+2 with a terrible continuation, even basic EO>Cross would be better.
 Better EO+2 (same orientation): y' R' F' D' L2 U F, and after that, nice D' R finish`,
     videoTimestamp: 535,
+    eoStepOrientation: ["y"],
   },
   {
     scramble: "R U2 R F2 L' D2 F2 U2 R B2 L' D F' L2 R' F' U' F2 D F2",
-    solution: `z2 (U' D) L U R2 F // EOCross
+    solution: `z2 // inspection
+(U' D) L U R2 F // EOCross
 (U D) L' U L2 U' L' D' // BR
 L' U L U' L U L' // BL
 U2 L' L U' L' U2 L U2 R U R' // FR
@@ -397,10 +424,12 @@ U R2' F2 R U2 R U2 R' F2 R U' R' U R // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 570,
+    eoStepOrientation: ["z2"],
   },
   {
     scramble: "L2 F L' F' L2 B' U D2 F D R2 B2 L D2 L B2 L' D2 L'",
-    solution: `y2 R' B' R F' (U' D) F' R' L' D' // EOCross
+    solution: `y2 // inspection
+R' B' R F' (U' D) F' R' L' D' // EOCross
 U L' U L R' U2 R // FR
 U' U R U' R' U' R U' R' U R U' R' // FR
 D' L U L' D // FL
@@ -411,10 +440,12 @@ U U U2 x R2 D2 R U2 R' D2 R U2 R // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 591,
+    eoStepOrientation: ["y2"],
   },
   {
     scramble: "D2 L' B2 L2 R B2 U2 F2 U2 R U' B2 L' F' D L' D L2 B' U",
-    solution: `y' x r' D2 F D L' D' // EOCross
+    solution: `y' x // inspection
+r' D2 F D L' D' // EOCross
 R U' R' U R' U2 R // BR
 U L U' L' R U' R' // FR
 D' U' L U L' D // FL
@@ -425,10 +456,12 @@ U2 U R U R' U R U' R' U R U' R' U' L' U U' U R U' R' L U' // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 614,
+    eoStepOrientation: ["y'", "x"],
   },
   {
     scramble: "D F B U2 B' D2 R' L U L2 F' U2 D2 R2 B' L2 F U2 B'",
-    solution: `y2 L R B R' U' F U R2 D' // EOCross
+    solution: `y2 // inspection
+L R B R' U' F U R2 D' // EOCross
 R' U R U' R' U' R // BR
 U2 L' U2 L U2 L' U L // FL
 R U' R' // FR
@@ -439,25 +472,28 @@ U' U' R U' R' U' R U R D R' U2 R D' R' U' R' U2 // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 638,
+    eoStepOrientation: ["y2"],
   },
   {
     scramble: "U2 L U' R2 L D' B' R' L B L' B2 D2 R' B2 L' D2 R D2 R2 B2",
-    solution: `z2 F' D2 r U' r' U R2 D // EOCross
+    solution: `z2 // inspection
+F' D2 r U' r' U R2 D // EOCross
 U  L' U L2 U L' // BL
 U' D' L' U' L D
 U L U2 L2 U' L2 U' L' // BL
 U' R' U R U R' U' R // BR
-U' R2 D' R U2 R' D R U2 R U // ZBLL
-`,
+U' R2 D' R U2 R' D R U2 R U // ZBLL\n`,
     time: "6.31",
     movecount: 47,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 658,
+    eoStepOrientation: ["z2"],
   },
   {
     scramble: "D B2 D' L2 F2 U R2 D' F2 D' F R' D' R' F' L F' R' F U",
-    solution: `x2 U D R' F D L2 D2 // EOCross
+    solution: `x2 // inspection
+U D R' F D L2 D2 // EOCross
 U' R' U2 R U R' U' R // BR
 U R U' R' U' L' U' L // FL
 U R U' R' U R U R' L U L' // BL
@@ -469,10 +505,12 @@ U2 x R' U R' D2 R U' R' D2 R2 x' U' // A perm`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 678,
+    eoStepOrientation: ["x2"],
   },
   {
     scramble: "R2 B2 F2 D2 L' R2 F2 U2 R2 D2 B L2 B' L F' D' L R' B2 U2 B'",
-    solution: `y2 x r' R F2 U2 F' D' R' R R' D' L' D2 // EOCross
+    solution: `y2 x // inspection
+r' R F2 U2 F' D' R' R R' D' L' D2 // EOCross
 U R' U' R U U' R U R2 U' R // BR
 U2 R U' R' L' U L // FR
 U L U' L' R U' R' // BL
@@ -485,10 +523,12 @@ R U' R' U' R U R D R' U' R D' R' U2 R' U' // R perm`,
     notes: `Better EOCross from this orientation: y2 L' F R U' B2 U' F R
 Or you can do x2 R' F D2 L F' L2 D R' D' but that's slightly worse`,
     videoTimestamp: 699,
+    eoStepOrientation: ["y2", "x"],
   },
   {
     scramble: "U2 F2 L' B' R' B' D' B D' F' L2 U' B2 D' F2 D' R2 F2 U' B2 U",
-    solution: `x' z D r' R' F' R' D' L' D2 L R2 // EOCross
+    solution: `x' z // inspection
+D r' R' F' R' D' L' D2 L R2 // EOCross
 D R U' R' D' // FL
 R' R U' R' U2 R U R' U2 R // BR
 U R U' R' U R U' R' L U2 L' // BL
@@ -500,10 +540,12 @@ U' M2 U M U2 M' U M2 U2 // U perm`,
     reconstructor: "Jouda",
     notes: `Better EOCross: y2 U' L' B'F2 U' F' R'`,
     videoTimestamp: 725,
+    eoStepOrientation: ["y'"],
   },
   {
     scramble: "F U2 F L2 B' R2 B R2 B' L B L B U R' F' D' L' F'",
-    solution: `z2 D' F' R' F' U' F R2 D R2 // EOCross
+    solution: `z2 // inspection
+D' F' R' F' U' F R2 D R2 // EOCross
 L' U L U' L U2 L' // BL
 R' U2 R L' U L U' L' U L // FL
 U R U' R' U R U R' // FR
@@ -514,10 +556,12 @@ U' R U R' U' R U' R' U2 R U' R' U2 R U R' U // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 747,
+    eoStepOrientation: ["z2"],
   },
   {
     scramble: "B' D2 L2 B' F' R2 B2 L2 D' L F D' R' U2 L B' D L2 F'",
-    solution: `x F B' R D r' F' L F U R2 D2 // EOCross
+    solution: `x // inspection
+F B' R D r' F' L F U R2 D2 // EOCross
 U U' U' L' U L U' L U L' // BL
 U' R U2 R' U2 R U' R' // FR
 U' L' U' L // FL
@@ -528,10 +572,12 @@ U' R' U' R F U' R' U' R U F' R' U2 R U' // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 770,
+    eoStepOrientation: [],
   },
   {
     scramble: "U2 B' L2 F R2 B' R2 D2 F' L2 R U L R' U' R B' L F L",
-    solution: `y x r' B R' U' F D2 R' U' L2 // EOCross
+    solution: `y x // inspection
+r' B R' U' F D2 R' U' L2 // EOCross
 U R' U R L' U L // FL
 R U' R' L U' L' // BL
 U2 R' U R U' R' U' R // BR
@@ -542,10 +588,12 @@ U2  R2 U R' D' R U R' D R' U' R2 U' R2' // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 794,
+    eoStepOrientation: ["y"],
   },
   {
     scramble: "U2 L2 D R2 B2 U' L2 D B2 D L F2 L' U2 B' L2 U' L' D2 R' D'",
-    solution: `y z2 x D' r' R U l D l' D' L D2 // EOCross
+    solution: `y z2 // inspection
+x D' r' R U l D l' D' L D2 // EOCross
 U L U L' R U' R' // FR
 U' L U' L' R' U' R // BR
 U' L U2 L2 U' L U' L' U2 L2 U L2 U L // BL
@@ -555,10 +603,12 @@ R U R' U R U2 R' U // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 817,
+    eoStepOrientation: ["y", "z2"],
   },
   {
     scramble: "B L2 D2 B U2 D2 L U' D' F L U2 F2 R2 U2 R' F2 D2 L' D2",
-    solution: `x R' D R r' U' F' L D' R2 D' L2 D' // EOCross
+    solution: `x // inspection
+R' D R r' U' F' L D' R2 D' L2 D' // EOCross
 U U L' U2 L U R U' R' // FR
 U' U2 L U' L' // BL 
 U R U2 R2 U' R2 U' R' // BR
@@ -572,25 +622,28 @@ M2 U M M' U M U M2 U M2 U M U // Z perm`,
 D' R' (F' B) R // partialEO + 2 cross edges
 D F' L2 D' // finish EOCross`,
     videoTimestamp: 840,
+    eoStepOrientation: [],
   },
   {
     scramble: "R2 D2 F2 L2 D' F2 D' U' B2 L2 U R' F2 L U' B2 L2 R' B L U2",
-    solution: `y' F' B' D U' F' D R D // EOCross
+    solution: `y' // inspection
+F' B' D U' F' D R D // EOCross
 U U' L U2 L' U' R' U R // BR
 L U L' U' L U L' // BL
 U U L' U' L R U' R' // FR
 L' U L U2 L' U L // FL
-U2 R U R' U R U2 R' F R U' R' U' R U2 R' U' F' // ZBLL
-`,
+U2 R U R' U R U2 R' F R U' R' U' R U2 R' U' F' // ZBLL\n`,
     time: "6.32",
     movecount: 57,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 880,
+    eoStepOrientation: ["y'"],
   },
   {
     scramble: "D2 F' L2 U2 F' U2 F2 D2 L2 F2 L2 D' F U' L2 F2 R' B' D B U2",
-    solution: `y F D2 U2 F' L' D L D' // EOCross
+    solution: `y // inspection
+F D2 U2 F' L' D L D' // EOCross
 U' R U R' L U' L' // BL
 U2 L' U2 L U L' U' L // FL
 U R' U2 R2 U R' // FR
@@ -601,10 +654,12 @@ R' F R U R' U' R' F' R2 U' R' U R U' R' U2 R U' // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 902,
+    eoStepOrientation: ["y"],
   },
   {
     scramble: "B2 L D2 L' U2 L B2 L2 F2 L B2 U B' R U2 F' R' D R U'",
-    solution: `y z2 D' R' F' L F U F' R D // EOCross
+    solution: `y z2
+D' R' F' L F U F' R D // EOCross
 U' L U' L' R' U' R // BR
 U L U L2' U' L U' L' U' L2 U L' // BL
 D R U R' U R U' R' D' // FL
@@ -615,6 +670,7 @@ U' R2 D' r U2 r' D R U2 R // ZBLL`,
     reconstructor: "Jouda",
     notes: `Messed up on BL, do U2 D L' U L D' instead`,
     videoTimestamp: 922,
+    eoStepOrientation: ["y", "z2"],
   },
   {
     scramble: "L2 D' F2 D' F2 L2 U F2 R2 U F L' D' B' L2 F L' F R2",
@@ -622,17 +678,18 @@ U' R2 D' r U2 r' D R U2 R // ZBLL`,
 U' R U R' L U' F2 L' F2 // BL + FR
 L' U2 L U' R' U R // BR
 U r U r' U' L' U L F' // FL
-U R U2 R' U' R U' R2 U' R U' R' U2 R U' // ZBLL
-`,
+U R U2 R' U' R U' R2 U' R U' R' U2 R U' // ZBLL\n`,
     time: "6.26",
     movecount: 47,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 950,
+    eoStepOrientation: [],
   },
   {
     scramble: "B2 D' F2 D U R2 D' U' R' F' D' B L2 U' L2 B D' B' L",
-    solution: `y' U' L F L D R L D2 // EOCross
+    solution: `y' // inspection
+U' L F L D R L D2 // EOCross
 U' L' U L // FL
 R' U' R U R' U2 R // BR
 U R U2 R' U R U' R' // FR
@@ -643,10 +700,12 @@ U R' U' R U R U2 R' U' R U' R2' U2 R // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 971,
+    eoStepOrientation: ["y'"],
   },
   {
     scramble: "L2 B2 D U2 F2 U' R2 D' F' L B F L' D' B L D' U2 F",
-    solution: `x U' D2 F r R' F' D2 R' // EOCross
+    solution: `x // inspection
+U' D2 F r R' F' D2 R' // EOCross
 U R' U R // BR
 U2 R U' R' L U' L' // BL
 U' U R U' R' U L' U' L // FL
@@ -657,10 +716,12 @@ U' U R U R' U R U R2' D' r U2 r' D R2 U R' U // ZBLL`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 990,
+    eoStepOrientation: ["x2"],
   },
   {
     scramble: "B2 R B2 R' U2 R' U2 F2 L B' L2 F' R' D' U2 L2 F' L' R'",
-    solution: `y2 B R D2 F' R2 U L2 D' R' // EOCross
+    solution: `y2 // inspection
+B R D2 F' R2 U L2 D' R' // EOCross
 R U' R' D R U R' D' // FL
 U2 L U L' // BL
 R U' R' D R' U R D' // FR
@@ -671,6 +732,7 @@ U' U R U R' U F' R U2 R' U' R' U' R' F R U R U2 // ZBLL +2`,
     reconstructor: "Jouda",
     notes: ``,
     videoTimestamp: 1012,
+    eoStepOrientation: ["y2"],
   },
   {
     scramble: "U2 R2 F U2 R2 F' L2 R2 D2 L2 U' R' B F2 L' B L' R' F U",
@@ -688,6 +750,7 @@ U' U2 R' U' R U' R' U' R U2 R D r' U2 r D' R' U' // ZBLL`,
     notes: `An alternate EOCross finish can be D2 L' D' R2.
 For 2nd pair, BL was better to solve than FR`,
     videoTimestamp: 1035,
+    eoStepOrientation: ["y2"],
   },
   {
     scramble: "U2 L F2 R' D2 R B2 D2 B2 L2 U2 B D' R' U' L' D2 B' F' R D'",
@@ -702,6 +765,7 @@ U U' R D R' U R D' R2 U' R U R' U R U R' U' R U2 // ZBLL`,
     reconstructor: "Yoruba",
     notes: ``,
     videoTimestamp: 1057,
+    eoStepOrientation: ["y"],
   },
   {
     scramble: "F' L2 U2 B' D2 R2 F' U2 R2 F U2 R U' F' D2 F2 L2 U2 B L' U",
@@ -717,6 +781,7 @@ U2 R U' R' U' R U' R' U R U R' U R' F' R U R U' R' F U2 // ZBLL`,
     reconstructor: "Yoruba",
     notes: ``,
     videoTimestamp: 1080,
+    eoStepOrientation: ["y"],
   },
   {
     scramble: "L2 F2 U R2 D' L2 F2 U2 B2 U R U L2 R2 F2 U F' L U' R'",
@@ -733,6 +798,7 @@ U' U' R U2 R' U' R U' R2 U2 R U R' U R // ZBLL`,
     reconstructor: "Yoruba",
     notes: `Misrecognized corner twist and did sune. Still gave me a valid case`,
     videoTimestamp: 1116,
+    eoStepOrientation: ["z2"],
   },
   {
     scramble: "D2 L2 F R2 D2 B F R2 D2 F2 R B2 U' L D2 B' F' D L2 U",
@@ -750,5 +816,6 @@ U' U R2 D' R U' R' D R2 U' R' U2 R U' // ZBLL`,
     notes: `Misscramble, original: D2 L2 F R2 D2 B F R2 D2 F2 R B2 U' L D2 B' F' D L2 (U')
 Suggested EOCross: y F R D L2 U' L U F' D2`,
     videoTimestamp: 1146,
+    eoStepOrientation: ["y'"],
   },
 ];
