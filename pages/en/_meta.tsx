@@ -1,17 +1,28 @@
 export default {
-  "index": "Introduction",
-  "about": {
-    "title": "About",
-    "type": "page"
-  },
-  "tutorial": "ZZ Tutorial",
-  "improvement-guide": "How to Improve",
-  "example-solves": "ZZ Example Solve Library",
-  "blog": {
-    "title": "Blog",
-    "type": "page",
-    "theme": {
-      "sidebar": false
+  index: {
+    title: "Intro",
+    display: 'hidden',
+    theme: {
+      // layout: 'raw'
+      breadcrumb: false,
+      timestamp: false,
+      sidebar: false,
+      toc: false,
     }
-  }
-}
+  },
+  roux: {
+    title: "Roux Method",
+    type: "page",
+  },
+  zz: {
+    title: "ZZ Method",
+    type: "page",
+  },
+  blog: {
+    title: "Blog",
+    type: "page",
+    theme: {
+      sidebar: false,
+    },
+  },
+};

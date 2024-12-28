@@ -7,7 +7,6 @@ import { Translation } from "./types"
 export const scrambleTextMap: Translation<string> = {
     en: "Scramble:",
     fr: "Scramble:",
-    he: "Scramble:",
     zh: "Scramble:",
 }
 
@@ -15,7 +14,6 @@ export const scrambleTextMap: Translation<string> = {
 export const solutionTextMap: Translation<string> = {
     en: "Solution:",
     fr: "Solution:",
-    he: "Solution:",
     zh: "Solution:",
 }
 
@@ -24,14 +22,12 @@ export const solutionTextMap: Translation<string> = {
 export const solveIndexMap: Translation<(solveNumber: number) => string> = {
     en: (solveNumber) => `Solve #${solveNumber}`,
     fr: (solveNumber) => `Solve #${solveNumber}`,
-    he: (solveNumber) => `Solve #${solveNumber}`,
     zh: (solveNumber) => `Solve #${solveNumber}`,
 }
 
 export const reconstructedByMap: Translation<(reconstructor: string) => string> = {
     en: (reconstructor) => `Reconstructed by ${reconstructor}`,
     fr: (reconstructor) => `Reconstructed by ${reconstructor}`,
-    he: (reconstructor) => `Reconstructed by ${reconstructor}`,
     zh: (reconstructor) => `Reconstructed by ${reconstructor}`,
 }
 
@@ -39,6 +35,5 @@ export const reconstructedByMap: Translation<(reconstructor: string) => string> 
 export const notesTextMap: Translation<string> = {
     en: "Notes:",
     fr: "Notes:",
-    he: "Notes:",
     zh: "Notes:",
 }

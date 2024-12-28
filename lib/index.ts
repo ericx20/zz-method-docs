@@ -1,4 +1,5 @@
 export * from "./simplifyRotations";
+export * from "./stickerings";
 
 export type Rotation =
   | "x"

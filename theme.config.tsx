@@ -3,7 +3,7 @@ import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
 import { useRouter } from "nextra/hooks";
 import Image from "next/image";
 import logo from "public/logo.svg";
-import Link from "next/link";
+// import Link from "next/link";
 import { authorsMap, backToTopMap, defaultDescriptionMap, editTextMap, feedbackLinkMap, footerMap, gitTimestampMap, logoTextMap, searchPlaceholderMap, tableOfContentsMap, titleTextMap } from "translations/site";
 import { useTranslation } from "translations/useTranslation";
 
@@ -12,7 +12,7 @@ const config: DocsThemeConfig = {
     const logoText = useTranslation(logoTextMap);
     return (
       <>
-        <Image src={logo} alt="ZZ Logo" width={40} />
+        <Image src={logo} alt="CubingMethods.com Logo" width={40} />
         <span>{logoText}</span>
       </>
     )
@@ -36,7 +36,6 @@ const config: DocsThemeConfig = {
   i18n: [
     { locale: 'en', name: 'English' },
     // { locale: 'fr', name: 'Français' },
-    // { locale: 'he', name: 'עִברִית', direction: 'rtl' },
     // { locale: 'zh', name: '中文' },
   ],
   head() {

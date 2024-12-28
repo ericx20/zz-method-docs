@@ -32,23 +32,19 @@ The rest of the article does not require any knowledge of CFOP.
 To complete the F2L, we need to solve four corners and four edges around the EOCross.
 
 <TwistyPlayer
-  stickeringSetup="x2"
-  experimentalSetupAlg="x2"
-  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD----,CORNERS:IIII----,CENTERS:IDDDDD"
-  background="none"
-  controlPanel="none"
+  rotateStickering="x2"
+    experimentalStickeringMaskOrbits="EDGES:IIIIDDDD----,CORNERS:IIII----,CENTERS:IDDDDD"
+    controlPanel="none"
 />
 
 Each pair of matching corners and edges is called an **F2L pair**. For example, this is the front-right (FR) pair, scrambled up:
 
 <TwistyPlayer
-  stickeringSetup="x2"
-  experimentalSetupAlg="x2"
-  experimentalStickeringMaskOrbits="EDGES:IIIXDDDD-DDD,CORNERS:IIXI-DDD,CENTERS:IDDDDD"
+  rotateStickering="x2"
+    experimentalStickeringMaskOrbits="EDGES:IIIXDDDD-DDD,CORNERS:IIXI-DDD,CENTERS:IDDDDD"
   alg="R U2 R' U' R U R'"
   experimentalSetupAnchor="end"
-  background="none"
-  controlPanel="none"
+    controlPanel="none"
 />
 
 And that "gap" where a pair belongs to is called an **F2L slot**. So the FR pair belongs to the FR slot, shown above as an empty spot.
@@ -69,11 +65,9 @@ We call these two simplest ways **basic inserts**.
 This is the **joined pair:** the two pieces of this F2L pair are joined together with the colors aligned.
 
 <TwistyPlayer
-  stickeringSetup="x2"
-  experimentalSetupAlg="x2"
-  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  alg="R U' R'"
+  rotateStickering="x2"
+    experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+    alg="R U' R'"
   experimentalSetupAnchor="end"
 />
 <span>Moves: `R U' R'`</span>
@@ -92,11 +86,9 @@ This is the **split pair:** it looks like a joined pair that was split apart by 
 We can also solve this in three moves with this strategy:
 
 <TwistyPlayer
-  stickeringSetup="x2"
-  experimentalSetupAlg="x2"
-  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  alg="R U R'"
+  rotateStickering="x2"
+    experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+    alg="R U R'"
   experimentalSetupAnchor="end"
 />
 <span>Moves: `R U R'`</span>
@@ -117,11 +109,9 @@ Here's the same F2L case on both the FR and FL pairs.
 Front-right pair:
 
 <TwistyPlayer
-  stickeringSetup="x2"
-  experimentalSetupAlg="x2"
-  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  alg="R U2' R'"
+  rotateStickering="x2"
+    experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+    alg="R U2' R'"
   experimentalSetupAnchor="end"
 />
 <span>Moves: `R U2 R'`</span>
@@ -129,11 +119,9 @@ Front-right pair:
 Front-left pair:
 
 <TwistyPlayer
-  stickeringSetup="x2"
-  experimentalSetupAlg="x2"
-  experimentalStickeringMaskOrbits="EDGES:IIIIDDDDD-DD,CORNERS:IIIID-DD,CENTERS:IDDDDD"
-  background="none"
-  alg="L' U2 L"
+  rotateStickering="x2"
+    experimentalStickeringMaskOrbits="EDGES:IIIIDDDDD-DD,CORNERS:IIIID-DD,CENTERS:IDDDDD"
+    alg="L' U2 L"
   experimentalSetupAnchor="end"
   cameraLongitude="-30"
 />
@@ -166,10 +154,9 @@ To move a trapped piece to the top, we'll learn a general strategy.
 As an example, the white-blue-orange corner is trapped in the FR slot.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDDIIDD,CORNERS:IIIII-DD,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 L' U' L (R U R' U')3"
+    experimentalSetupAlg="L' U' L (R U R' U')3"
   alg="R U R'"
 />
 <span>Moves: `R U R'`</span>
@@ -181,10 +168,9 @@ As an example, the white-blue-orange corner is trapped in the FR slot.
 This strategy still works if both F2L pieces are trapped in the same slot:
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDDI-DD,CORNERS:IIIII-DD,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 L' U L U2 R U R' U R U R'"
+    experimentalSetupAlg="L' U L U2 R U R' U R U R'"
   alg="R U R'"
 />
 <span>Moves: `R U R'`</span>
@@ -193,10 +179,9 @@ However, if exactly one piece is already at the top, there's a chance that it wi
 For example, doing `R U R'` here will just trap the corner.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDDI-DD,CORNERS:IIIII-DD,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 F2 R' F2 R U'"
+    experimentalSetupAlg="F2 R' F2 R U'"
   alg="R U R'"
 />
 <span>Moves: `R U R'`. Oh no, corner's trapped now!</span>
@@ -208,10 +193,9 @@ Here, the first move is `R`, so then we move the pieces out of the R layer.
 `U2` works. You could also do `U'`.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDDI-DD,CORNERS:IIIII-DD,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 F2 R' F2 R U'"
+    experimentalSetupAlg="F2 R' F2 R U'"
   alg="R U2 R'"
 />
 <span>Moves: `R'`**`U2`**`R'`</span>
@@ -225,10 +209,9 @@ This BR pair has both pieces trapped.
 Let's lift the edge to the top.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDDII-I,CORNERS:IIIIIII-,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 R' U R L U L2 U L"
+    experimentalSetupAlg="R' U R L U L2 U L"
   alg="L U' L'"
   cameraLongitude="-30"
 />
@@ -241,10 +224,9 @@ Let's lift the edge to the top.
 Then we can lift the corner to the top, but be careful because we now have the edge at the top.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDDII-I,CORNERS:IIIIIII-,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 R' U R L U L2 U L2 U' L'"
+    experimentalSetupAlg="R' U R L U L2 U L2 U' L'"
   alg="L' U' L"
   cameraLongitude="-30"
 />
@@ -263,21 +245,19 @@ The pair is now at the top, but if they're "touching" then we want to separate t
 The pair is **touching** if they're right next to each other like this:
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  controlPanel="none"
-  experimentalSetupAlg="x2 R U' R' U' R U R'"
+    controlPanel="none"
+  experimentalSetupAlg="R U' R' U' R U R'"
 />
 
 This pair is separated, which is what we want:
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  controlPanel="none"
-  experimentalSetupAlg="x2 R U R' U2 R U' R' U2"
+    controlPanel="none"
+  experimentalSetupAlg="R U R' U2 R U' R' U2"
 />
 
 To separate a touching pair, there are four easy moves:
@@ -295,10 +275,9 @@ For example, in this situation we can do:
 4. `R'` to move the FR slot back down.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 R U' R' U' R U R'"
+    experimentalSetupAlg="R U' R' U' R U R'"
   alg="U R U2 R'"
 />
 <span>Moves: `U R U2 R'`</span>
@@ -309,10 +288,9 @@ For example, in this situation we can do:
 Here's the FL pair, the pieces are touching and the BL slot is also unsolved.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDDD-DI,CORNERS:IIIID-ID,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 L' U L U L' U' L"
+    experimentalSetupAlg="L' U L U L' U' L"
   alg="L U2 L'"
   cameraLongitude="-30"
 />
@@ -344,10 +322,9 @@ We'll setup a joined pair.
 Here's the strategy alongside an example:
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 R U R' U' R U' R' U2"
+    experimentalSetupAlg="R U R' U' R U' R' U2"
   alg="U2 R U R'"
 />
 <span>Moves: `U2 R U R'`</span>
@@ -365,10 +342,9 @@ Then we'll have a joined pair.
 Here's the FL pair, the corner has the white D sticker on the top side so it's Case A.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDDDID-,CORNERS:IIIIDI-D,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 L U L' U' L U2 L' U' "
+    experimentalSetupAlg="L U L' U' L U2 L' U' "
   alg="U L U2 L'"
   cameraLongitude="-30"
 />
@@ -393,10 +369,9 @@ The **hiding spot** for the corner is the position that is an `R2` or `L2` move 
 Here's the strategy for Case B:
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 R U R' U2 R U2 R' U"
+    experimentalSetupAlg="R U R' U2 R U2 R' U"
   alg="U' R U2 R'"
 />
 <span>Moves: `U' R U2 R'`</span>
@@ -414,10 +389,9 @@ Now we'll have a joined pair!
 This is the BL pair. Both pieces have green on the top, so this is Case B.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDDDDD-,CORNERS:IIIIDD-D,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 L U L' U2 L U' L' "
+    experimentalSetupAlg="L U L' U2 L U' L' "
   alg="L U L'"
   cameraLongitude="-30"
 />
@@ -445,20 +419,18 @@ The split pair is also like this, so we'll set up to the split pair.
 There are only two cases. It's either a split pair which is our goal (you can see that it's 1 move away from being joined).
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  controlPanel="none"
-  experimentalSetupAlg="x2 R U' R'"
+    controlPanel="none"
+  experimentalSetupAlg="R U' R'"
 />
 
 Or, it's not a split pair. We'll follow a strategy very similar to Case B.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 R U' R' U' R U' R' U"
+    experimentalSetupAlg="R U' R' U' R U' R' U"
   alg="U' R U R'"
 />
 <span>Moves: `U' R U R'`</span>
@@ -482,10 +454,9 @@ Imagine we did an `R2`. That position would move to the top-front-right.
 That's the hiding spot.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDDDD-D,CORNERS:IIIIDDD-,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 R' U R U' R' U' R U "
+    experimentalSetupAlg="R' U R U' R' U' R U "
   alg="U2 R' U' R"
 />
 <span>Moves: `U2 R' U' R`</span>
@@ -512,10 +483,9 @@ The FR slot is in the R layer, so we can do a `U2` to move the pair out of the R
 `U'` also works.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 R U R' U2"
+    experimentalSetupAlg="R U R' U2"
   alg="U2"
 />
 
@@ -526,11 +496,9 @@ Now it's time to do the basic insert. Here's the explanation from the [basic ins
 3. Bring the solved slot back down. (`R'`)
 
 <TwistyPlayer
-  stickeringSetup="x2"
-  experimentalSetupAlg="x2"
-  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  alg="R U' R'"
+  rotateStickering="x2"
+    experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+    alg="R U' R'"
   experimentalSetupAnchor="end"
 />
 <span>Moves: `R U' R'`</span>
@@ -538,11 +506,9 @@ Now it's time to do the basic insert. Here's the explanation from the [basic ins
 Alternatively, if we chose `U'` instead of `U2` to position the pair, our basic insert will be like this:
 
 <TwistyPlayer
-  stickeringSetup="x2"
-  experimentalSetupAlg="x2"
-  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  alg="R U2 R'"
+  rotateStickering="x2"
+    experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+    alg="R U2 R'"
   experimentalSetupAnchor="end"
 />
 <span>Moves: `R U2 R'`</span>
@@ -557,21 +523,18 @@ The corner needs to be above the slot we're solving, and that's the only positio
 In this case, do a `U'` to move the corner above the FR slot, which the pair belongs to.
 
 <TwistyPlayer
-  stickeringSetup="x2"
+  rotateStickering="x2"
   experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  experimentalSetupAlg="x2 R U' R' U"
+    experimentalSetupAlg="R U' R' U"
   alg="U'"
 />
 
 Now it's time to do the basic insert. Here's the explanation from the [basic inserts section](/tutorial/zzf2l#basic-inserts) again:
 
 <TwistyPlayer
-  stickeringSetup="x2"
-  experimentalSetupAlg="x2"
-  experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
-  background="none"
-  alg="R U R'"
+  rotateStickering="x2"
+    experimentalStickeringMaskOrbits="EDGES:IIIIDDDD-DDD,CORNERS:IIII-DDD,CENTERS:IDDDDD"
+    alg="R U R'"
   experimentalSetupAnchor="end"
 />
 <span>Moves: `R U R'`</span>

@@ -3,8 +3,14 @@ import type { ReactElement } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
-
+import { Atkinson_Hyperlegible } from "next/font/google";
+import './globals.css'
 import "./styles.css";
+
+const atkinsonHyperlegible = Atkinson_Hyperlegible({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
   // GoatCounter analytics integration, taken from https://github.com/arp242/goatcounter/issues/482#issuecomment-1016033292
@@ -25,7 +31,7 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
   );
   const isProd = process.env.NODE_ENV === "production";
   return (
-    <>
+    <div className={atkinsonHyperlegible.className} >
       <Component {...pageProps} />
       {isProd && (
         <Script
@@ -35,6 +41,6 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
           strategy="afterInteractive"
         />
       )}
-    </>
+    </div>
   );
 }

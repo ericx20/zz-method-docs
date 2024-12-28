@@ -18,17 +18,15 @@ export default function AlgSheet({ algSet }: AlgSheetProps) {
           <strong className={styles.mobileName}>{algCase.name}</strong>
           <TwistyPlayer
             alg={algCase.algs[0]}
-            stickeringSetup="x2"
-            experimentalSetupAlg="x2"
-            experimentalSetupAnchor="end"
+            rotateStickering="x2"
+                        experimentalSetupAnchor="end"
             visualization={
               algSet.visualization === "3D" ? "3D" : "experimental-2D-LL"
             }
             experimentalStickering={algSet.stickering}
             experimentalStickeringMaskOrbits={algSet.customStickering}
             controlPanel="none"
-            background="none"
-            className={styles.algImage}
+                        className={styles.algImage}
             rootClassName={styles.algImage}
           />
           <p className={styles.mobileCategory}>{algCase.category}</p>

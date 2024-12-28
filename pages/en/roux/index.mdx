@@ -1,0 +1,90 @@
+---
+title: Roux Method Introduction
+description: An introduction to the Roux Method for the Rubik's Cube.
+author: crystalcuber
+---
+
+import Link from "next/link";
+import { Steps } from 'nextra/components'
+import TwistyPlayer from "components/TwistyPlayer";
+import { STICKERINGS } from "lib"
+import YouTubeEmbed from "components/YouTubeEmbed";
+
+
+## What is Roux?
+
+Roux (pronounced "roo") is a fast and intuitive method for solving the Rubik's Cube, [proposed by Gilles Roux in 2003](https://www.cubinghistory.com/3x3/Methods/Roux). It works by simplifying the cube into an easier puzzle with fewer types of moves.
+
+These are the four main steps of Roux:
+
+<Steps>
+  ### First Block (FB)
+  <div className="flex gap-8 mt-4 flex-col sm:flex-row">
+    <TwistyPlayer
+      rotateStickering="x2 y"
+      controlPanel="none"
+      className="size-36"
+      cameraLatitude="-20"
+      cameraLongitude="-30"
+      experimentalStickeringMaskOrbits={STICKERINGS.FB}
+    />
+    Build a 1x2x3 block on the left side of the cube. This is done by joining pieces together with logic, no algorithms needed.
+  </div>
+
+  ### Second Block (SB)
+  <div className="flex gap-8 mt-4 flex-col sm:flex-row">
+    <TwistyPlayer
+      rotateStickering="x2 y"
+      controlPanel="none"
+      className="size-36"
+      cameraLatitude="-20"
+      cameraLongitude="30"
+      experimentalStickeringMaskOrbits={STICKERINGS.SB}
+    />
+    Build another 1x2x3 block on the right.
+    This time, you only need R, M and U layer moves.
+  </div>
+
+  ### Solve the top corners (CMLL)
+  <div className="flex gap-8 mt-4 flex-col sm:flex-row">
+    <TwistyPlayer
+      rotateStickering="x2 y"
+      controlPanel="none"
+      className="size-36"
+      cameraLatitude="20"
+      cameraLongitude="30"
+      experimentalStickeringMaskOrbits={STICKERINGS.CMLL}
+    />
+    Solve the four corners on the top side with algorithms.
+  </div>
+
+  ### Solve the last six edges (LSE)
+  <div className="flex gap-8 mt-4 flex-col sm:flex-row">
+    <TwistyPlayer
+      rotateStickering="x2 y"
+      controlPanel="none"
+      className="size-36"
+      cameraLatitude="20"
+      cameraLongitude="30"
+      experimentalStickeringMaskOrbits={STICKERINGS.LSE}
+    />
+    Solve the **L**ast **S**ix **E**dges of the cube.
+    This is all done with M and U layer moves.
+  </div>
+</Steps>
+
+## Why learn Roux?
+
+Roux is a **fast** speedsolving method used to achieve incredible results in official competitions. Check out this 6.05 3x3 average by Crimson Arradaza:
+
+<YouTubeEmbed embedId="A6eCuklwyYM" />
+
+It's also an excellent method for one-handed solving. Sean Patrick Villanueva used Roux to set his 8.09 World Record average in May of 2024.
+
+<YouTubeEmbed embedId="ihV-FH0Bfcw" />
+
+Roux is also very **intuitive**. It encourages solving the cube with a natural thought process. It's easy to learn and doesn't rely on memorizing algorithms.
+
+## Get started with Roux
+
+Check out our [Roux Tutorial](/roux/tutorial)!
