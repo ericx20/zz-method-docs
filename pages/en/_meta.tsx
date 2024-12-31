@@ -18,6 +18,10 @@ export default {
     title: "ZZ Method",
     type: "page",
   },
+  "method-dev": {
+    title: "Method Development",
+    type: "page",
+  },
   blog: {
     title: "Blog",
     type: "page",

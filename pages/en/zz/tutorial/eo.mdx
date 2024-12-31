@@ -105,7 +105,7 @@ We call these two regions "orbits".
   experimentalHintSprite="/assets/orbits.png"
 />
 
-The spots marked in purple, let's call it the **purple orbit**.
+The spots marked in purple, let's call that the **inner orbit**.
 It covers all the edge stickers on the **U**p and **D**own sides, plus two on the **F**ront and two on the **B**ack.
 Remember this, it's important later!
 
@@ -121,8 +121,8 @@ Press ▶️ to see!
   experimentalSetupAnchor="end"
 />
 
-Also notice that every edge has one sticker in the purple orbit, and the other sticker in the outer orbit.
-For example, this bad edge has a red sticker in the purple orbit, and a green sticker in the outer orbit.
+Also notice that every edge has one sticker in the inner orbit, and the other sticker in the outer orbit.
+For example, this bad edge has a red sticker in the inner orbit, and a green sticker in the outer orbit.
 
 <TwistyPlayer
   alg="F' U' R'"
@@ -133,7 +133,7 @@ For example, this bad edge has a red sticker in the purple orbit, and a green st
 />
 
 In order to twist this edge, we must switch red and green around.
-But that means red (on the purple orbit) must move to where green was (on the outer orbit), which is impossible with natural moves!
+But that means red (on the inner orbit) must move to where green was (on the outer orbit), which is impossible with natural moves!
 _That's why natural moves can't twist edges._
 
 This explains why the edge is "bad".
@@ -195,10 +195,10 @@ We have two rules for finding bad edges:
 
 ### Rule #1
 
-**Rule #1:** look for **L and R stickers on the purple orbit**. Their edges are bad.
+**Rule #1:** look for **L and R stickers on the inner orbit**. Their edges are bad.
 
 "L and R stickers" means the stickers that match the color of **L**eft and **R**ight centers.
-In our example, we're looking for yellow and white stickers on the purple orbit.
+In our example, we're looking for yellow and white stickers on the inner orbit.
 Edges with those stickers are bad.
 
 <TwistyPlayer
@@ -264,7 +264,7 @@ We've found all 6 bad edges! Here they are.
 
 The rules can seem magical, but this is why they work:
 
-**Rule 1:** L and R stickers on the purple orbit cannot be solved with natural moves, because their solved positions
+**Rule 1:** L and R stickers on the inner orbit cannot be solved with natural moves, because their solved positions
 are all on the outer orbit. Natural moves can't move stickers between orbits, so those edges are bad.
 
 **Rule 2:** It's the same logic for the U and D stickers.
