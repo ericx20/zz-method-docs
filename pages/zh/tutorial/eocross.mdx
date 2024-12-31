@@ -20,10 +20,8 @@ A solved EOCross looks like this:
 
 <TwistyPlayer
   experimentalStickering="EOcross"
-  experimentalSetupAlg="x2"
-  stickeringSetup="x2"
-  background="none"
-  controlPanel="none"
+    rotateStickering="x2"
+    controlPanel="none"
   cameraLatitude="-30"
 />
 
@@ -83,11 +81,10 @@ Then we can do `R'`.
 
 <TwistyPlayer
   experimentalStickeringMaskOrbits="EDGES:IIII--IIIIII,CORNERS:IIIIIIII,CENTERS:------"
-  experimentalSetupAlg="x2 D R D'"
-  stickeringSetup="x2"
+  experimentalSetupAlg="D R D'"
+  rotateStickering="x2"
   alg="D' R'"
-  background="none"
-  cameraLatitude="-30"
+    cameraLatitude="-30"
 />
 
 Now we know how to move any cross edge to the bottom.
@@ -95,11 +92,10 @@ We could put all cross edges on the bottom, and it would look like this.
 
 <TwistyPlayer
   experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
-  background="none"
-  controlPanel="none"
+    controlPanel="none"
   cameraLatitude="-30"
-  experimentalSetupAlg="x2 D2 R D R' D' R"
-  stickeringSetup="x2"
+  experimentalSetupAlg="D2 R D R' D' R"
+  rotateStickering="x2"
 />
 
 However, this is not a solved cross!
@@ -107,10 +103,8 @@ Our goal is to solve the cross pieces, which looks something like this:
 
 <TwistyPlayer
   experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
-  experimentalSetupAlg="x2"
-  stickeringSetup="x2"
-  background="none"
-  controlPanel="none"
+    rotateStickering="x2"
+    controlPanel="none"
   cameraLatitude="-30"
 />
 
@@ -130,12 +124,11 @@ Here's an example where we use these relationships to solve cross:
 
 <TwistyPlayer
   experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
-  background="none"
-  controlPanel="none"
+    controlPanel="none"
   cameraLatitude="-30"
   cameraLongitude="45"
-  experimentalSetupAlg="x2 L' D' R D2 R' L2 U2"
-  stickeringSetup="x2"
+  experimentalSetupAlg="L' D' R D2 R' L2 U2"
+  rotateStickering="x2"
 />
 
 There are already two cross edges at the bottom, but they don't have the right relationship.
@@ -146,11 +139,10 @@ We can fix that by replacing the green-white cross edge with the blue-white cros
 
 <TwistyPlayer
   experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
-  background="none"
-  cameraLatitude="-30"
+    cameraLatitude="-30"
   cameraLongitude="45"
-  experimentalSetupAlg="x2 L' D' R D2 R' L2 U2"
-  stickeringSetup="x2"
+  experimentalSetupAlg="L' D' R D2 R' L2 U2"
+  rotateStickering="x2"
   alg="R"
 />
 <span>Move: `R`</span>
@@ -163,11 +155,10 @@ We can do `D2 R'` to place the blue cross edge opposite to the green cross edge,
 
 <TwistyPlayer
   experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
-  background="none"
-  cameraLatitude="-30"
+    cameraLatitude="-30"
   cameraLongitude="45"
-  experimentalSetupAlg="x2 L' D' R D2 R' L2 U2 R"
-  stickeringSetup="x2"
+  experimentalSetupAlg="L' D' R D2 R' L2 U2 R"
+  rotateStickering="x2"
   alg="D2 R'"
 />
 
@@ -176,11 +167,10 @@ We can finish with `D L'`.
 
 <TwistyPlayer
   experimentalStickeringMaskOrbits="EDGES:IIII----IIII,CORNERS:IIIIIIII,CENTERS:------"
-  background="none"
-  cameraLatitude="-30"
+    cameraLatitude="-30"
   cameraLongitude="-30"
-  experimentalSetupAlg="x2 L' D' R D2 R' L2 U2 R D2 R'"
-  stickeringSetup="x2"
+  experimentalSetupAlg="L' D' R D2 R' L2 U2 R D2 R'"
+  rotateStickering="x2"
   alg="D L'"
 />
 

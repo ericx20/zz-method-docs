@@ -58,8 +58,7 @@ When optimizing efficiency more, take note of the alternative solutions that pri
   experimentalSetupAlg="z2"
   alg="R U2' R2' U' R2 U' R'"
   experimentalSetupAnchor="end"
-  background="none"
-  experimentalStickeringMaskOrbits="EDGES:DDDDIIIIDDD-,CORNERS:DD-DIIII,CENTERS:DDDDDD"
+    experimentalStickeringMaskOrbits="EDGES:DDDDIIIIDDD-,CORNERS:DD-DIIII,CENTERS:DDDDDD"
 />
 
 But with the FR slot open, there's no need for that. This mean the case could now be solved with just `R U2 R2 U' R`:
@@ -68,8 +67,7 @@ But with the FR slot open, there's no need for that. This mean the case could no
   experimentalSetupAlg="z2"
   alg="R U2' R2' U' R"
   experimentalSetupAnchor="end"
-  background="none"
-  experimentalStickeringMaskOrbits="EDGES:DDDDIIIIDID-,CORNERS:DD-IIIII,CENTERS:DDDDDD"
+    experimentalStickeringMaskOrbits="EDGES:DDDDIIIIDID-,CORNERS:DD-IIIII,CENTERS:DDDDDD"
 />
 
 One example of these free slot solutions is **keyhole:** when you have a slot with only one solved piece, you can leverage an open slot to insert the other piece.
@@ -88,8 +86,7 @@ In Step 3, insert the edge into the slot that it belongs to. Here's an example:
   experimentalSetupAlg="z2"
   alg="D' R U' R' D"
   experimentalSetupAnchor="end"
-  background="none"
-  experimentalStickeringMaskOrbits="EDGES:DDDDIIIID-DI,CORNERS:DDIDIIII,CENTERS:DDDDDD"
+    experimentalStickeringMaskOrbits="EDGES:DDDDIIIID-DI,CORNERS:DDIDIIII,CENTERS:DDDDDD"
 />
 <span>Moves: `D' R U' R' D`</span>
 
@@ -105,8 +102,7 @@ When inserting a corner, the D move in Step 2 should be to move the spot the cor
   experimentalSetupAlg="z2"
   alg="D' L' U L D"
   experimentalSetupAnchor="end"
-  background="none"
-  experimentalStickeringMaskOrbits="EDGES:DDDDIIIIIDDD,CORNERS:IDD-IIII,CENTERS:DDDDDD"
+    experimentalStickeringMaskOrbits="EDGES:DDDDIIIIIDDD,CORNERS:IDD-IIII,CENTERS:DDDDDD"
 />
 <span>Moves: `D' L' U L D`</span>
 
@@ -120,8 +116,7 @@ After going through LS, you could then check the cases where one of the pieces i
   experimentalSetupAlg="z2"
   alg="R' F2 R F2"
   experimentalSetupAnchor="end"
-  background="none"
-  experimentalStickeringMaskOrbits="EDGES:DDDDIIII-IDD,CORNERS:-DDIIIII,CENTERS:DDDDDD"
+    experimentalStickeringMaskOrbits="EDGES:DDDDIIII-IDD,CORNERS:-DDIIIII,CENTERS:DDDDDD"
 />
 
 So the only cases left are the ones with both pieces in the F2L slots, what about those? Bar a few good cases, it's not recommended to learn them. Why? Because when these cases appear in a solve, there's a very high chance that there will be another F2L pair on the cube that's more efficient and faster to solve, so we could just choose that pair instead. This is called [Pair Choice](/improvement-guide/zzf2l/pair-choice).
