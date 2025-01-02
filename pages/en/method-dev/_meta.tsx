@@ -1,4 +1,4 @@
 export default {
   index: "Introduction to Method Development",
-  "method-dev-lifecycle": "Method Development Lifecycle",
+  "method-dev-life-cycle": "Method Development Life Cycle",
 };
