@@ -5,6 +5,6 @@ export { middleware } from 'nextra/locales'
 export const config = {
   // Matcher ignoring `/api`, `/_next` and `/assets`
   matcher: [
-    '/((?!api|_next/static|_next/image|assets|favicon.ico|icon.svg|apple-icon.png|manifest).*)'
+    '/((?!api|_next/static|_next/image|assets|favicon.ico|icon.svg|apple-icon.png|manifest|robots.txt).*)'
   ]
 }
