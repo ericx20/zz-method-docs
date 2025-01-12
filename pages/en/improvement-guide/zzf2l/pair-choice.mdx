@@ -37,17 +37,19 @@ It's the transition of looking at F2L not as 4 individual pairs (intermediate ap
 In order to consider pair choice, there are some prerequisites:
 
 - Optimize pair solutions beforehand. If you don't do that, chances are that most of the time all of your choices would be equally as bad.
-- Look at a pair, and immediately know the solution, as well as the quality of that solution. You can categorize them into 3 cases: free pairs/3 movers, 6-7 movers (pieces in U), and the rest.
+- Look at a pair, and immediately know the solution, as well as the quality of that solution. You can categorize them into 3 cases: free pairs/3 movers, 5-7 movers (pieces in U), and the rest.
 - Deduction (learn more [here](/improvement-guide/zzf2l/deduction))
 
 Developed through focused untimed f2l only solves, practice by trying out different things, looking for patterns and make sure you're aware of all of your F2L pairs.
 
 ## Rules of thumb
 
-1.  Prioritize free pairs and easiest pairs.
-2.  Look out for the U layer: if an f2l case has an F2L piece in U, it's most likely good.
+Here are some rules of thumb in the order of priority:
+
+1.  If you see any free pairs, solve them. If there's no free pairs, choose the medium tier pairs (the ones that can be solved in 5-7 moves)
+2.  Look out for the U layer: if an f2l case has an F2L piece in U, it's most likely good. If BOTH pieces are in the U layer that's even better.
 3.  Pair order: solve back/right/left slots first.
 
 ### Pair order
 
-It's preferable for your first F2L pairs to be BL+BR (back slots), BL+FL (left slots), or BR+FR (right slots). This will ensure that you will have all of your pieces visible, as well as it will make sure that your last two pairs will be fastest on average. That means you should be avoiding solving both front first, or slots that are diagonal (FL+BR, FR+BL) which interfere with lookahead and turning.
+It's preferable for your first F2L pairs to be BL+BR (back slots), BL+FL (left slots), or BR+FR (right slots). This will ensure that you will have all of your pieces visible, as well as it will make sure that your last two pairs will be fastest on average. If your first 2 pairs are diagonal (FL+BR, FR+BL), that's slightly worse but still fine. However, avoid solving front slots first (FR+FL) because they interfere with lookahead and turning the most.
