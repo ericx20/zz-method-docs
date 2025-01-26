@@ -10,6 +10,10 @@ export default {
       toc: false,
     }
   },
+  basics: {
+    title: "Cube Basics",
+    type: "page",
+  },
   roux: {
     title: "Roux Method",
     type: "page",

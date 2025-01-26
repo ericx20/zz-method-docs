@@ -84,9 +84,19 @@ Now we have the anchor and its matching center solved! This forms a block of two
 
 ## Part 2
 
+
+### Forming a pair
+
 Now let's form a **pair**: a matching edge and corner. We'll make a pair to expand our block into this:
 
-TODO: DL solved and dimmed, L dimmed, DFL and FL normal. yellow top red front
+<TwistyPlayer
+  rotateStickering="x2 y"
+  controlPanel="none"
+  className=""
+  cameraLatitude="-20"
+  cameraLongitude="-30"
+  experimentalStickeringMaskOrbits="EDGES:IIIIIIIDI-II,CORNERS:IIIII-II,CENTERS:IDIIII"
+/>
 
 We'll connect the blue-red edge with the blue-red-white corner. As we can see, those are the pieces that will expand the block.
 
@@ -94,8 +104,95 @@ Start by moving the blue-red edge to the **loading spot**: the bottom-front posi
 
 TODO: show DF highlighted
 
+Remember to keep the anchor at the bottom-left, and avoid any moves that break the blue center away from the anchor!
+
+Secondly, move the blue-red-white corner to the top layer if it's not already there. In most cases, all you need is one R- or B-layer move.
+
+// insert example
+
+But if the corner is in the bottomo-front-left position, we have a problem. One move is not enough, because if we do one F-layer move to bring it to the top, the edge gets kicked out of the loading spot!
+
+// show example
+
+In this case, we need to do three moves that follow this strategy:
+1. Move the edge out of the way
+2. Then move the corner to the top
+3. Move the edge back to the loading spot
+
+See if you can figure it out. Below is one possible solution:
+
+<details>
+  <summary>Solution</summary>
+  You could do `Rw' F Rw` like this:
+  // TODO visualizer
+</details>
+
+At this point, the edge is in the loading spot and the corner is at the top. Our goal is to join the edge with the corner with an M-layer move to form a pair.
+
+// TODO show pair being joined
+
+But if we try to do it now, the colors might not line up! We need to prepare the corner so its colors will match with the edge.
+
+First: the corner must not have its white sticker on the top side. This is because the edge doesn't have any white stickers, so there's no way it could match the corner's white sticker on top.
+
+// Show example of that
+
+If the corner's white sticker is on the top, you can fix it by moving it to the **corner-twisting spot**: the top-back-right position.
+
+// Show UBR highlighted
+
+Then do an `R'`. This will "twist" the corner so that white is no longer on the top.
+
+// show example
 
 
+Now we are sure the corner doesn't have white on the top, so that problem is gone. However, there's another problem that can happen:
 
+TODO flesh this out:
+ok basically 3 things that can go wrong
+1. white on top: never match. twist by moving to UBR and then R'
+2. white on front/back: also never match. move white to the left/right
+3. colors are in "Reverse" order. Do U2 then M move to fix, it'll swap the order of the colours on the corner to match the edge.
 
-IDEA FOR LATER: it can get really hard to remember which colours of pieces to solve. teach to beginners that they can use the centers as a reference. move the M slice to get the white center on the bottom. you can now figure out which pieces belong where, because you know what the solved colours are for each side.
+Now we can finally join the edge with the corner with an M-layer move!
+This is how we form a pair, and we'll be repeating this process later.
+
+### Inserting the pair
+
+Now we want to **insert** this pair to expand the block from Part 1. Try to figure it out before revealing the solutions below. Remember to keep the anchor at the bottom-left, and don't break the blocks apart.
+
+<details>
+  <summary>Case 1</summary>
+  If the pair has blue on top, it can be moved to the front and inserted with a single move (`F'`)
+</details>
+
+<details>
+  <summary>Case 2</summary>
+  If the pair has red on top, it can be moved to the front and inserted with twmo moves (`Rw' F`)
+</details>
+
+Great! Now we have a single combined block. Remember to avoid moves that break blocks. Now, F moves will break this block so we will avoid them.
+
+## Part 3
+
+We'll make another pair, the same way as we did before. This time, the edge is blue-orange and the corner is white-blue-orange.
+
+### A note about colors
+
+But how do we know the colors of the pieces we're solving next? As we progress, it will become more difficult to memorize that for example, our second pair is blue-orange edge and white-blue-orange corner. So let's use a trick.
+
+Remember from the Cube Basics that centers act as a guide for where the colors belong on the cube. So if we solve the centers, we'll know the colors of the pieces we want to solve next.
+
+This can be done with a single M move to get the white center to the bottom. This way, the centers are solved around the anchor.
+
+### Forming the pair
+
+This is the same process as in Part 2, so here are some examples:
+
+// TODO Examples
+
+### Inserting the pair
+
+Inserting the pair works the same way as in Part 2. Just that we first move the pair to the back rather than the front.
+
+Congrats! Now the first block is solved.
