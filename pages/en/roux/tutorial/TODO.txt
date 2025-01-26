@@ -1,0 +1,34 @@
+
+If you're new to the Rubik's Cube, this is the place to learn how the Cube works!
+
+Let's start by revealing one of the secrets of the Cube. From the outside, the cube appears to be made of colored **stickers** that move around.
+
+But if we take it apart, this is what we see:
+TODO: image of cube taken apart, with corner center and edge labelled.
+
+
+TODO: i think it's better to first explain why its not just stickers by solving side then side.
+and then when it fails, we realize it's pieces
+the way to teach that would be something like, let's solve one side of the cube. the layer could look something like a g-perm or something, where there are two corners that have headlights. now we wanna solve the side with headlights, we need to make the sticker in between the headlights also that same colour as the headlights. but the edge in between the two corners is made of two stickers fused together, so the only way to have both the first and the second side solved is to switch that edge out with another edge. this results in lots of redundant work, because you have to move the same pieces around multiple times.
+
+
+The Cube is made of **pieces**: not just stickers, but _groups_ of stickers that move _together_. This simple fact tells us a lot about the Cube!
+
+Here are the three types of pieces:
+
+**Corners** are groups of three stickers.
+They are always in these 8 spots, no matter how you turn.
+
+**Edges** are groups of two stickers.
+They are always in these 12 spots, and they _don't mix_ with corners! An edge won't be in a corner spot, and a corner won't be in an edge spot.
+
+**Centers** are pieces with a single sticker.
+Centers _don't move_ when you turn a side! Therefore, the color of a center tells you the solved color of its side.
+
+To solve the Rubik's Cube, we need to move the same-color stickers to the same side. So we might try to solve the Cube, one side at a time. 
+
+For example, if we solve the blue side first:
+
+TODO: insert image of incorrectly solved layer
+
+TODO: finish the rest of the guide

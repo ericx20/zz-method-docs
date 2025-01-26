@@ -4,56 +4,11 @@ description: Learn First Block, the first step of the Roux Method.
 author: crystalcuber
 ---
 
+import { Callout } from "nextra/components";
 import TwistyPlayer from "components/TwistyPlayer";
 import { STICKERINGS } from "lib";
 
-ok i decided its best to just have a cube basics section and link to it in every beginner guide, as opposed to "copy-pasting" the basics in every tutorial. chatgpt gave a great point which is not only does it make the site more modular, it also prevents beginners from feeling overwhelmed when they see repetitive content while checking out multiple methods.
-
-
-# Introduction to the Cube
-
-If you're new to the Rubik's Cube, this is the place to learn how the Cube works!
-
-Let's start by revealing one of the secrets of the Cube. From the outside, the cube appears to be made of colored **stickers** that move around.
-
-But if we take it apart, this is what we see:
-TODO: image of cube taken apart, with corner center and edge labelled.
-
-
-TODO: i think it's better to first explain why its not just stickers by solving side then side.
-and then when it fails, we realize it's pieces
-the way to teach that would be something like, let's solve one side of the cube. the layer could look something like a g-perm or something, where there are two corners that have headlights. now we wanna solve the side with headlights, we need to make the sticker in between the headlights also that same colour as the headlights. but the edge in between the two corners is made of two stickers fused together, so the only way to have both the first and the second side solved is to switch that edge out with another edge. this results in lots of redundant work, because you have to move the same pieces around multiple times.
-
-
-The Cube is made of **pieces**: not just stickers, but _groups_ of stickers that move _together_. This simple fact tells us a lot about the Cube!
-
-Here are the three types of pieces:
-
-**Corners** are groups of three stickers.
-They are always in these 8 spots, no matter how you turn.
-
-**Edges** are groups of two stickers.
-They are always in these 12 spots, and they _don't mix_ with corners! An edge won't be in a corner spot, and a corner won't be in an edge spot.
-
-**Centers** are pieces with a single sticker.
-Centers _don't move_ when you turn a side! Therefore, the color of a center tells you the solved color of its side.
-
-To solve the Rubik's Cube, we need to move the same-color stickers to the same side. So we might try to solve the Cube, one side at a time. 
-
-For example, if we solve the blue side first:
-
-TODO: insert image of incorrectly solved layer
-
-TODO: finish the rest of the guide
-
-
-# Intro to Roux
-
-note: this is where the storytelling begins. i want to give beginners motivation to complete this guide. this is a special guide that helps the reader understand the cube and figure out little parts of it on their own. this is different from tradition, which relies very much on brute memorization. this way is much more satisfying because you feel like you really know how you solved it.
-
-# First Block (FB)
-
-The first step of the Roux Method is to solve this block on one side of the cube.
+The first step of the Roux Method is to solve this block on the left side of the cube:
 
 <TwistyPlayer
   rotateStickering="x2 y"
@@ -64,36 +19,68 @@ The first step of the Roux Method is to solve this block on one side of the cube
   experimentalStickeringMaskOrbits={STICKERINGS.FB}
 />
 
-In this tutorial, we'll solve the block on the left side, with blue on the left and white on the bottom.
+We call that the **First Block**. Let's break it down into three smaller blocks:
 
-Let's break it down into three smaller steps:
+// TODO: visualizer in a timeline, just call them part 1 part 2 part 3
+1. Center and edge in the middle
+2. Front pair
+3. Back pair
 
-TODO: add images
-1. Solve the blue-white edge
-2. Solve the pair at the front
-3. Solve the pair at the back
+## Part 1: Anchor and Center
 
-A **pair** is a corner and edge with matching colors.
+To start, we will choose an edge piece to be the **"anchor"**: a special piece that we say is solved. All other pieces will be solved around this anchor. In this tutorial we'll choose the white-blue edge as the anchor.
 
-## Part 1
+Find the white-blue edge, then hold the cube so the edge's white sticker is on the bottom, and its blue sticker is on the left.
 
-We'll start with the blue center. Hold the cube so the blue center is on the left. That center is now considered "solved", and we'll keep it on the left for the _entire solve_. So imagine this center is tied to your left hand.
+<Callout type="info">
+  We will hold this anchor in the bottom-left _throughout the whole solve!_
+  
+  We won't make any moves that touch the anchor, such as turning the bottom or left layers.
+</Callout>
 
-Next, locate the blue and white edge. We want to connect it to the blue center, as shown here.
+Then, find the blue center on the cube. Move it to the left side, without moving the anchor. These two types of moves will come into handy:
 
-TODO: Image of blue center + DL edge
+// TODO: insert animation for Uw
 
-This only needs 1 or 2 moves. We encourage you to try it out and experiment.
+// TODO: insert animation for Rw
 
-Sometimes the edge can join with the center in a single move, like this:
+Try it out and experiment! Below are the solutions.
 
-TODO: examples. be sure to use random scrambles and dim all the pieces except DL, instead of just greying them out. this helps beginners get a sense that we are just ignoring other pieces.
+<details>
+  <summary>Case 1</summary>
+  If the center is at the front, right or back side, you can move it to the left with one move, like this:
+  <TwistyPlayer
+    rotateStickering="x2 y"
+    experimentalStickeringMaskOrbits="EDGES:IIIIIIIDIIII,CORNERS:IIIIIIII,CENTERS:I-IIII"
+    experimentalSetupAlg="Uw'"
+    alg="Uw"
+    cameraLatitude="-20"
+    cameraLongitude="-30"
+    viewer-link="none"
+  />
+</details>
 
-In other cases, one move would get the edge to the left layer but flipped the wrong way. If this happens, try placing the edge into the middle layer by turning a side. Then, turn a different side to move it back to the left layer.
+<details>
+  <summary>Case 2</summary>
+  If the center is at the top or bottom, you can move it to the front or back, then solve like in Case 1.
+    <TwistyPlayer
+    rotateStickering="x2 y"
+    experimentalStickeringMaskOrbits="EDGES:IIIIIIIDIIII,CORNERS:IIIIIIII,CENTERS:I-IIII"
+    experimentalSetupAlg="Uw' Rw"
+    alg="Rw' Uw"
+    cameraLatitude="20"
+    cameraLongitude="-30"
+    viewer-link="none"
+  />
+</details>
 
-TODO: examples
+Now we have the anchor and its matching center solved! This forms a block of two pieces.
 
-Once we form a block, we want to avoid moves that will break it apart. For the blue center and blue-white edge, we will avoid D-layer moves from now on because they'll break the two pieces apart.
+<Callout type="info">
+  Once we form a block, we want to keep it together! We'll avoid moves that break apart the blocks.
+
+  For the block that we just solved, we'll now avoid doing `Uw` moves because they break the center apart from the anchor.
+</Callout>
 
 ## Part 2
 
