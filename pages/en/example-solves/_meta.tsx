@@ -1,4 +1,5 @@
 export default {
+  "yoruba-6.93-ao5": "Yoruba's 6.93 ao5",
   "yoruba-5.86-ao5": "Yoruba's 5.86 ao5",
   "yoruba-6.65-ao25": "Yoruba's 6.65 ao25",
   "yoruba-7.19-ao50": "Yoruba's 7.19 ao50",

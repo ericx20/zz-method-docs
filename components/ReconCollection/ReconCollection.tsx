@@ -88,7 +88,7 @@ export default function ReconCollection({
           const active = index === selectedReconIndex;
           const onClick = () => {
             setSelectedReconIndex(index);
-            if (!recon.videoTimestamp) return;
+            if (recon.videoTimestamp === undefined) return;
             shouldJumpToVideo && youTubePlayer?.seekTo(recon.videoTimestamp);
           };
           const isDNF = recon.time?.includes("DNF");
