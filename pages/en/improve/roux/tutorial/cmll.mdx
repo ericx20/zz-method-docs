@@ -1,0 +1,217 @@
+---
+title: Corners of the Last Layer
+description: Learn CMLL, the 3rd step of the Roux Method.
+author: crystalcuber
+---
+
+import { Callout } from "nextra/components";
+import TwistyPlayer from "components/TwistyPlayer";
+import { ReconViewer } from "components/ReconViewer";
+import { STICKERINGS } from "lib";
+
+The third step of the Roux method is called CMLL. We will solve the corners on the top side of the cube.
+
+{/* Show image of what SB -> CMLL looks like */}
+
+{/* TODO: link to 2-look CMLL page externally */}
+<Callout type="info">
+  If you've learned CFOP or ZZ, you can jump ahead to 2-look CMLL. You may already know most of it!
+</Callout>
+
+{/* TODO: reminder to keep the anchor in the bottom-left */}
+
+## Part 1: Orient the corners
+
+Our first goal is to twist the top corners so that all their yellow stickers face the top.
+A corner with yellow on top is called **oriented**, and our goal is to "orient" all four top corners.
+
+TODO show a concrete example of a before/after OCLL
+
+Let's learn a 7-move sequence called **Sune**, it will help us twist the corners:
+
+TODO show the 7 moves of Sune written out
+
+<details>
+<summary>A tip for remembering Sune easily</summary>
+Pay attention to what it does to the front-right pair:
+
+<TwistyPlayer
+  rotateStickering="x2 y"
+  className="size-48"
+  cameraLatitude="20"
+  cameraLongitude="40"
+  experimentalStickeringMaskOrbits={STICKERINGS.SB_FRONT_PAIR}
+  alg="R U R' U R U2 R'"
+  tempoScale="0.75"
+/>
+<span>Moves: `R U R' U R U2 R'`</span>
+
+- The first three moves (`R U R'`) takes out the front-right pair of the Second Block.
+- Then, there's a `U` to move that pair further away.
+- Finally, `R U2 R'` inserts the pair back into the Second Block.
+
+</details>
+
+Try practicing Sune on your cube multiple times. When done correctly, the First Block and Second Block should still be solved at the end.
+
+What does Sune do? It twists all top corners clockwise, except for the front-left corner.
+
+TODO diagram showing the effect of Sune
+
+Count the number of oriented corners at the top. If there's already four oriented, you're lucky and Part 1 is done! Otherwise, there are two cases:
+
+### One oriented corner
+
+The simplest case is when there's exactly one oriented corner. Follow these steps:
+1. Move the oriented corner to the front-left position using a U move
+2. Apply Sune to twist the other three corners
+
+Repeat until all corners are oriented.
+
+TODO examples (show sune and antisune cases)
+
+### None or multiple oriented
+
+Otherwise, there are no oriented corners or there are multiple. We can transform it into a case with exactly one corner, which we already know how to solve. To transform it, we'll need to apply Sune at just the right angle. An **angle** is one of the four ways that we can align the U layer.
+
+TODO: show example of applying Sune at the wrong angle on a Pi or something, and show that it doesn't work
+then show an example of sune at the right angle and be like yeah that works, and in fact every case has a working angle
+
+Start by looking at the top corners of your cube. Imagine what would happen if we did Sune: imagine that all the corners were twisted clockwise except the front-left one. Count how many oriented corners that will give you.
+
+<details>
+
+<summary>Example</summary>
+
+<TwistyPlayer
+  rotateStickering="x2 y"
+  className="size-48"
+  cameraLatitude="45"
+  cameraLongitude="40"
+  experimentalStickeringMaskOrbits={STICKERINGS.CMLL}
+  experimentalSetupAlg="R U2 R2 U' R2 U' R2 U2 R U'"
+  controlPanel="none"
+/>
+
+TODO: make these visualizers have arrows on them
+
+- Front-left will stay not oriented.
+- Front-right will be twisted so its yellow sticker would face the top. Oriented!
+- Back-right will be twisted so its yellow sticker would face the top. Oriented!
+- Back-left will be twisted so its yellow sticker would face the back. Not oriented.
+
+There would be two oriented corners.
+</details>
+
+If you counted exactly one oriented corner, great! Do the Sune sequence, and you'll get a case with one oriented corner which we already learned how to solve.
+
+Otherwise, do a `U` move to try a different angle, and repeat the process. You will at most need to try three more times.
+
+<details>
+<summary>Example</summary>
+Continuing with the previous example, we had two oriented corners instead of one.
+So we'll do `U` and try again, imagining how Sune would twist the corners:
+
+<TwistyPlayer
+  rotateStickering="x2 y"
+  className="size-48"
+  cameraLatitude="45"
+  cameraLongitude="40"
+  experimentalStickeringMaskOrbits={STICKERINGS.CMLL}
+  experimentalSetupAlg="R U2 R2 U' R2 U' R2 U2 R"
+  controlPanel="none"
+/>
+
+- Front-left will stay not oriented.
+- Front-right will be twisted so its yellow sticker would face the top. Oriented!
+- Back-right will be twisted so its yellow sticker would face the right. Not oriented.
+- Back-left will be twisted so its yellow sticker would face the back. Not oriented.
+
+There would be one oriented corner. Great, let's apply Sune to get one oriented corner.
+
+<TwistyPlayer
+  rotateStickering="x2 y"
+  className="size-48"
+  cameraLatitude="45"
+  cameraLongitude="40"
+  experimentalStickeringMaskOrbits={STICKERINGS.CMLL}
+  experimentalSetupAlg="R U2 R2 U' R2 U' R2 U2 R"
+  alg="R U R' U R U2 R'"
+/>
+<span>Moves: `R U R' U R U2 R'`</span>
+
+We now have one oriented corner.
+</details>
+
+## Part 2: Permute the corners
+
+Our final goal is to swap the corners around so their colours match on all sides, like this:
+
+<TwistyPlayer
+  rotateStickering="x2 y"
+  className="size-48"
+  cameraLatitude="30"
+  cameraLongitude="30"
+  experimentalStickeringMaskOrbits={STICKERINGS.CMLL}
+  controlPanel="none"
+/>
+
+To do this, we'll learn the **J perm**: a sequence that swaps two corners around. It's easier to learn when we break it into smaller parts.
+
+TODO make it animated, also make graphics for each of the moves with arrows or something
+```
+(R U R') F'   // first 3 moves of Sune, then F'
+(R U R') U'   // first 3 moves of Sune, then U'
+R' F          // fix the First Block
+R2 U' R'      // fix the Second Block
+```
+
+The J perm swaps around the two corners on the top-right:
+
+TODO: visualcube for J perm, show arrow between UFR and UBR
+
+
+There are only two different ways the corners need to be swapped:
+
+### Adjacent swap
+
+The first case is an "adjacent swap": two corners next to each other need to switch places.
+
+TODO: show adj swap on the back corners, so front corners has a prominent pair of green headlights
+
+Look for a pattern called **headlights**: a pair of matching stickers on the same side. In the above example, there's a green pair of headlights at the front. We only look at headlights on the top layer corners, and we ignore the top colour (yellow).
+
+If you see a pair of headlights, that means you have an adjacent swap.
+1. Move the headlights to the left side with a U layer move.
+2. Do a J perm. This will swap the two corners on the right.
+
+<details>
+<summary>Example</summary>
+TODO: explain
+<TwistyPlayer
+  experimentalStickeringMaskOrbits={STICKERINGS.CMLL}
+  experimentalSetupAlg="R U R' F' R U R' U' R' F R2 U' R' U2"
+  alg="U2 R U R' F' R U R' U' R' F R2 U' R'"
+  rotateStickering="x2 y"
+/>
+<span>Moves: `U2 (R U R' F' R U R' U' R' F R2 U' R')`</span>
+
+</details>
+
+### Opposite swap
+
+If you don't see any headlights, then you have an "opposite swap": two corners far apart from each other need to switch places.
+
+Do a J perm to transform it into an adjacent swap case. Then solve that as before with another J perm.
+
+<details>
+<summary>Example</summary>
+TODO Explain
+<TwistyPlayer
+  experimentalStickeringMaskOrbits={STICKERINGS.CMLL}
+  experimentalSetupAlg="F R U' R' U' R U R' F' R U R' U' R' F R F'"
+  alg="R U R' F' R U R' U' R' F R2 U' R'"
+  rotateStickering="x2 y"
+/>
+<span>Moves: `R U R' F' R U R' U' R' F R2 U' R'`</span>
+</details>

@@ -1,0 +1,93 @@
+---
+title: Second Block (SB)
+description: Learn Second Block, the second step of the Roux Method.
+author: crystalcuber
+---
+
+import { Callout } from "nextra/components";
+import TwistyPlayer from "components/TwistyPlayer";
+import { STICKERINGS } from "lib";
+
+The second step of the Roux Method is to solve this block on the right side of the cube:
+
+<TwistyPlayer
+  rotateStickering="x2 y"
+  controlPanel="none"
+  className="size-48"
+  cameraLatitude="-20"
+  cameraLongitude="30"
+  experimentalStickeringMaskOrbits={STICKERINGS.SB}
+/>
+
+We call that the **Second Block**. It looks just like the First Block, and we will be solving it in a similar way. Let's break it down into three smaller blocks again:
+
+// TODO: visualizer in a timeline
+1. Bottom-right edge
+2. Front pair
+3. Back pair
+
+## Part 1: Bottom-right edge
+
+Remember Part 1 from First Block? We solved a block made up of an edge and center on the left side. This time, we'll solve a block like this on the right side.
+
+// visualizer
+
+// TODO: too wordy
+
+You can see that we'll need to solve the white-green edge and the green center. But wait! The green center is already solved. This is because the green and blue centers are always on opposite sides of the cube. Since we solved the blue center on the left, the green center will be on the right no matter what.
+
+All we have left is the white-green edge. Experiment and try to solve it to the bottom-right position on your own.
+
+<Callout type="info">
+  Remember to keep the anchor at the bottom left, and avoid moves that break up our solved blocks.
+
+  From now on, we'll only use R, U and M layer moves because they don't break the First Block. Rw moves are also useful, because they are a combination of R and M layer moves.
+</Callout>
+
+First, we'll see how we can move the white-green edge to the bottom-right spot.
+
+If the edge is on the right, a single R move will get it there.
+
+If it's not on the right but it's on top, a U move will move it to the right, and then it can be solved with an R move as before.
+
+Otherwise, the edge is stuck at the bottom. It can be moved to the top with an M move and solved as described above.
+
+However, getting it into the bottom-right spot isn't enough. Half the time it will be twisted in the wrong way! We can tell if it's twisted wrong when the edge is on the right, and its right sticker doesn't match the right center.
+
+To fix that, move the edge to the top, and then align it so it's in the M-layer.
+
+<Callout>
+  Quarter turn M moves have the power to _twist_ the edges in the M-layer.
+</Callout>
+
+So we'll do an `M'` or `M` move, whichever keeps the edge at the top. You'll see that now, when we move it to the right side, the edge has been flipped! This is enough for us to solve this edge: we can move it to the right place and twisted right.
+
+## Part 2: Front Pair
+
+TODO: elaborate
+
+### Forming the pair
+
+This is the same process as in the First Block. The only difference is that if we move to the corner to the twisting spot, we need to do a few more moves to twist it. Not just `R'`, but something like `R' U R` so that we can twist the corner but also get the bottom-right edge back to its original position.
+
+// TODO elaborate and show examples
+
+### Inserting the pair
+
+Turn the U layer to get the pair to the front, since we'll be inserting it to the front. But this time, since we don't want to break the First Block, our inserts are going to be a little bit longer. Try it out on your own before revealing the solutions. Remember that we only use R, U, M and Rw moves.
+
+<details>
+  <summary>Case 1</summary>
+  If the top side of the corner is the same color as the right center, we can do `Rw U Rw'` to insert.
+</details>
+
+<details>
+  <summary>Case 2</summary>
+  Otherwise, `R U' R'`
+</details>
+
+## Part 3: Back Pair
+
+Repeat the same process as in the front pair. The only difference is that the insertions happen at the back.
+
+// TODO: elaborate and give examples

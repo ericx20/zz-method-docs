@@ -1,0 +1,52 @@
+---
+title: Last Six Edges
+description: Learn LSE, the final step of the Roux Method.
+author: crystalcuber
+---
+
+import { Callout } from "nextra/components";
+import TwistyPlayer from "components/TwistyPlayer";
+import { ReconViewer } from "components/ReconViewer";
+import { STICKERINGS } from "lib";
+
+The final step of the Roux Method is to solve the **Last Six Edges (LSE)**.
+
+<TwistyPlayer
+  rotateStickering="x2 y"
+  controlPanel="none"
+  className="size-48"
+  cameraLatitude="30"
+  cameraLongitude="30"
+  experimentalStickeringMaskOrbits={STICKERINGS.LSE}
+/>
+
+In this step, we only need M and U layer turns. Try doing some M and U turns on your cube, notice they don't break anything we've solved previously!
+
+LSE is split into three parts: 4a, 4b and 4c. Remember how in CMLL we first twisted the top corners a certain way? This let us solve the pieces by swapping them around, without needing to worry about how they're twisted. Here in LSE, we'll do something similar: 4a twists the last six edges a certain way, so that 4b and 4c can swap the edges around without needing to twist them.
+
+## 4a: Edge Orientation
+
+Our first goal is to make the top and bottom sides of the cube all white and yellow.
+Here's an example of what that looks like:
+<TwistyPlayer
+  rotateStickering="x2 y"
+  controlPanel="none"
+  className="size-48"
+  cameraLatitude="30"
+  cameraLongitude="30"
+  experimentalStickeringMaskOrbits={STICKERINGS.LSE}
+  experimentalSetupAlg="M' U2 M' U2 M2 U' M2 U M' U2 M"
+/>
+{/* TODO: would be nice to show non-EO state -> EO state with an arrow to make it clear what's changed */}
+
+First, move the yellow and white centre pieces to the top and bottom of the cube. Half the time they'll already be in those positions, but if not then `M'` will move them there.
+
+Then, we'll repeat a process of twisting edges so that their white or yellow stickers are all on the top or bottom sides. If an edge has its white or yellow sticker on the top or bottom, we call that a **good** edge. Otherwise, it's a **bad** edge. We want to make all of them good.
+
+Count the number of bad edges on the cube. There will be an even number from 0 to 6
+
+
+
+## 4b: Solve the Left and Right layers
+
+## 4c: Solve the M layer

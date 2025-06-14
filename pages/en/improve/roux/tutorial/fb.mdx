@@ -1,0 +1,204 @@
+---
+title: First Block (FB)
+description: Learn First Block, the first step of the Roux Method.
+author: crystalcuber
+---
+
+import { Callout } from "nextra/components";
+import TwistyPlayer from "components/TwistyPlayer";
+import { STICKERINGS } from "lib";
+
+TODO: there needs to be more story. Frame the method as a moveset reduction method
+i.e. we're simplifying the cube, so after each step is an easier puzzle with fewer ways to turn.
+or that it preserves much more stuff
+
+The first step of the Roux Method is to solve this block on the left side of the cube:
+
+<TwistyPlayer
+  rotateStickering="x2 y"
+  controlPanel="none"
+  className="size-48"
+  cameraLatitude="-20"
+  cameraLongitude="-30"
+  experimentalStickeringMaskOrbits={STICKERINGS.FB}
+/>
+
+We call that the **First Block**. Let's break it down into three smaller blocks:
+
+// TODO: visualizer in a timeline, just call them part 1 part 2 part 3
+1. Center and edge in the middle
+2. Front pair
+3. Back pair
+
+## Part 1: Anchor and Center
+
+To start, we will choose an edge piece to be the **"anchor"**: a special piece that we say is solved. All other pieces will be solved around this anchor. In this tutorial we'll choose the white-blue edge as the anchor.
+
+Find the white-blue edge, then hold the cube so the edge's white sticker is on the bottom, and its blue sticker is on the left.
+
+<Callout type="info">
+  We will hold this anchor in the bottom-left _throughout the whole solve!_
+  
+  We won't make any moves that touch the anchor, such as turning the bottom or left layers.
+</Callout>
+
+Then, find the blue center on the cube. Move it to the left side, without moving the anchor. These two types of moves will come into handy:
+
+// TODO: insert animation for Uw
+
+// TODO: insert animation for Rw
+
+Try it out and experiment! Below are the solutions.
+
+<details>
+  <summary>Case 1</summary>
+  If the center is at the front, right or back side, you can move it to the left with one move, like this:
+  <TwistyPlayer
+    rotateStickering="x2 y"
+    experimentalStickeringMaskOrbits="EDGES:IIIIIII-IIII,CORNERS:IIIIIIII,CENTERS:I-IIII"
+    experimentalSetupAlg="Uw'"
+    alg="Uw"
+    cameraLatitude="-20"
+    cameraLongitude="-30"
+    viewer-link="none"
+  />
+</details>
+
+<details>
+  <summary>Case 2</summary>
+  If the center is at the top or bottom, you can move it to the front or back, then solve like in Case 1.
+    <TwistyPlayer
+    rotateStickering="x2 y"
+    experimentalStickeringMaskOrbits="EDGES:IIIIIII-IIII,CORNERS:IIIIIIII,CENTERS:I-IIII"
+    experimentalSetupAlg="Uw' Rw"
+    alg="Rw' Uw"
+    cameraLatitude="20"
+    cameraLongitude="-30"
+    viewer-link="none"
+  />
+</details>
+
+Now we have the anchor and its matching center solved! This forms a block of two pieces.
+
+<Callout type="info">
+  Once we form a block, we want to keep it together! We'll avoid moves that break apart the blocks.
+
+  For the block that we just solved, we'll now avoid doing `Uw` moves because they break the center apart from the anchor.
+</Callout>
+
+## Part 2: Front Pair
+
+
+### Forming a pair
+
+Now let's form a **pair**: a matching edge and corner. We'll make a pair to expand our block into this:
+
+<TwistyPlayer
+  rotateStickering="x2 y"
+  controlPanel="none"
+  className=""
+  cameraLatitude="-20"
+  cameraLongitude="-30"
+  experimentalStickeringMaskOrbits="EDGES:IIIIIIIDI-II,CORNERS:IIIII-II,CENTERS:IDIIII"
+/>
+
+We'll connect the blue-red edge with the blue-red-white corner. As we can see, those are the pieces that will expand the block at the front.
+
+Start by moving the blue-red edge to the **loading spot**: the bottom-front position.
+
+TODO: show DF highlighted
+
+Remember to keep the anchor at the bottom-left, and avoid any moves that break the blue center away from the anchor!
+
+Secondly, move the blue-red-white corner to the top layer if it's not already there. In most cases, all you need is one R- or B-layer move.
+
+// insert example
+
+But if the corner is in the bottom-front-left position, we have a problem. One move is not enough, because if we do one F-layer move to bring it to the top, the edge gets kicked out of the loading spot!
+
+// show example
+
+In this case, we need to do three moves that follow this strategy:
+1. Move the edge out of the way
+2. Then move the corner to the top
+3. Move the edge back to the loading spot
+
+See if you can figure it out. Below is one possible solution:
+
+<details>
+  <summary>Solution</summary>
+  You could do `Rw' F Rw` like this:
+  // TODO visualizer
+</details>
+
+At this point, the edge is in the loading spot and the corner is at the top. Our goal is to join the edge with the corner with an M-layer move to form a pair.
+
+// TODO show pair being joined
+
+But if we try to do it now, the colors might not line up! We need to prepare the corner so its colors will match with the edge.
+
+First: the corner must not have its white sticker on the top side. This is because the edge doesn't have any white stickers, so there's no way it could match the corner's white sticker on top.
+
+// Show example of that
+
+If the corner's white sticker is on the top, you can fix it by moving it to the **corner-twisting spot**: the top-back-right position.
+
+// Show UBR highlighted
+
+Then do an `R'`. This will "twist" the corner so that white is no longer on the top.
+
+// show example
+
+
+Now we are sure the corner doesn't have white on the top, so that problem is gone. However, there's another problem that can happen:
+
+TODO flesh this out:
+ok basically 3 things that can go wrong
+1. white on top: never match. twist by moving to UBR and then R'
+2. white on front/back: also never match. move white to the left/right
+3. colors are in "Reverse" order. Do U2 then M move to fix, it'll swap the order of the colours on the corner to match the edge.
+
+Now we can finally join the edge with the corner with an M-layer move!
+This is how we form a pair, and we'll be repeating this process later.
+
+### Inserting the pair
+
+Now we want to **insert** this pair to expand the block from Part 1. Try to figure it out before revealing the solutions below. Remember to keep the anchor at the bottom-left, and don't break the blocks apart.
+
+<details>
+  <summary>Case 1</summary>
+  If the pair has blue on top, it can be moved to the front and inserted with a single move (`F'`)
+</details>
+
+<details>
+  <summary>Case 2</summary>
+  If the pair has red on top, it can be moved to the front and inserted with twmo moves (`Rw' F`)
+</details>
+
+Great! Now we have a single combined block. Remember to avoid moves that break blocks. Now, F moves will break this block so we will avoid them.
+
+## Part 3: Back pair
+
+We'll make another pair, the same way as we did before. This time, the edge is blue-orange and the corner is white-blue-orange. This pair belongs to the back of the First Block.
+
+### A note about colors
+
+But how do we know the colors of the pieces we're solving next? As we progress, it will become more difficult to memorize that for example, our second pair is blue-orange edge and white-blue-orange corner. So let's use a trick.
+
+Remember from the Cube Basics that centers act as a guide for where the colors belong on the cube. So if we solve the centers, we'll know the colors of the pieces we want to solve next.
+
+This can be done with a single M move to get the white center to the bottom. This way, the centers are solved around the anchor.
+
+### Forming the pair
+
+This is the same process as in Part 2, so here are some examples:
+
+// TODO Examples
+
+### Inserting the pair
+
+Inserting the pair works the same way as in Part 2. Just that we first move the pair to the back rather than the front.
+
+Congrats! Now the first block is solved.
+
+{/* TODO: for each part, there should be real walkthrough solves shown on real scrambles */}
